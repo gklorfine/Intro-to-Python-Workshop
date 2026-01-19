@@ -1,0 +1,61 @@
+---
+title: "QMWS Spring 2026: Introduction to Python for Data Analysis"
+subtitle: "Day One: Foundations"
+author: "Gavin Klorfine & Deborah Laze"
+format: beamer
+jupyter: termproject
+---
+
+# Installation
+
+## Visual Studio (VS) Code
+- Installation link: https://code.visualstudio.com/download
+- Integrated Development Environment (IDE)
+- Can use it to code in many different languages
+- Commonly used in both academia and industry
+
+## Visual Studio (VS) Code
+- Once installed, go to the "Extensions" tab and search "Python"
+- Install the below extensions:
+
+![](images/extensions.png)
+
+## Anaconda
+- A tool for configuring Python **environments**
+    - More often than not, you need to install **packages** that allow you to code more easily/efficiently
+    - Allows for version control
+    - Issues can arise if environments are not used, for example:
+        - If you install two packages that conflict with one another
+        - If you install a package that requires a specific version of Python
+    - Anaconda allows these issues to be isolated to a specific environment, rather than affecting your whole Python installation
+        - Especially useful if you have more than one project going on
+
+## Anaconda
+- Installation link: https://www.anaconda.com/download
+- The simplest way to use Anaconda is via the **Navigator**
+- To install:
+    1. Make an account
+    1. Install the full distribution via the "Graphical Installer"
+
+---
+
+- Installation link: https://www.anaconda.com/download
+- On Mac:
+
+![](images/condaMac.png)
+
+---
+
+- Installation link: https://www.anaconda.com/download
+- On Windows:
+
+![](images/condaWindows.png)
+
+# Setting Up a Conda Environment
+<!-- Here we would just share screen and show how using the Navigator -->
+
+# The Basics
+
+## Variables
+- In programming, a variable is a space in computer memory where values may be stored
+ 

@@ -713,3 +713,34 @@ qm_mean(x)
 # Numpy
 
 ## Numpy
+- Somewhat similar to MATLAB if you have used that
+- Useful for working with arrays/matrices
+
+### `np.arange()` {.example}
+```{python}
+#| label: arange
+
+import numpy as np
+
+np.arange(start=10, stop=20, step=2, dtype = "int64")
+```
+
+::: {.callout-note}
+- `stop` parameter is *exclusive*
+:::
+
+## Numpy
+
+### `np.linspace()` {.example}
+```{python}
+#| label: linspace
+
+import numpy as np
+
+np.linspace(start=10, stop=20, num=6, dtype = "int64")
+```
+
+::: {.callout-tip}
+- Use `np.linspace()` for breaking something into equal parts
+- Use `np.arange()` for creating a sequence of numbers
+:::

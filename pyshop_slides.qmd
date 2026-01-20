@@ -3,8 +3,9 @@ title: "QMWS Spring 2026: Introduction to Python for Data Analysis"
 subtitle: "Day One: Foundations"
 author: "Gavin Klorfine & Deborah Laze"
 format: beamer
-jupyter: termproject
+jupyter: termproject 
 ---
+<!-- Change jupyter environment in YAML once a workshop one is created -->
 
 # Installation
 
@@ -58,4 +59,3 @@ jupyter: termproject
 
 ## Variables
 - In programming, a variable is a space in computer memory where values may be stored
- 

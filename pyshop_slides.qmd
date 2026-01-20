@@ -552,3 +552,164 @@ while count <= len(x) - 1:
     count += 1    # Same as count = count + 1
 ```
 
+## `while` Loops: the `break` Statement
+
+- The `break` statement is used to exit a loop
+
+### `break` {.example}
+```{python}
+#| label: breaks
+
+x = 0
+
+while True:     # Infinite loop...
+    if x > 10:
+        break   # Until you break!
+    x += 1
+
+print(x)
+```
+
+## `for` Loops
+- Often used with the `range()` function to loop over code a set number of times
+
+### `for` Loops, `range()` {.example}
+```{python}
+#| label: forRange
+
+for i in range(3):
+    print(i)
+```
+
+## `for` Loops
+
+### Iterating Over Entries in a List {.example}
+```{python}
+#| label: forList
+
+x = [10,20,30,67]
+
+for i in x:
+    print(i)
+```
+
+## `for` Loops: `enumerate()`
+
+- Use `enumerate()` and a second indexing variable (usually `i` or `j`) if you want to keep variable position
+
+### `enumerate()` {.example}
+```{python}
+#| label: enumerate
+
+x = [10,20,30,67]
+
+for i, j in enumerate(x):
+    print(i, j)
+```
+
+## `for` Loops: Nesting
+- Loops (and conditionals) may be nested inside one another (like Russian dolls / Matryoshka)
+
+### Nesting {.example}
+```{python}
+#| label: nesting
+
+x = ["big", "small"]
+y = ["cat", "dog"]
+
+for i in x:
+    for j in y:
+        print(i, j)
+```
+
+# Importing Packages, Defining Functions
+
+## Importing Packages
+- Some packages are installed with Python by default, and no extra work is required to use them
+
+### `import math` {.example}
+```{python}
+#| label: importMath
+
+import math
+
+print(f'pi = {math.pi:.3f}')
+```
+
+## Importing Packages
+- We can rename packages to make their usage more concise
+
+### Renaming Packages {.example}
+```{python}
+#| label: impAs
+
+import math as m
+
+print(f'pi = {m.pi:.3f}')
+```
+
+## Importing Packages
+
+- Some require installation. This is most easily (and safely) done through **anaconda**
+
+<!-- GK: Share screen here and show how to add numpy to environment -->
+
+## Importing Packages
+### `import numpy as np` {.example}
+```{python}
+#| label: impNumpy
+
+import numpy as np      # Common convention
+
+# Take a sample of 3 values from N(0, 1)
+print(np.random.normal(loc = 0, scale = 1, size = 3))
+```
+
+::: {.callout-note}
+- `loc` = $\mu$, `scale` = $\sigma$
+:::
+
+## Defining Functions
+- Sometimes you repeat the same code over and over again
+    - When this happens, it is useful to collapse the repeated code into a function
+    - Otherwise, code becomes long and messy due to copy-pasting
+
+## Defining Functions
+
+### Defining Basic Functions {.example}
+```{python}
+#| label: basicFuncs
+
+def addition(a, b):
+    return a + b              # What the functions spits out
+
+print(addition(a = 1, b = 5)) # Call function
+
+def subtraction(a, b = 1):    # Give b default value of 1
+    return a - b
+
+print(subtraction(a = 5))
+```
+
+## Defining Functions
+
+### Function Example {.example}
+```{python}
+#| label: def
+
+x = [0,1,2,3,4,5,6,7]
+
+def qm_mean(things):
+    sum = 0
+
+    for i in things:
+        sum += i
+    
+    return sum / len(x)
+
+qm_mean(x)              
+```
+
+# Numpy
+
+## Numpy

@@ -6,6 +6,9 @@ format:
     beamer:
         theme: Madrid
         slide-level: 2
+execute:
+    echo: True
+    include: True
 jupyter: termproject # GK: I need to make sure to change this once we finalize
 ---
 
@@ -65,8 +68,6 @@ jupyter: termproject # GK: I need to make sure to change this once we finalize
 ### Defining and Printing Variables {.example}
 ```{python}
 #| label: defPrint
-#| echo: True
-#| include: True
 
 x = 67
 
@@ -77,8 +78,6 @@ print(x)
 ### Defining and Printing Variables {.example}
 ```{python}
 #| label: defPrint_add
-#| echo: True
-#| include: True
 
 a = 1
 b = 2
@@ -109,8 +108,6 @@ print(a + b)    # * for multiplication, / for division
 ### Checking Type {.example}
 ```{python}
 #| label: checkType
-#| echo: True
-#| include: True
 
 x = 416
 print(x, type(x))   # type() to check type
@@ -119,8 +116,6 @@ print(x, type(x))   # type() to check type
 ### Converting Type {.example}
 ```{python}
 #| label: convType
-#| echo: True
-#| include: True
 
 x = 416
 x = str(x)      # str() to convert to string
@@ -134,11 +129,9 @@ print(x, type(x))
     - These are essentially pre-made chunks of code for you to use
     - More on this later!
 
-### What will be outputted by the below code?
+### What will the below code output?
 ```{python}
 #| label: typePrint_q
-#| echo: True
-#| include: True
 #| output: False
 
 x = "Variable"
@@ -155,8 +148,6 @@ print(x)
 ### Defining Lists {.example}
 ```{python}
 #| label: listType
-#| echo: True
-#| include: True
 
 x = [0, 1, 2, 3, 4]     # Define a list; square brackets
 print(type(x))
@@ -171,8 +162,6 @@ print(type(x))
 ### Indexing Lists {.example}
 ```{python}
 #| label: listIndex
-#| echo: True
-#| include: True
 
 x = [0, 1, 2, 3, 4]
 
@@ -186,8 +175,6 @@ print(x[-1])    # Index last element
 ### Slicing Lists {.example}
 ```{python}
 #| label: listSlice
-#| echo: True
-#| include: True
 
 x = [0, 1, 2, 3, 4]
 
@@ -204,8 +191,6 @@ print(x[0:2])   # first and second (but not third) elements
 ### Slicing Lists, continued {.example}
 ```{python}
 #| label: slicingCont
-#| echo: True
-#| include: True
 
 x = [0, 1, 2, 3, 4]
 
@@ -219,8 +204,6 @@ print(x[0:1])   # a (silly) way to index just the first element
 ### len() function {.example}
 ```{python}
 #| label: lenFunc
-#| echo: True
-#| include: True
 
 x = [0, 1, 2, 3, 4]
 
@@ -237,8 +220,6 @@ print(x[len(x) - 1])
 ### .append() {.example}
 ```{python}
 #| label: listAppend
-#| echo: True
-#| include: True
 
 x = [0,1,2,3,4]
 
@@ -253,8 +234,6 @@ print(x)
 ### .extend() {.example}
 ```{python}
 #| label: listExtend
-#| echo: True
-#| include: True
 
 x = [0,1,2,3,4]
 
@@ -269,8 +248,6 @@ print(x)
 ### Difference Between .append() and .extend() {.example}
 ```{python}
 #| label: appExtDiff
-#| echo: True
-#| include: True
 
 x = [0,1,2,4]
 y = [5,6,7,8]
@@ -288,8 +265,6 @@ print(x)
 ### Changing a Value in a List {.example}
 ```{python}
 #| label: changeList
-#| echo: True
-#| include: True
 
 x = [0, 1, 2, 3, 4]
 
@@ -297,7 +272,7 @@ x[0] = 9
 print(x)
 ```
 
-## Tuples (Vriefly) <!-- GK: Do you think "(Briefly)" is necessary? -->
+## Tuples (Briefly) <!-- GK: Do you think "(Briefly)" is necessary? -->
 
 - Like lists, tuples contain multiple values
 - Unlike lists, tuples are **immutable**; they cannot be changed once created.
@@ -306,8 +281,6 @@ print(x)
 ### Defining a Tuple {.example}
 ```{python}
 #| label: tupleDef
-#| echo: True
-#| include: True
 
 x = ("a", "tuple")  # Round brackets
 
@@ -320,9 +293,7 @@ print(type(x))
 ### Changing Values... ERROR! {.example}
 ```{python}
 #| label: tupleError
-#| echo: True
-#| include: True
-#| error: true
+#| error: True
 
 x = ("a", "tuple")
 
@@ -336,8 +307,6 @@ x[0] = "Not a"
 ### Unpacking Tuples {.example}
 ```{python}
 #| label: unpack
-#| echo: True
-#| include: True
 
 x, y = (6, 7)
 
@@ -350,4 +319,95 @@ print(y)
 ## Strings: Basics
 
 - Strings are a lot like lists in that they are **iterable**
-    - For now, think of **iterable** items (lists, strings) as a sequence of values
+    - For now, think of these (lists, strings) as a sequence of values
+
+### Strings are Like Lists! {.example}
+```{python}
+#| label: stringList
+
+cringe = "Hello world!"
+
+print(cringe[0:5])
+print(len(cringe))
+```
+
+## Strings: Basics
+
+- Strings are also kind of like tuples in that they are **immutable**
+
+### String Immutability {.example}
+```{python}
+#| label: strImmutable
+#| error: true
+cringe = "Hello world!"
+cringe[0:5] = "Goodbye"     # Error
+```
+
+
+## Strings: Methods
+- We can turn to string **methods** to "modify" strings when needed (they just create a new string "behind the scenes")
+
+### .replace() {.example}
+```{python}
+#| label: strReplace
+
+cringe = "Hello world!"
+
+print(cringe.replace("Hello", "Goodbye"))
+```
+
+## Strings: Methods
+
+### .split() {.example}
+```{python}
+#| label: strSplit
+
+meme_list = "baby gronk, 67, skibidi toilet, the rizzler"
+
+
+print(meme_list.split(", ")) # Split on ", "; returns a list
+
+print(meme_list.split(", ")[0]) # Index the list
+```
+
+## Strings: Methods
+
+### How might you index "the rizzler"?
+. . .
+```{python}
+#| label: rizzIndex
+
+meme_list = "baby gronk, 67, skibidi toilet, the rizzler"
+
+print(meme_list.split(", ")[3])
+print(meme_list.split(", ")[-1])
+print(meme_list.split(", ")[len(meme_list.split(", ")) - 1])
+```
+
+## Strings: f-strings
+
+- If you wanted to include variables within text, format strings as per the following:
+
+### f-string Example {.example}
+```{python}
+#| label: fString
+
+x = 3.14159
+
+print(f'Approximate value of pi is {x}')
+
+print(f'To three decimal places is {x:.3f}') 
+```
+
+## Strings: f-strings
+
+- The string (surrounded by either single `''` or double `""` quotations) is preceded by `f`
+- The variable is surrounded by curly braces `{}` within the string
+- Formatting is applied to the variable *within the curly braces*
+    - A `:` signals that the proceeding formatting code should be applied to the variable
+
+### f-string Formatting Basics
+- `x:.3f`
+    - Format variable `x`
+    - Round to 3 decimal places
+    - `f` means `float`

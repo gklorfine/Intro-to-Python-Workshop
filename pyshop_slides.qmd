@@ -61,3 +61,57 @@ jupyter: termproject # Make sure to change this
 
 ## Variables
 - In programming, a variable is a space in computer memory where values may be stored
+
+### Defining and Printing Variables
+```{python}
+#| label: defPrint
+#| echo: True
+#| include: True
+
+x = 67
+
+print(x)
+```
+
+## Variables
+### Defining and Printing Variables
+```{python}
+#| label: defPrint_add
+#| echo: True
+#| include: True
+
+a = 1
+b = 2
+
+print(a + b)    # * for multiplication, / for division
+```
+
+::: {.callout-note}
+- Use `#` to make a **comment**
+:::
+
+## Variable Types
+1. `int` (integer; "whole number")
+    - less memory <!-- maybe can just mention this and not have on slide? -->
+    - 1 is an `int`
+1. `float` (real; "decimal number")
+    - 1.2 is a `float`
+    - 1.0 is a `float`
+1. `str` (string; characters/words with no numerical meaning)
+    - `"Hello world!"` is a string
+    - `"416-676-6767"` is also a string
+1. `bool` (boolean; can be `True` or `False`; more on this later)
+1. `None`
+    - A special type of variable that essentially means "nothing meaningful is stored"
+    - Useful as a placeholder
+
+## Variable Types
+### Checking and Converting Between Variable Types
+```{python}
+#| label: checkConvert
+#| echo: True
+#| include: True
+
+x = 67
+
+```

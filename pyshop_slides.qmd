@@ -168,19 +168,28 @@ print(type(x))
 ```
 
 ## Lists: Indexing
+```{python}
+#| label: listToStareAt
+
+x = [0,1,2,3,4]
+```
+
 - To extract one or more values from a list, you **index** the list
 - Python uses **zero-based indexing**
     - This means that the first element of a list is index `0`, the second element is index `1`, ...
     - Element $x$ is index $x - 1$
 
+## Lists: Indexing
 ### Indexing Lists {.example}
 ```{python}
 #| label: listIndex
 
 x = [0, 1, 2, 3, 4]
+y = 2
 
 print(x[0])     # Index first element of a list
 print(x[-1])    # Index last element
+print(x[y])     # Index yth element
 ```
 
 ## Lists: Indexing
@@ -472,3 +481,74 @@ print (x > 2 and y > 2)
 - `not`
 :::
 ::::
+
+# Conditional Statements
+
+## Conditional Statements
+- If thing1 happens, do $x$
+- If thing2 happens instead, do $y$
+- Otherwise, do $z$
+
+. . .
+
+### Basic `if`/`elif`/`else` {.example}
+```{python}
+#| label: condns
+
+x = 10  # Value presumably unknown
+y = 20
+
+if x == 4:
+    print("x is 4")
+elif x > y:
+    print("x is bigger than y")
+else:
+    print("none of the above")
+```
+
+## Conditional Statements
+### Structure of Conditionals {.example}
+```{python}
+#| label: condns_struc
+if x == 4:
+    print("x is 4")
+```
+- Begins with `if`/`elif` ("else if")/`else`
+- Boolean expression/value
+- Colon `:`
+- Indented code underneath that runs if condition is met
+
+# Loops
+
+## `while` Loops
+
+- Loops are used to run a chunk of code repeatedly
+    - Often a set number of times
+- This is best shown and unpacked through examples:
+
+## `while` Loops
+
+### `while` Loop Basics {.example}
+```{python}
+#| label: while_basic
+count = 1   # Initialize counter
+
+while count <= 5:
+    print(count)
+    count = count + 1   # Increment counter
+```
+
+## `while` Loops
+
+### Iterating through a list {.example}
+```{python}
+#| label: whileList
+
+x = [0,1,2,3]
+count = 0
+
+while count <= len(x) - 1:
+    print(x[count])
+    count += 1    # Same as count = count + 1
+```
+

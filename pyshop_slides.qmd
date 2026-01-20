@@ -2,10 +2,12 @@
 title: "QMWS Spring 2026: Introduction to Python for Data Analysis"
 subtitle: "Day One: Foundations"
 author: "Gavin Klorfine & Deborah Laze"
-format: beamer
-jupyter: termproject 
+format: 
+    beamer:
+        theme: Madrid
+        slide-level: 2
+jupyter: termproject # Make sure to change this
 ---
-<!-- Change jupyter environment in YAML once a workshop one is created -->
 
 # Installation
 
@@ -52,8 +54,8 @@ jupyter: termproject
 
 ![](images/condaWindows.png)
 
-# Setting Up a Conda Environment
-<!-- Here we would just share screen and show how using the Navigator -->
+# Setting Up a Conda Environment <!-- Here we would just share screen and show how using the Navigator -->
+
 
 # The Basics
 

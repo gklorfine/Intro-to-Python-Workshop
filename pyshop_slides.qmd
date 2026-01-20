@@ -75,9 +75,9 @@ print(x)
 ```
 
 ## Variables
-### Defining and Printing Variables {.example}
+### Arithmetic {.example}
 ```{python}
-#| label: defPrint_add
+#| label: arith
 
 a = 1
 b = 2
@@ -88,6 +88,20 @@ print(a + b)    # * for multiplication, / for division
 ::: {.callout-note}
 - Use `#` to make a **comment**
 :::
+
+## Variables
+
+### Updating Variables {.example}
+```{python}
+#| label: upVar
+
+x = 10
+x = 20
+x = 15
+
+print (x)
+```
+
 
 ## Variable Types
 1. `int` (integer; "whole number")
@@ -201,7 +215,7 @@ print(x[0:1])   # a (silly) way to index just the first element
 ## Lists: Length
 - To find the length of a list:
 
-### len() function {.example}
+### `len()` function {.example}
 ```{python}
 #| label: lenFunc
 
@@ -217,7 +231,7 @@ print(x[len(x) - 1])
 - Lists have certain functions that can be applied to them, called **methods**
     - Methods are more general than this (e.g., string methods; more on these in a little bit!)
 
-### .append() {.example}
+### `.append()` {.example}
 ```{python}
 #| label: listAppend
 
@@ -231,7 +245,7 @@ print(x)
 
 ## Lists: Methods
 
-### .extend() {.example}
+### `.extend()` {.example}
 ```{python}
 #| label: listExtend
 
@@ -347,7 +361,7 @@ cringe[0:5] = "Goodbye"     # Error
 ## Strings: Methods
 - We can turn to string **methods** to "modify" strings when needed (they just create a new string "behind the scenes")
 
-### .replace() {.example}
+### `.replace()` {.example}
 ```{python}
 #| label: strReplace
 
@@ -358,7 +372,7 @@ print(cringe.replace("Hello", "Goodbye"))
 
 ## Strings: Methods
 
-### .split() {.example}
+### `.split()` {.example}
 ```{python}
 #| label: strSplit
 
@@ -411,3 +425,50 @@ print(f'To three decimal places is {x:.3f}')
     - Format variable `x`
     - Round to 3 decimal places
     - `f` means `float`
+
+# Booleans
+
+## Booleans
+- A boolean variable (type `bool`) can be either `True` (`1`) or `False` (`0`).
+
+### Booleans {.example}
+```{python}
+#| label: booleans
+
+x = True
+y = 10
+print(type(x), type(y))
+
+print (y > 5)
+print (y < 5)
+print(type(y < 5))
+```
+
+```{python}
+#| label: boolCont
+
+x = 5
+y = 10
+
+print (x > 2 and y > 2)
+```
+
+## Booleans
+
+:::: {.columns}
+::: {.column width = "40%"}
+### Comparison Operators
+- `>` greater than
+- `<` less than
+- `>=` greater than or equal to
+- `<=` less than or equal to
+- `==` equal to
+- `!=` not equal to
+:::
+::: {.column width = "40%"}
+### Logical Operators
+- `and`
+- `or`
+- `not`
+:::
+::::

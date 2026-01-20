@@ -344,3 +344,10 @@ x, y = (6, 7)
 print(x)
 print(y)
 ```
+
+# Strings
+
+## Strings: Basics
+
+- Strings are a lot like lists in that they are **iterable**
+    - For now, think of **iterable** items (lists, strings) as a sequence of values

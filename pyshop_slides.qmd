@@ -6,7 +6,7 @@ format:
     beamer:
         theme: Madrid
         slide-level: 2
-jupyter: termproject # Make sure to change this
+jupyter: termproject # GK: I need to make sure to change this once we finalize
 ---
 
 # Installation
@@ -21,7 +21,7 @@ jupyter: termproject # Make sure to change this
 - Once installed, go to the "Extensions" tab and search "Python"
 - Install the below extensions:
 
-![](images/extensions.png)
+![](images/extensions.png){fig-align="center"}
 
 ## Anaconda
 - A tool for configuring Python **environments**
@@ -45,16 +45,16 @@ jupyter: termproject # Make sure to change this
 - Installation link: https://www.anaconda.com/download
 - On Mac:
 
-![](images/condaMac.png)
+![](images/condaMac.png){fig-align="center"}
 
 ---
 
 - Installation link: https://www.anaconda.com/download
 - On Windows:
 
-![](images/condaWindows.png)
+![](images/condaWindows.png){fig-align="center"}
 
-# Setting Up a Conda Environment <!-- Here we would just share screen and show how using the Navigator -->
+# Setting Up a Conda Environment <!-- GK: Here we would just share screen and show how using the Navigator -->
 
 
 # The Basics
@@ -62,7 +62,7 @@ jupyter: termproject # Make sure to change this
 ## Variables
 - In programming, a variable is a space in computer memory where values may be stored
 
-### Defining and Printing Variables
+### Defining and Printing Variables {.example}
 ```{python}
 #| label: defPrint
 #| echo: True
@@ -74,7 +74,7 @@ print(x)
 ```
 
 ## Variables
-### Defining and Printing Variables
+### Defining and Printing Variables {.example}
 ```{python}
 #| label: defPrint_add
 #| echo: True
@@ -92,7 +92,7 @@ print(a + b)    # * for multiplication, / for division
 
 ## Variable Types
 1. `int` (integer; "whole number")
-    - less memory <!-- maybe can just mention this and not have on slide? -->
+    - less memory <!-- GK: maybe can just mention this and not have on slide? -->
     - 1 is an `int`
 1. `float` (real; "decimal number")
     - 1.2 is a `float`
@@ -106,12 +106,241 @@ print(a + b)    # * for multiplication, / for division
     - Useful as a placeholder
 
 ## Variable Types
-### Checking and Converting Between Variable Types
+### Checking Type {.example}
 ```{python}
-#| label: checkConvert
+#| label: checkType
 #| echo: True
 #| include: True
 
-x = 67
+x = 416
+print(x, type(x))   # type() to check type
+```
 
+### Converting Type {.example}
+```{python}
+#| label: convType
+#| echo: True
+#| include: True
+
+x = 416
+x = str(x)      # str() to convert to string
+print(x, type(x))
+```
+
+- Can also use `int()` and `float()` to convert to respective type
+
+## A Brief Note
+- `print()`, `type()`, `str()`, etc. are all examples of **functions**
+    - These are essentially pre-made chunks of code for you to use
+    - More on this later!
+
+### What will be outputted by the below code?
+```{python}
+#| label: typePrint_q
+#| echo: True
+#| include: True
+#| output: False
+
+x = "Variable"
+
+print(type(x))
+print(x)
+```
+
+# More Advanced Variable Types
+
+## Lists
+- Multiple values can be stored in one variable. A list is one way to do this:
+
+### Defining Lists {.example}
+```{python}
+#| label: listType
+#| echo: True
+#| include: True
+
+x = [0, 1, 2, 3, 4]     # Define a list; square brackets
+print(type(x))
+```
+
+## Lists: Indexing
+- To extract one or more values from a list, you **index** the list
+- Python uses **zero-based indexing**
+    - This means that the first element of a list is index `0`, the second element is index `1`, ...
+    - Element $x$ is index $x - 1$
+
+### Indexing Lists {.example}
+```{python}
+#| label: listIndex
+#| echo: True
+#| include: True
+
+x = [0, 1, 2, 3, 4]
+
+print(x[0])     # Index first element of a list
+print(x[-1])    # Index last element
+```
+
+## Lists: Indexing
+- You can also take more than one element, or a **slice**, of the list
+
+### Slicing Lists {.example}
+```{python}
+#| label: listSlice
+#| echo: True
+#| include: True
+
+x = [0, 1, 2, 3, 4]
+
+print(x[0:2])   # first and second (but not third) elements
+```
+
+::: {.callout-important}
+- `[inclusive:exclusive]`
+    - The index on the *left-hand* side of the slice is *included*, whereas the index on the *right-hand* side of the slice is *excluded*
+:::
+
+## Lists: Indexing
+
+### Slicing Lists, continued {.example}
+```{python}
+#| label: slicingCont
+#| echo: True
+#| include: True
+
+x = [0, 1, 2, 3, 4]
+
+print(x[0:3])   # first three elements
+print(x[0:1])   # a (silly) way to index just the first element
+```
+
+## Lists: Length
+- To find the length of a list:
+
+### len() function {.example}
+```{python}
+#| label: lenFunc
+#| echo: True
+#| include: True
+
+x = [0, 1, 2, 3, 4]
+
+print(len(x))   # The length of list x
+
+# Another way to find the last element (not so silly!)
+print(x[len(x) - 1])
+```
+
+## Lists: Methods
+- Lists have certain functions that can be applied to them, called **methods**
+    - Methods are more general than this (e.g., string methods; more on these in a little bit!)
+
+### .append() {.example}
+```{python}
+#| label: listAppend
+#| echo: True
+#| include: True
+
+x = [0,1,2,3,4]
+
+x.append(5)
+print(x)
+```
+
+- Adds an entry to a list
+
+## Lists: Methods
+
+### .extend() {.example}
+```{python}
+#| label: listExtend
+#| echo: True
+#| include: True
+
+x = [0,1,2,3,4]
+
+x.extend([6,7,8,9])
+print(x)
+```
+
+- Extend a list by "glueing" it to another list
+
+## Lists: Methods
+
+### Difference Between .append() and .extend() {.example}
+```{python}
+#| label: appExtDiff
+#| echo: True
+#| include: True
+
+x = [0,1,2,4]
+y = [5,6,7,8]
+
+x.append(y)
+print(x)
+
+x = [0,1,2,4]   # Redefine x
+x.extend(y)
+print(x)
+```
+
+## Lists: Changing Values
+
+### Changing a Value in a List {.example}
+```{python}
+#| label: changeList
+#| echo: True
+#| include: True
+
+x = [0, 1, 2, 3, 4]
+
+x[0] = 9
+print(x)
+```
+
+## Tuples (Vriefly) <!-- GK: Do you think "(Briefly)" is necessary? -->
+
+- Like lists, tuples contain multiple values
+- Unlike lists, tuples are **immutable**; they cannot be changed once created.
+    - Lists are *mutable*
+
+### Defining a Tuple {.example}
+```{python}
+#| label: tupleDef
+#| echo: True
+#| include: True
+
+x = ("a", "tuple")  # Round brackets
+
+print(x[0], x[1])
+print(type(x))
+```
+
+## Tuples (Briefly)
+
+### Changing Values... ERROR! {.example}
+```{python}
+#| label: tupleError
+#| echo: True
+#| include: True
+#| error: true
+
+x = ("a", "tuple")
+
+x[0] = "Not a"
+```
+
+## Tuples (Briefly)
+
+- Tuples have special properties, one of which is below:
+
+### Unpacking Tuples {.example}
+```{python}
+#| label: unpack
+#| echo: True
+#| include: True
+
+x, y = (6, 7)
+
+print(x)
+print(y)
 ```

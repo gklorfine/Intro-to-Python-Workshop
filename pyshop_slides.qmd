@@ -6,6 +6,9 @@ format:
     beamer:
         theme: Madrid
         slide-level: 2
+header-includes: # GK: GPT added this part of YAML to fix file not rendering
+    - \usepackage{textcomp}
+    - \providecommand{\textasciicaret}{\textasciicircum}
 execute:
     echo: True
     include: True
@@ -353,6 +356,48 @@ cringe = "Hello world!"
 print(cringe[0:5])
 print(len(cringe))
 ```
+
+## Strings: Basics
+
+- We can join two strings together through **concatenation**
+
+### Concatenation {.example}
+```{python}
+#| label: concat
+
+a = "Hello"
+b = "World!"
+
+c = a + " " + b     # Note the space between words
+print(c)
+```
+
+## Strings: Basics
+
+- Sometimes you need to include quotations or other characters inside a string that would normally return an error
+- This can be done through an **escape sequence**
+
+### ERROR! Why You Need Escape Sequences... {.example}
+
+```{python}
+#| label: err_escSeq
+#| error: true
+
+x = "This is a "string""
+```
+
+## Strings: Basics
+### Escape Sequences {.example}
+```{python}
+#| label: escSeq
+
+x = "This is a \"string\""
+print(x)
+```
+
+::: {.callout-note}
+- The 
+:::
 
 ## Strings: Basics
 
@@ -729,8 +774,9 @@ import numpy as np
 
 list1 = [1,2,3,4]
 print(list1 * 2)
+print(type(list1))
 
-numpyList = np.array([1,2,3,4])
+numpyList = np.array(list1)
 print(numpyList * 2)
 print(type(numpyList))
 ```
@@ -772,7 +818,7 @@ print(array2d.dtype)    # Type of elements
     - `int32`
     - `int64`
     - `float64`
-- Generally, type + memory (in bits)
+- Generally, numpy type = type learned before + memory (in bits)
 
 ## Numpy
 

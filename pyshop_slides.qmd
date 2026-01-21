@@ -342,7 +342,7 @@ print(y)
 
 # Strings
 
-## Strings: Basics
+## Strings
 
 - Strings are a lot like lists in that they are **iterable**
     - For now, think of these (lists, strings) as a sequence of values
@@ -357,7 +357,7 @@ print(cringe[0:5])
 print(len(cringe))
 ```
 
-## Strings: Basics
+## Strings
 
 - We can join two strings together through **concatenation**
 
@@ -372,7 +372,7 @@ c = a + " " + b     # Note the space between words
 print(c)
 ```
 
-## Strings: Basics
+## Strings
 
 - Sometimes you need to include quotations or other characters inside a string that would normally return an error
 - This can be done through an **escape sequence**
@@ -386,7 +386,7 @@ print(c)
 x = "This is a "string""
 ```
 
-## Strings: Basics
+## Strings
 ### Escape Sequences {.example}
 ```{python}
 #| label: escSeq
@@ -399,7 +399,7 @@ print(x)
 - The 
 :::
 
-## Strings: Basics
+## Strings
 
 - Strings are also kind of like tuples in that they are **immutable**
 
@@ -412,7 +412,7 @@ cringe[0:5] = "Goodbye"     # Error
 ```
 
 
-## Strings: Methods
+## Strings
 - We can turn to string **methods** to "modify" strings when needed (they just create a new string "behind the scenes")
 
 ### `.replace()` {.example}
@@ -424,7 +424,7 @@ cringe = "Hello world!"
 print(cringe.replace("Hello", "Goodbye"))
 ```
 
-## Strings: Methods
+## Strings
 
 ### `.split()` {.example}
 ```{python}
@@ -438,7 +438,7 @@ print(meme_list.split(", ")) # Split on ", "; returns a list
 print(meme_list.split(", ")[0]) # Index the list
 ```
 
-## Strings: Methods
+## Strings
 
 ### How might you index "the rizzler"?
 . . .
@@ -452,7 +452,7 @@ print(meme_list.split(", ")[-1])
 print(meme_list.split(", ")[len(meme_list.split(", ")) - 1])
 ```
 
-## Strings: f-strings
+## Strings
 
 - If you wanted to include variables within text, format strings as per the following:
 
@@ -467,7 +467,7 @@ print(f'Approximate value of pi is {x}')
 print(f'To three decimal places is {x:.3f}') 
 ```
 
-## Strings: f-strings
+## Strings
 
 - The string (surrounded by either single `''` or double `""` quotations) is preceded by `f`
 - The variable is surrounded by curly braces `{}` within the string
@@ -597,7 +597,7 @@ while count <= len(x) - 1:
     count += 1    # Same as count = count + 1
 ```
 
-## `while` Loops: the `break` Statement
+## `while` Loops
 
 - The `break` statement is used to exit a loop
 
@@ -638,7 +638,7 @@ for i in x:
     print(i)
 ```
 
-## `for` Loops: `enumerate()`
+## `for` Loops
 
 - Use `enumerate()` and a second indexing variable (usually `i` or `j`) if you want to keep variable position
 
@@ -652,7 +652,7 @@ for i, j in enumerate(x):
     print(i, j)
 ```
 
-## `for` Loops: Nesting
+## `for` Loops
 - Loops (and conditionals) may be nested inside one another (like Russian dolls / Matryoshka)
 
 ### Nesting {.example}
@@ -758,6 +758,7 @@ qm_mean(x)
 # Numpy
 
 ## Numpy
+
 - Somewhat similar to MATLAB if you have used that
 - Useful for working with arrays/matrices
 - Stands for **num**erical **py**thon
@@ -776,7 +777,7 @@ list1 = [1,2,3,4]
 print(list1 * 2)
 print(type(list1))
 
-numpyList = np.array(list1)
+numpyList = np.array(list1)  # Convert list -> numpy array
 print(numpyList * 2)
 print(type(numpyList))
 ```
@@ -796,7 +797,7 @@ print(array2d)
 print(type(array2d))
 ```
 
-## Numpy
+## Numpy: 
 
 ### To Check Attributes of a Numpy Variable {.example}
 ```{python}
@@ -890,3 +891,52 @@ print(x[2, 0:2])    # Row 2, columns 0 and 1
 print(type(x[2, 0:2]))
 ```
 
+## Numpy
+
+- You may also perform **aggregate** functions on numpy arrays
+
+### Numpy Aggregate Functions {.example}
+```{python}
+#| label: nump_agg
+
+import numpy as np
+
+x = np.array([1,4,7,15])
+
+print(np.mean(x))
+print(np.median(x))
+print(np.std(x))
+```
+
+## Numpy
+
+### More Aggregate Functions {.example}
+```{python}
+#| label: nump_agg_more
+
+import numpy as np
+
+x = np.array([1,4,7,15])
+
+print(np.min(x))        # Minimum value
+print(np.argmin(x))     # Position of minimum value
+print(np.max(x))        # Maximum value
+print(np.argmax(x))     # Position of maximum value
+```
+
+## Numpy
+### Check-in
+- How might you generate 100 random values from the standard normal distribution?
+- How might you get the maximum of these values?
+
+. . .
+
+```{python}
+#| label: maxNorm
+
+import numpy as np
+
+print(np.max(np.random.normal(loc=0, scale=1, size=100)))
+```
+
+# Pandas

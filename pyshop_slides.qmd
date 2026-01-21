@@ -715,6 +715,66 @@ qm_mean(x)
 ## Numpy
 - Somewhat similar to MATLAB if you have used that
 - Useful for working with arrays/matrices
+- Stands for **num**erical **py**thon
+- Based in computer language **C**
+    - Faster, more efficient computations
+
+## Numpy
+
+### Working With Lists/Arrays {.example}
+```{python}
+#| label: listArray
+
+import numpy as np
+
+list1 = [1,2,3,4]
+print(list1 * 2)
+
+numpyList = np.array([1,2,3,4])
+print(numpyList * 2)
+print(type(numpyList))
+```
+
+## Numpy
+
+- Matrices are typically worked with as **2D** numpy arrays
+
+### 2D Numpy Arrays {.example}
+```{python}
+#| label: 2d
+
+import numpy as np
+
+array2d = np.array([[1,2,3], [4,5,6]]) # List of lists
+print(array2d)
+print(type(array2d))
+```
+
+## Numpy
+
+### To Check Attributes of a Numpy Variable {.example}
+```{python}
+#| label: attrib_numpy
+
+import numpy as np
+
+array2d = np.array([[1,2,3], [4,5,6]])
+
+print(array2d.shape)    # Shape (# rows, # columns)
+print(array2d.ndim)     # Number of dimensions
+print(array2d.size)     # Number of elements
+print(array2d.dtype)    # Type of elements
+```
+
+## Numpy
+- Some numpy types:
+    - `uint8`
+    - `int32`
+    - `int64`
+    - `float64`
+- Generally, type + memory (in bits)
+
+## Numpy
 
 ### `np.arange()` {.example}
 ```{python}
@@ -744,3 +804,43 @@ np.linspace(start=10, stop=20, num=6, dtype = "int64")
 - Use `np.linspace()` for breaking something into equal parts
 - Use `np.arange()` for creating a sequence of numbers
 :::
+
+## Numpy
+### Random Numbers {.example}
+```{python}
+#| label: rand
+
+import numpy as np
+
+print(np.random.normal(loc = 0, scale = 1, size = 3))
+print(np.random.uniform(low = 0, high = 10, size = 3))
+```
+
+## Numpy
+### Indexing Numpy Arrays {.example}
+```{python}
+#| label: indexNumpy
+
+import numpy as np
+
+x = np.random.normal(0, 10, size=(3,3))
+print(x, "\n")  # Print x with a blank line after it
+
+print(x[2,2], type(x[2,2]))
+print(x[2,:])   # Row 2 (zero-based), all columns
+```
+
+## Numpy
+### Indexing (cont.) {.example}
+```{python}
+#| label: indexCont
+
+import numpy as np
+
+x = np.random.normal(0, 10, size=(3,3))
+print(x, "\n")
+
+print(x[2, 0:2])    # Row 2, columns 0 and 1
+print(type(x[2, 0:2]))
+```
+

@@ -204,7 +204,7 @@ print(x[y])     # Index yth element
 
 x = [0, 1, 2, 3, 4]
 
-print(x[0:2])   # first and second (but not third) elements
+print(x[0:2])   # First and second (but not third) elements
 ```
 
 ::: {.callout-important}
@@ -220,8 +220,8 @@ print(x[0:2])   # first and second (but not third) elements
 
 x = [0, 1, 2, 3, 4]
 
-print(x[0:3])   # first three elements
-print(x[0:1])   # a (silly) way to index just the first element
+print(x[0:3]) # First three elements
+print(x[0:1]) # Silly way to index just the first element
 ```
 
 ## Lists: Length
@@ -396,7 +396,7 @@ print(x)
 ```
 
 ::: {.callout-note}
-- The 
+- The `\` indicates the start of an escape sequence
 :::
 
 ## Strings
@@ -940,3 +940,51 @@ print(np.max(np.random.normal(loc=0, scale=1, size=100)))
 ```
 
 # Pandas
+
+## Pandas
+
+- For data analysis in Python
+- Somewhat similar to R if you have used that
+    - Introduces the 
+
+
+# Matplotlib.pyplot
+
+## Matplotlib.pyplot
+- **Matplotlib.pyplot** is a package for visualizing data in Python
+- Fun fact: If you have asked ChatGPT for a graph, you likely received one that was made using this package
+
+## Matplotlib.pyplot
+
+### Basic Histogram {.example}
+
+```{python}
+#| label: pltSetup
+#| output: false
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+x = np.random.normal(0, 1, 1000)
+plt.hist(x)
+plt.show()
+```
+
+## Matplotlib.pyplot
+
+### Basic Histogram {.example}
+```{python}
+#| label: pltShow
+#| echo: false
+#| fig-align: center
+
+import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib.pyplot import figure
+
+x = np.random.normal(0, 1, 1000)
+
+figure(figsize=(3, 3), dpi=200) # Format figure for display
+plt.hist(x)
+plt.show()
+```

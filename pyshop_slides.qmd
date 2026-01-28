@@ -945,7 +945,21 @@ print(np.max(np.random.normal(loc=0, scale=1, size=100)))
 
 - For data analysis in Python
 - Somewhat similar to R if you have used that
-    - Introduces the 
+    - Introduces the data frame
+
+## Pandas
+
+### Creating a DataFrame {.example}
+```{python}
+#| label: pandas_df
+
+import pandas as pd
+
+pd.DataFrame({
+    "Memes" : ["67", "the rizzler", "harambe"],
+    "Rating": [5, 9, 10]
+})
+```
 
 
 # Matplotlib.pyplot
@@ -978,13 +992,130 @@ plt.show()
 #| echo: false
 #| fig-align: center
 
-import numpy as np
-import matplotlib.pyplot as plt
 from matplotlib.pyplot import figure
 
 x = np.random.normal(0, 1, 1000)
 
-figure(figsize=(3, 3), dpi=200) # Format figure for display
+figure(figsize=(2.5, 2.5), dpi=200) # Format figure for display
 plt.hist(x)
 plt.show()
+```
+
+## Matplotlib.pyplot
+
+- A few ways to modify the histogram are illustrated below
+
+### Modifying the Plot {.example}
+```{python}
+#| label: modifyplt
+#| output: false
+
+plt.hist(
+    x,                      # Data
+    color = "green",        # Bar Colour
+    edgecolor = "black",    # Outline Colour
+    bins = np.arange(-3, 3.5, 0.5) # Bins of 0.5 from -3 to +3
+)
+plt.show()
+```
+
+## Matplotlib.pyplot
+
+### Modifying the Plot {.example}
+```{python}
+#| label: modifyplt_show
+#| echo: false
+#| fig-align: center
+
+figure(figsize=(2.5, 2.5), dpi=200) # Format figure for display
+plt.hist(
+    x,                      # Data
+    color = "green",        # Bar Colour
+    edgecolor = "black",    # Outline Colour
+    
+    # Bins of size 0.5, from -3 to +3
+    bins = np.arange(-3, 3.5, 0.5)
+)
+plt.show()
+```
+
+## Matplotlib.pyplot
+
+### More Ways to Modify {.example}
+
+```{python}
+#| label: moremodif
+#| output: false
+
+plt.hist(
+    x, color = "green", edgecolor = "black",
+    bins = np.arange(-3, 3.5, 0.5)
+)
+
+plt.xticks(np.arange(-3, 4, 1)) # x-axis ticks spaced by 1
+plt.title("Sample from N ~ (0, 1)")
+plt.xlabel("Value")
+plt.ylabel("Count")
+plt.show()
+```
+
+## Matplotlib.pyplot
+
+### More Ways to Modify {.example}
+
+```{python}
+#| label: moremodif_show
+#| echo: false
+#| fig-align: center
+
+figure(figsize=(2.5, 2.5), dpi=200)
+plt.hist(
+    x, color = "green", edgecolor = "black",
+    bins = np.arange(-3, 3.5, 0.5)
+)
+plt.xticks(np.arange(-3, 4, 1)) # x-axis ticks spaced by 1
+plt.yticks(np.arange(0, 250, 50))
+plt.title("Sample from N ~ (0, 1)")
+plt.xlabel("Value")
+plt.ylabel("Count")
+plt.show()
+```
+
+
+## Matplotlib.pyplot
+
+- The below is how data was generated for subsequent scatterplot examples
+
+### Simulated Data for a Simple Regression {.example}
+```{python}
+#| label: regressData
+
+errors = np.random.normal(0, 2, 10) # Normal errors
+nums_x = np.arange(0, 10, 1) # Nums 0 to 9
+nums_y = np.arange(0, 10, 1) # y = x
+
+# y = x + error
+for i, err in enumerate(errors): 
+    nums_y[i] += err
+```
+
+## Matplotlib.pyplot
+
+### Scatterplot {.example}
+```{python}
+#| label: scatter
+#| output: false
+
+plt.plot(nums_x, nums_y, 'ro')  # plot(x, y, style)
+plt.show()                      # 'ro' = red circles
+```
+
+```{python}
+#| label: scatter_show
+#| echo: false
+#| fig-align: center
+
+figure(figsize=(2.5, 2.5), dpi=200)
+plt.plot(nums_x, nums_y, 'ro')
+plt.show()                      
 ```

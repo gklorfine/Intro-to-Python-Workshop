@@ -853,9 +853,24 @@ np.linspace(start=10, stop=20, num=6, dtype = "int64")
 :::
 
 ## Numpy
+
+- Numpy has lots of functions relating to choosing random values 
+
+### Random Choice {.example}
+```{python}
+#| label: randChoice
+
+import numpy as np
+
+print(np.random.choice(["A", "B", "C", "D"]))
+
+print(np.random.choice(["A", "B", "C", "D"], size = 2))
+```
+
+## Numpy
 ### Random Numbers {.example}
 ```{python}
-#| label: rand
+#| label: randNum
 
 import numpy as np
 

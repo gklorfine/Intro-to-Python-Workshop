@@ -1,5 +1,7 @@
 # A script to generate the logo for the project, as displayed in the README.md file at the project's root.
-# I (GK) used this video as a resource: https://www.youtube.com/watch?v=kmA6P4vjuaI
+# Along with documentation, I (GK) used these videos as resources: 
+    # https://www.youtube.com/watch?v=kmA6P4vjuaI
+    # https://www.youtube.com/watch?v=T8RXMRlRoRg&t=60s
 
 import matplotlib.pyplot as plt
 import matplotlib.patches as patches # For drawing shapes in matplotlib

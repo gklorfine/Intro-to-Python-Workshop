@@ -89,3 +89,30 @@ Starting out, most problems encountered will be basic enough to handle through t
 - The logo for this workshop was created using **matplotlib**. The script is located in this repo at <a href="images/logo.py">images/logo.py</a>. There are a couple of video resources included as comments within this file--I (GK) referred to these videos when making the logo and thought they might be of use to some
 
 - [**pygame**](https://www.pygame.org/docs/) for games
+
+``` python
+from pyfiglet import Figlet
+f = Figlet(font = 'slant')
+print(f.renderText("Thank you\n       for\nattending!"))
+```
+
+``` text
+  ________                __                       
+ /_  __/ /_  ____ _____  / /__   __  ______  __  __
+  / / / __ \/ __ `/ __ \/ //_/  / / / / __ \/ / / /
+ / / / / / / /_/ / / / / ,<    / /_/ / /_/ / /_/ / 
+/_/ /_/ /_/\__,_/_/ /_/_/|_|   \__, /\____/\__,_/  
+                              /____/               
+                   ____          
+                  / __/___  _____
+                 / /_/ __ \/ ___/
+                / __/ /_/ / /    
+               /_/  \____/_/     
+                                 
+         __  __                 ___             __
+  ____ _/ /_/ /____  ____  ____/ (_)___  ____ _/ /
+ / __ `/ __/ __/ _ \/ __ \/ __  / / __ \/ __ `/ / 
+/ /_/ / /_/ /_/  __/ / / / /_/ / / / / / /_/ /_/  
+\__,_/\__/\__/\___/_/ /_/\__,_/_/_/ /_/\__, (_)   
+                                      /____/      
+```

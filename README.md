@@ -36,7 +36,7 @@ Starting with the installation of Python and relevant packages, this workshop gu
 
 ## Resources
 
-##### Documentation:
+### Documentation:
 
 - "How To Use Developer Documentation" by Codecademy ([YouTube video](https://www.youtube.com/watch?v=s1PLS3SQHQ0))
 
@@ -49,7 +49,7 @@ Starting with the installation of Python and relevant packages, this workshop gu
 
 Documentation for base Python may be found at [docs.python.org](https://docs.python.org/)
 
-##### Artificial Intelligence (AI) Tools:
+### Artificial Intelligence (AI) Tools:
 
 Though not covered in this workshop, AI tools can be very handy for programming. When using these tools, a few general guidelines include:
 
@@ -67,7 +67,7 @@ Common uses for AI include:
 
 Starting out, most problems encountered will be basic enough to handle through the familiar 'chat' interface. When problems span multiple files, tools such as [ChatGPT Codex](https://chatgpt.com/codex/) and [Claude Code](https://code.claude.com/docs/en/overview) are very useful. At the user's command, these tools are given access to the project directory and have the ability to modify code and create/remove files; however, many features are pay-walled (in the case of Claude Code, the entire thing is). *Both ChatGPT Codex and Claude Code may be integrated into Visual Studio (VS) Code as an 'extension'*.
 
-##### Fun
+### Fun
 
 - The logo for this workshop was created using **matplotlib**. The script is located in this repo at <a href="images/logo.py">images/logo.py</a>. There are a couple of video resources included as comments within this file--I (GK) referred to these videos when making the logo and thought they might be of use to some
 

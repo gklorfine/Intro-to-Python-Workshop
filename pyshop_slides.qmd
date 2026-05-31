@@ -1107,11 +1107,7 @@ plt.show()
 
 errors = np.random.normal(0, 2, 10) # Normal errors
 nums_x = np.arange(0, 10, 1) # Nums 0 to 9
-nums_y = np.arange(0, 10, 1) # y = x
-
-# y = x + error
-for i, err in enumerate(errors): 
-    nums_y[i] += err
+nums_y = nums_x + errors # y = x + errors
 ```
 
 ## Matplotlib.pyplot

@@ -42,16 +42,17 @@ Slides were made using [**Quarto**](https://quarto.org/), an open-source publish
 
 - "How To Use Developer Documentation" by Codecademy ([YouTube video](https://www.youtube.com/watch?v=s1PLS3SQHQ0))
 
-| **Resource** |                            **Link**                           |
-| :----------- | :------------------------------------------------------------ |
+| **Resource** |                                                **Link**                                                |
+| :----------- | :----------------------------------------------------------------------------------------------------- |
 | **Package**  | |
-| matplotlib   | [matplotlib.org/stable](https://matplotlib.org/stable)        |
-| NumPy        | [numpy.org](https://numpy.org/)                               |
-| pandas       | [pandas.pydata.org/docs](https://pandas.pydata.org/docs)      |
-| statsmodels  | [statsmodels.org/stable](https://www.statsmodels.org/stable)  |
+| matplotlib   | [matplotlib.org/stable](https://matplotlib.org/stable)                                                 |
+| NumPy        | [numpy.org](https://numpy.org/)                                                                        |
+| pandas       | [pandas.pydata.org/docs](https://pandas.pydata.org/docs)                                               |
+| statsmodels  | [statsmodels.org/stable](https://www.statsmodels.org/stable)                                           |
 | **Software** | |           
-| Python       | [docs.python.org](https://docs.python.org/)                   |
-| Anaconda     | [docs.conda.io](https://docs.conda.io/)                       |
+| Python       | [docs.python.org](https://docs.python.org/)                                                            |
+| Anaconda     | [docs.conda.io](https://docs.conda.io/)                                                                |
+| VS Code      | [code.visualstudio.com/docs/introvideos/basics](https://code.visualstudio.com/docs/introvideos/basics) |
 
 
 ### Artificial Intelligence (AI) tools:
@@ -59,7 +60,7 @@ Slides were made using [**Quarto**](https://quarto.org/), an open-source publish
 Though not covered in this workshop, AI tools can be very handy for programming. When using these tools, a few general guidelines include:
 
 - Manually verifying that the code generated outputs what is expected (how exactly this is done varies case-by-case)
-    + This is of the ***utmost importance*** if working with real data
+    + This is of the ***utmost importance*** when working with real data
 - Understand what is generated. This may require reading documentation, watching videos, having the AI tool explain itself (using AI as a 'tutor'), etc.
     + Again, if the latter is chosen, be skeptical of the generated information
 - Treating confidential information with the necessary care
@@ -74,7 +75,10 @@ Starting out, most problems encountered will be basic enough to handle through t
 
 ### Further reading:
 
-[ ] **TODO: Put stuff here**
+- [**Jupyter Notebook**](https://jupyter-notebook.readthedocs.io/en/latest/) allows you to combine markdown text and Python code into a single file (like an `.Rmd` file in programming language **R**). A Jupyter Notebook has the file extension `.ipynb`.
+    + "Jupyter Notebooks in VS Code" article in the VS Code documentation ([link](https://code.visualstudio.com/docs/datascience/jupyter-notebooks))
+
+[ ] **TODO: Put stuff here (GK: I was thinking maybe more in depth guides for the packages we are including?)**
 
 ### Other:
 

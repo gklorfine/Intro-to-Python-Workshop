@@ -10,7 +10,7 @@ import numpy as np
 # Define figure, figure size
 plt.figure(figsize = (8, 8))
 
-# Create 'patches' (draw shapes)
+# Create 'patch' (draw shape)
 hex = patches.RegularPolygon(
     (0, 0), # Position (x, y)
     numVertices = 14, 
@@ -25,7 +25,6 @@ plt.annotate(
     color = "white", 
     fontsize = 54, fontfamily='signpainter'
 )
-
 plt.annotate(
     "Spring 2026", (0, -.83), ha = "center", va = "center",
     color = "white", 
@@ -58,7 +57,7 @@ axin.spines[['top', 'right']].set_visible(False) # Remove top and right spines (
 axin.spines[['bottom', 'left']].set_color('white') # Colour bottom and left spines to white
 axin.spines[['bottom', 'left']].set_linewidth(2.15) # Set bottom and left spine linewidth
 
-# Add 'patches' to figure
+# Add 'patch' to figure
 ax.add_patch(hex)
 
 # Set figure limits
@@ -67,4 +66,5 @@ plt.ylim([-1.15,1.15])
 
 # Save figure w/ transparent background
 plt.savefig('images/logo.png', dpi = 300, transparent = True, bbox_inches = 'tight', pad_inches = 0.05)
+
 plt.show()

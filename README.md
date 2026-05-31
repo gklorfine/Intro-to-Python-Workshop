@@ -1,1 +1,1 @@
-# Python Workshop in Progress <a href="images/logo.py"><img src="images/logo.png" align="right" height="200" alt="Python workshop logo created using matplotlib"/></a>
+# Python Workshop in Progress <a href="images/logo.py"><img src="images/logo.png" align="right" height="256" alt="Python workshop logo created using matplotlib.pyplot"/></a>

@@ -87,8 +87,8 @@ Starting out, most problems encountered will be basic enough to handle through t
 ### Fun:
 
 - The logo for this workshop was created using **matplotlib**. The script is located in this repo at <a href="images/logo.py">images/logo.py</a>. There are a couple of video resources included as comments within this file--I (GK) referred to these videos when making the logo and thought they might be of use to some
-
 - [**pygame-ce**](https://pyga.me/docs/) for games
+    + See *Introduction to Python for Data Analysis: The Game* under [fun/](fun/)
 
 ``` python
 from pyfiglet import Figlet

@@ -75,7 +75,7 @@ Starting out, most problems encountered will be basic enough to handle through t
 
 ### Further reading:
 
-- [**Jupyter Notebook**](https://jupyter-notebook.readthedocs.io/en/latest/) allows you to combine markdown text and Python code into a single file (like an `.Rmd` file in programming language **R**). A Jupyter Notebook has the file extension `.ipynb`.
+- [**Jupyter Notebook**](https://jupyter-notebook.readthedocs.io/en/latest/) allows you to combine markdown text and Python code into a single file (like an `.Rmd` file in programming language **R**). A Jupyter Notebook has the file extension `.ipynb`
     + "Jupyter Notebooks in VS Code" article in the VS Code documentation ([link](https://code.visualstudio.com/docs/datascience/jupyter-notebooks))
 
 [ ] **TODO: Put stuff here (GK: I was thinking maybe more in depth guides for the packages we are including?)**
@@ -88,7 +88,7 @@ Starting out, most problems encountered will be basic enough to handle through t
 
 - The logo for this workshop was created using **matplotlib**. The script is located in this repo at <a href="images/logo.py">images/logo.py</a>. There are a couple of video resources included as comments within this file--I (GK) referred to these videos when making the logo and thought they might be of use to some
 
-- [**pygame**](https://www.pygame.org/docs/) for games
+- [**pygame-ce**](https://pyga.me/docs/) for games
 
 ``` python
 from pyfiglet import Figlet

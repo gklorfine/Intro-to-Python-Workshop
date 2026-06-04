@@ -30,7 +30,9 @@ York University, Canada <br>
 
 <i><span style="color: red;">Attendees are encouraged to read this entire document, as relevant information and resources are interspersed throughout.</i></span>
 
-Starting with the installation of Python and relevant packages, this workshop guides attendees through basic programming structures/syntax, culminating in the manipulation and analysis of data. Interactive exercises will be available throughout the workshop to practice applying Python and data analysis skills and will serve as the building blocks for a short, end-of-workshop project. A digital credential is provided upon the successful completion of this project. This workshop is meant for those with no prior experience or exposure to Python, although all levels are welcome.
+This workshop takes place June 26, 27, and 28 from 11:30AM to 2:30PM over Zoom (the links were provided to attendees over email).
+
+Starting with the installation of Python and relevant packages, this workshop guides attendees through basic programming structures/syntax, culminating in the manipulation and analysis of data. Interactive exercises will be available throughout the workshop to practice applying Python and data analysis skills and will serve as the building blocks for a short, end-of-workshop project. A digital credential is provided upon the successful completion of this project. This workshop is meant for those with no prior experience or exposure to Python (or programming, for that matter), although all levels are welcome.
 
 Slides were made using [**Quarto**](https://quarto.org/), an open-source publishing system. You may see the 'behind the scenes' code for the slides by opening the `.qmd` files (either through Visual Studio (VS) Code or online via GitHub). This is also a good way to access the code displayed on each slide (tip: `CTRL + F` to search is useful here).
 
@@ -74,6 +76,8 @@ Common uses for AI include:
 Starting out, most problems encountered will be basic enough to handle through the familiar 'chat' interface. When problems span multiple files, tools such as [**ChatGPT Codex**](https://chatgpt.com/codex/) and [**Claude Code**](https://code.claude.com/docs/en/overview) are very useful. At the user's command, these tools are given access to the project directory and have the ability to modify code and create/remove files; however, many features are pay-walled (in the case of Claude Code, the entire thing is). *Both ChatGPT Codex and Claude Code may be integrated into VS Code as an 'extension'*.
 
 ### Further reading:
+
+Although we cover a vast amount of material in this workshop, we only skim the surface of what Python has to offer. This said, we hope that this workshop enables you to feel comfortable seeking out and engaging with material beyond what we have taught. Some resources to do so are provided below:
 
 - [**Jupyter Notebook**](https://jupyter-notebook.readthedocs.io/en/latest/) allows you to combine markdown text and Python code into a single file (like an `.Rmd` file in programming language **R**). A Jupyter Notebook has the file extension `.ipynb`
     + "Jupyter Notebooks in VS Code" article in the VS Code documentation ([link](https://code.visualstudio.com/docs/datascience/jupyter-notebooks))

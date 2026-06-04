@@ -1130,3 +1130,638 @@ figure(figsize=(2.5, 2.5), dpi=200)
 plt.plot(nums_x, nums_y, 'ro')
 plt.show()                      
 ```
+# Matplotlib.pyplot
+
+- You can add another plot layer by calling another plotting function before `plt.show()`
+- This is useful for adding:
+    - reference lines
+    - fitted lines
+    - multiple groups
+
+### Adding a Line to a Scatterplot {.example}
+```{python}
+#| label: scatter_add_line
+#| output: false
+
+plt.plot(nums_x, nums_y, 'ro')       # Observed data: red circles
+plt.plot(nums_x, nums_x, 'k-')       # Reference line: black solid line
+plt.show()
+```
+
+## Matplotlib.pyplot
+
+### Adding Labels and a Legend {.example}
+```{python}
+#| label: scatter_add_line_show
+#| echo: false
+#| fig-align: center
+
+figure(figsize=(2.5, 2.5), dpi=200)
+plt.plot(nums_x, nums_y, 'ro', label = "Observed")
+plt.plot(nums_x, nums_x, 'k-', label = "Reference line")
+plt.title("Scatterplot with Reference Line")
+plt.xlabel("X Value")
+plt.ylabel("Y Value")
+plt.legend()
+plt.show()
+```
+
+- `label` gives each layer a name
+- `plt.legend()` displays the labels on the plot
+- `plt.title()`, `plt.xlabel()`, and `plt.ylabel()` make the plot easier to interpret
+
+# statsmodels
+
+## statsmodels
+
+- `statsmodels` is a package for statistical testing and modelling
+- It is useful when you want:
+    - formal hypothesis tests
+    - regression models
+    - p-values and confidence intervals
+    - detailed statistical output
+
+### Importing `statsmodels` Functions {.example}
+```{python}
+#| label: sm_imports
+
+import statsmodels.formula.api as smf
+from statsmodels.stats.weightstats import ttest_ind
+```
+
+## statsmodels
+
+- `statsmodels.formula.api` contains functions that use formula notation
+- It is commonly renamed `smf`
+- `ttest_ind` is a function for independent-samples t-tests
+
+### Import Structure {.example}
+```{python}
+#| label: sm_import_structure
+#| output: false
+
+import statsmodels.formula.api as smf
+#      package.module        alias
+
+from statsmodels.stats.weightstats import ttest_ind
+#    package.module.submodule       function
+```
+
+## Statistical Testing
+
+- Statistical tests help us use a **sample** to make inferences about a larger population
+- A test usually starts with a **null hypothesis**
+    - Often "no difference" or "no relationship"
+- We compare the observed data to what would be expected if the null hypothesis were true
+
+::: {.callout-note}
+- The code runs the test, but the researcher chooses whether the test makes sense
+:::
+
+## Statistical Testing
+
+### General Workflow
+
+1. State the research question
+1. Identify the variable types and study design
+1. Summarize and visualize the data
+1. Run the appropriate test
+1. Interpret the estimate, confidence interval, and p-value
+
+## Example Data
+
+- We will use simulated scores from two independent groups
+- Each row represents one participant
+- The group labels are stored in a pandas DataFrame
+
+### Creating the Data {.example}
+```{python}
+#| label: sm_create_data
+
+import pandas as pd
+
+np.random.seed(42)
+
+scores_df = pd.DataFrame({
+    "group": ["control"] * 30 + ["treatment"] * 30,
+    "score": np.concatenate([
+        np.random.normal(70, 10, 30),
+        np.random.normal(76, 10, 30)
+    ])
+})
+```
+
+## Example Data
+
+### Inspecting the Data {.example}
+```{python}
+#| label: sm_inspect_data
+
+print(scores_df.head())   # First five rows
+print(scores_df.shape)    # (number of rows, number of columns)
+```
+
+- Always inspect the data before running a test
+
+## Example Data
+
+### Group Summary {.example}
+```{python}
+#| label: sm_group_summary
+
+print(
+    scores_df.groupby("group").agg(
+        n = ("score", "count"),
+        mean = ("score", "mean"),
+        sd = ("score", "std")
+    )
+)
+```
+
+- `groupby("group")` summarizes the control and treatment rows separately
+- Each tuple specifies `(column, summary function)`
+
+## Independent-Samples t-Test
+
+- Used to compare the means of **two independent groups**
+- Example: Do treatment and control groups have different mean scores?
+- Do not use this test if the same participants appear in both groups
+
+**Null hypothesis:**
+
+$$
+H_0: \mu_{\text{treatment}} - \mu_{\text{control}} = 0
+$$
+
+## Independent-Samples t-Test
+
+### Selecting Each Group {.example}
+```{python}
+#| label: sm_select_groups
+
+control = scores_df.loc[
+    scores_df["group"] == "control",  # Rows to include
+    "score"                           # Column to return
+]
+
+treatment = scores_df.loc[
+    scores_df["group"] == "treatment",
+    "score"
+]
+```
+
+- `ttest_ind()` needs the two groups as separate variables
+
+## Welch's t-Test
+
+- Welch's t-test is an independent-samples t-test
+- It does **not** assume equal population variances
+- It is a useful default when comparing two independent groups
+
+### Running the Test {.example}
+```{python}
+#| label: sm_ttest
+
+test_result = ttest_ind(
+    treatment,       # First group
+    control,         # Second group
+    usevar = "unequal"
+)
+
+print(test_result)
+```
+
+## `ttest_ind()`
+
+### Function Structure {.example}
+```{python}
+#| label: sm_ttest_structure
+#| eval: false
+
+ttest_ind(
+    x1,                  # Values from the first group
+    x2,                  # Values from the second group
+    alternative = "two-sided",
+    usevar = "unequal",  # Welch's t-test
+    value = 0            # Difference under the null hypothesis
+)
+```
+
+- Use `alternative = "two-sided"` when either group could have the larger mean
+- Use `value = 0` when the null hypothesis is no mean difference
+
+## `ttest_ind()`
+
+- `ttest_ind()` returns three values:
+    1. t-statistic
+    1. p-value
+    1. degrees of freedom
+
+### Tuple Unpacking {.example}
+```{python}
+#| label: sm_ttest_unpack
+
+t_statistic, p_value, degrees_freedom = ttest_ind(
+    treatment,
+    control,
+    usevar = "unequal"
+)
+
+print(t_statistic)
+print(p_value)
+print(degrees_freedom)
+```
+
+## t-Test Interpretation
+
+- The t-statistic describes the group difference relative to its uncertainty
+- The p-value describes how incompatible the result is with the null hypothesis
+- The degrees of freedom help determine the t-distribution used by the test
+
+::: {.callout-important}
+- A p-value is **not** the probability that the null hypothesis is true
+:::
+
+## Mean Difference
+
+- The t-test output should be interpreted alongside the observed group difference
+
+### Calculating the Mean Difference {.example}
+```{python}
+#| label: sm_mean_difference
+
+mean_difference = treatment.mean() - control.mean()
+
+print(f"Treatment mean: {treatment.mean():.2f}")
+print(f"Control mean: {control.mean():.2f}")
+print(f"Mean difference: {mean_difference:.2f}")
+```
+
+## Reporting a t-Test
+
+### Formatting the Result {.example}
+```{python}
+#| label: sm_ttest_report
+
+print(
+    f"Mean difference = {mean_difference:.2f}, "
+    f"t({degrees_freedom:.2f}) = {t_statistic:.2f}, "
+    f"p = {p_value:.3f}"
+)
+```
+
+- Report the observed difference and p-value together
+- Use cautious language such as "evidence of a difference"
+
+## Correlation
+
+- A correlation describes the direction and strength of a **linear relationship**
+- Pearson's correlation coefficient is represented by $r$
+- It ranges from -1 to 1
+
+::: {.callout-important}
+- Correlation does not establish causation
+:::
+
+## Correlation
+
+### Adding a Second Variable {.example}
+```{python}
+#| label: sm_add_hours
+
+np.random.seed(7)
+
+scores_df["study_hours"] = (
+    2
+    + 0.08 * scores_df["score"]
+    + np.random.normal(0, 1.5, len(scores_df))
+)
+```
+
+## Correlation
+
+### Scatterplot {.example}
+```{python}
+#| label: sm_scatter
+#| output: false
+
+plt.plot(scores_df["study_hours"], scores_df["score"], "bo")
+plt.xlabel("Study Hours")
+plt.ylabel("Score")
+plt.show()
+```
+
+- Use a scatterplot before calculating a correlation
+
+## Correlation
+
+### `.corr()` Method {.example}
+```{python}
+#| label: sm_corr
+
+correlation = scores_df["study_hours"].corr(
+    scores_df["score"]
+)
+
+print(f"r = {correlation:.2f}")
+```
+
+- `.corr()` describes the observed sample relationship
+- Regression can test whether the population slope differs from zero
+
+## Simple Linear Regression
+
+- Simple linear regression examines the relationship between:
+    - one continuous **outcome**
+    - one continuous **predictor**
+- Here, the outcome is `score` and the predictor is `study_hours`
+
+$$
+\text{score} = \text{intercept} + (\text{slope} \times \text{study hours}) + \text{error}
+$$
+
+## Formula Notation
+
+### Formula Structure {.example}
+```{python}
+#| label: sm_formula_structure
+#| eval: false
+
+"score ~ study_hours"
+# outcome ~ predictor
+```
+
+- The outcome goes on the left of `~`
+- The predictor goes on the right of `~`
+- Column names must match the DataFrame
+
+## `smf.ols()`
+
+### Creating a Model {.example}
+```{python}
+#| label: sm_ols_create
+
+model_definition = smf.ols(
+    formula = "score ~ study_hours",
+    data = scores_df
+)
+
+print(type(model_definition))
+```
+
+- `ols` stands for **ordinary least squares**
+- `smf.ols()` defines the model but does not estimate its coefficients yet
+
+## `.fit()`
+
+### Fitting a Model {.example}
+```{python}
+#| label: sm_ols_fit
+
+model = model_definition.fit()
+
+print(type(model))
+```
+
+- `.fit()` estimates the intercept, slope, and other model statistics
+- Store the fitted result so its attributes can be inspected
+
+## Method Chaining
+
+### Defining and Fitting in One Step {.example}
+```{python}
+#| label: sm_ols_one_step
+
+model = smf.ols(
+    "score ~ study_hours",
+    data = scores_df
+).fit()
+```
+
+- This is a common way to define and fit a model
+
+## `.params`
+
+### Model Parameters {.example}
+```{python}
+#| label: sm_model_params
+
+print("Intercept:", round(model.params["Intercept"], 2))
+print("study_hours:", round(model.params["study_hours"], 2))
+```
+
+- `Intercept`: predicted score when study hours equals zero
+- `study_hours`: predicted score change for one additional study hour
+
+## `.params`
+
+### Accessing One Parameter {.example}
+```{python}
+#| label: sm_model_param_index
+
+intercept = model.params["Intercept"]
+slope = model.params["study_hours"]
+
+print(f"Intercept: {intercept:.2f}")
+print(f"Slope: {slope:.2f}")
+```
+
+- Use the parameter name to extract a specific estimate
+
+## `.pvalues`
+
+### Testing the Slope {.example}
+```{python}
+#| label: sm_model_pvalues
+
+slope_p_value = model.pvalues["study_hours"]
+
+print(f"study_hours p-value: {slope_p_value:.3f}")
+```
+
+**Null hypothesis:**
+
+$$
+H_0: \text{population slope} = 0
+$$
+
+## `.conf_int()`
+
+### Confidence Intervals {.example}
+```{python}
+#| label: sm_model_ci
+
+slope_ci = model.conf_int().loc["study_hours"]
+
+print(f"Lower: {slope_ci[0]:.2f}")
+print(f"Upper: {slope_ci[1]:.2f}")
+```
+
+- A confidence interval gives a range of values compatible with the model and data
+
+```{python}
+#| label: sm_summary_image_helper
+#| echo: false
+#| output: false
+
+def summary_table_image(table, width = 5.8, height = 1.8, fontsize = 5):
+    fig, ax = plt.subplots(figsize = (width, height), dpi = 220)
+    ax.text(
+        0.01, 0.98, str(table),
+        family = "monospace",
+        fontsize = fontsize,
+        va = "top",
+        ha = "left",
+        transform = ax.transAxes
+    )
+    ax.axis("off")
+    plt.show()
+```
+
+## `.summary().tables[0]`
+
+### Model Overview {.example}
+```{python}
+#| label: sm_summary_table0_code
+#| output: false
+
+summary = model.summary()
+print(summary.tables[0])
+```
+
+```{python}
+#| label: sm_summary_table0_image
+#| echo: false
+#| fig-align: center
+
+summary_table_image(summary.tables[0], height = 2.35, fontsize = 4.7)
+```
+
+- Table 0 summarizes the model setup and overall fit
+- Useful for checking the outcome, sample size, $R^2$, and model type
+
+## `.summary().tables[1]`
+
+### Coefficient Table {.example}
+```{python}
+#| label: sm_summary_table1_code
+#| output: false
+
+print(summary.tables[1])
+```
+
+```{python}
+#| label: sm_summary_table1_image
+#| echo: false
+#| fig-align: center
+
+summary_table_image(summary.tables[1], height = 1.25, fontsize = 5.2)
+```
+
+- Table 1 gives the estimates for each model term
+- Focus first on `coef`, `P>|t|`, and `[0.025, 0.975]`
+
+## `.summary().tables[2]`
+
+### Diagnostics Table {.example}
+```{python}
+#| label: sm_summary_table2_code
+#| output: false
+
+print(summary.tables[2])
+```
+
+```{python}
+#| label: sm_summary_table2_image
+#| echo: false
+#| fig-align: center
+
+summary_table_image(summary.tables[2], height = 1.35, fontsize = 5)
+```
+
+- Table 2 contains diagnostic and assumption-related information
+- Useful later when checking whether the model is behaving reasonably
+
+## `.rsquared`
+
+- R-squared is the proportion of outcome variance described by the fitted model
+- It ranges from 0 to 1
+- A larger R-squared does not prove that the model is correct or causal
+
+### R-Squared Attribute {.example}
+```{python}
+#| label: sm_rsquared
+
+print(f"R-squared: {model.rsquared:.3f}")
+```
+
+## `.predict()`
+
+### Predicted Outcomes {.example}
+```{python}
+#| label: sm_predict
+
+scores_df["predicted_score"] = model.predict(scores_df)
+
+for i in range(3):
+    print(
+        f"Observed: {scores_df['score'][i]:.2f}; "
+        f"Predicted: {scores_df['predicted_score'][i]:.2f}"
+    )
+```
+
+- `.predict()` calculates the fitted outcome for each row
+
+## Plotting Model Predictions
+
+### Observed and Predicted Values {.example}
+```{python}
+#| label: sm_plot_line
+#| output: false
+
+ordered = scores_df.sort_values("study_hours")
+
+plt.plot(scores_df["study_hours"], scores_df["score"], "bo")
+plt.plot(ordered["study_hours"], ordered["predicted_score"], "k-")
+plt.xlabel("Study Hours")
+plt.ylabel("Score")
+plt.show()
+```
+
+## Plotting Model Predictions
+
+### Fitted Line {.example}
+```{python}
+#| label: sm_plot_line_show
+#| echo: false
+#| fig-align: center
+
+figure(figsize=(2.5, 2.5), dpi=200)
+ordered = scores_df.sort_values("study_hours")
+plt.plot(scores_df["study_hours"], scores_df["score"], "bo")
+plt.plot(ordered["study_hours"], ordered["predicted_score"], "k-")
+plt.xlabel("Study Hours")
+plt.ylabel("Score")
+plt.show()
+```
+
+- Blue circles are observed values
+- The black line contains model-predicted values
+
+## Reporting Regression Results
+
+### Formatting the Result {.example}
+```{python}
+#| label: sm_regression_report
+
+slope_ci = model.conf_int().loc["study_hours"]
+
+print(
+    f"b = {model.params['study_hours']:.2f}, "
+    f"95% CI [{slope_ci[0]:.2f}, {slope_ci[1]:.2f}], "
+    f"p = {model.pvalues['study_hours']:.3f}"
+)
+```
+
+- Report the estimated slope, confidence interval, and p-value together
+- Use **associated with**, rather than **caused**

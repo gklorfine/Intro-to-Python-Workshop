@@ -514,3 +514,14 @@ data at the chosen confidence level.
     - p-value: evidence against a zero coefficient under the model assumptions.
     - R-squared: proportion of outcome variance described by this fitted model; it
 is **not** proof that the model is correct.
+
+```{python statsmodels_regression}
+#| eval: false
+import statsmodels.formula.api as smf
+
+model = smf.ols("score ~ study_hours", data=scores_df).fit()
+
+print(model.params)
+print(model.conf_int())
+print(model.summary())
+```

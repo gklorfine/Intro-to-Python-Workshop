@@ -30,7 +30,7 @@ York University, Canada <br>
 
 <i><span style="color: red;">Attendees are encouraged to read this entire document, as relevant information and resources are interspersed throughout.</i></span>
 
-This workshop takes place June 26, 27, and 28 from 11:30AM to 2:30PM over Zoom (the links were provided to attendees over email).
+This workshop takes place June 26, 27, and 28 from 11:30AM to 2:30PM over Zoom (the links were provided to attendees over email). Tickets for this workshop were sold out (26/25 spots filled)!
 
 Starting with the installation of Python and relevant packages, this workshop guides attendees through basic programming structures/syntax, culminating in the manipulation and analysis of data. Interactive exercises will be available throughout the workshop to practice applying Python and data analysis skills and will serve as the building blocks for a short, end-of-workshop project. A digital credential is provided upon the successful completion of this project. This workshop is meant for those with no prior experience or exposure to Python (or programming, for that matter), although all levels are welcome.
 

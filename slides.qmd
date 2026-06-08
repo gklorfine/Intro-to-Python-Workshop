@@ -12,22 +12,10 @@ header-includes: # GK: GPT added this part of YAML to fix file not rendering
 execute:
     echo: True
     include: True
-jupyter: termproject # GK: I need to make sure to change this once we finalize
+jupyter: ws # GK: I need to make sure to change this once we finalize
 ---
 
 # Installation
-
-## Visual Studio (VS) Code
-- Installation link: https://code.visualstudio.com/download
-- Integrated Development Environment (IDE)
-- Can use it to code in many different languages
-- Commonly used in both academia and industry
-
-## Visual Studio (VS) Code
-- Once installed, go to the "Extensions" tab and search "Python"
-- Install the below extensions:
-
-![](images/extensions.png){fig-align="center"}
 
 ## Anaconda
 - A tool for configuring Python **environments**
@@ -60,7 +48,30 @@ jupyter: termproject # GK: I need to make sure to change this once we finalize
 
 ![](images/condaWindows.png){fig-align="center"}
 
-# Setting Up a Conda Environment <!-- GK: Here we would just share screen and show how using the Navigator -->
+## Setting Up a Conda Environment 
+- See the presenter's shared screen
+
+<!-- GK: Here we would just share screen and show how using the Navigator -->
+
+## Visual Studio (VS) Code
+- Installation link: https://code.visualstudio.com/download
+- Integrated Development Environment (IDE)
+- Can use it to code in many different languages
+- Commonly used in both academia and industry
+
+## Visual Studio (VS) Code
+- Once installed, go to the "Extensions" tab and search "Python"
+- Install the below extensions:
+
+![](images/extensions.png){fig-align="center"}
+
+## Visual Studio (VS) Code
+- To point VS Code to your new Conda environment:
+    1. Open the Command Palette 
+        a. `Ctrl + Shift + P` on Windows 
+        b. `Command + Shift + P` on MacOS
+    1. Search "Python: Select Interpreter"
+    1. Select the interpreter that corresponds to your new environment (the name of the environment will be in parentheses)
 
 
 # The Basics
@@ -102,7 +113,7 @@ x = 10
 x = 20
 x = 15
 
-print (x)
+print(x)
 ```
 
 
@@ -298,7 +309,7 @@ x[0] = 9
 print(x)
 ```
 
-## Tuples (Briefly) <!-- GK: Do you think "(Briefly)" is necessary? -->
+## Tuples
 
 - Like lists, tuples contain multiple values
 - Unlike lists, tuples are **immutable**; they cannot be changed once created.
@@ -314,7 +325,7 @@ print(x[0], x[1])
 print(type(x))
 ```
 
-## Tuples (Briefly)
+## Tuples
 
 ### Changing Values... ERROR! {.example}
 ```{python}
@@ -326,7 +337,7 @@ x = ("a", "tuple")
 x[0] = "Not a"
 ```
 
-## Tuples (Briefly)
+## Tuples
 
 - Tuples have special properties, one of which is below:
 
@@ -430,26 +441,28 @@ print(cringe.replace("Hello", "Goodbye"))
 ```{python}
 #| label: strSplit
 
-meme_list = "baby gronk, 67, skibidi toilet, the rizzler"
+meme_list = "Harambe, 67, Jar Jar Binks, The Rizzler"
 
+# Split on ", "; returns a list
+new_list = meme_list.split(", ")
 
-print(meme_list.split(", ")) # Split on ", "; returns a list
-
-print(meme_list.split(", ")[0]) # Index the list
+print(new_list)
+print(new_list[0]) # Index the list
 ```
 
 ## Strings
 
-### How might you index "the rizzler"?
+### How might you index "The Rizzler"?
 . . .
 ```{python}
 #| label: rizzIndex
 
-meme_list = "baby gronk, 67, skibidi toilet, the rizzler"
+meme_list = "Harambe, 67, Jar Jar Binks, The Rizzler"
+new_list = meme_list.split(", ")
 
-print(meme_list.split(", ")[3])
-print(meme_list.split(", ")[-1])
-print(meme_list.split(", ")[len(meme_list.split(", ")) - 1])
+print(new_list[3])
+print(new_list[-1])
+print(new_list[len(new_list) - 1])
 ```
 
 ## Strings
@@ -493,18 +506,25 @@ x = True
 y = 10
 print(type(x), type(y))
 
-print (y > 5)
-print (y < 5)
+print(y > 5)
+print(y < 5)
 print(type(y < 5))
 ```
 
+## Booleans
+
+### Booleans {.example}
 ```{python}
 #| label: boolCont
 
 x = 5
 y = 10
 
-print (x > 2 and y > 2)
+print(x == 5)
+print(x > 2 and y > 2)  # Both need to be True
+print(x > 2 and y < 2)
+print(x > 2 and not y < 2)
+print(x > 2 or y < 2)   # At least one needs to be True
 ```
 
 ## Booleans
@@ -682,9 +702,9 @@ print(f'pi = {math.pi:.3f}')
 ```
 
 ## Importing Packages
-- We can rename packages to make their usage more concise
+- We can "rename" packages to make their usage more concise
 
-### Renaming Packages {.example}
+### "Renaming" Packages {.example}
 ```{python}
 #| label: impAs
 
@@ -750,7 +770,7 @@ def qm_mean(things):
     for i in things:
         sum += i
     
-    return sum / len(x)
+    return sum / len(things)
 
 qm_mean(x)              
 ```

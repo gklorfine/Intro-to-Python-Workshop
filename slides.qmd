@@ -572,7 +572,7 @@ else:
 ```
 
 ## Conditional Statements
-### Structure of Conditionals {.example}
+### Structure of Conditionals
 ```{python}
 #| label: condns_struc
 if x == 4:
@@ -758,6 +758,19 @@ print(subtraction(a = 5))
 
 ## Defining Functions
 
+### Basic Structure of a Function
+
+```{python}
+#| label: funcStruc
+#| eval: false
+
+# "arg" short for "argument"
+def function_name(arg1, arg2 = default_value, arg_n):
+    return output
+```
+
+## Defining Functions
+
 ### Function Example {.example}
 ```{python}
 #| label: def
@@ -840,6 +853,10 @@ print(array2d.dtype)    # Type of elements
     - `int64`
     - `float64`
 - Generally, numpy type = type learned before + memory (in bits)
+
+::: {.callout-note}
+- The `u` in `uint8` stands for "unsigned," meaning that the variable can only store positive values
+:::
 
 ## Numpy
 

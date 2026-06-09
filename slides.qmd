@@ -469,12 +469,17 @@ print(new_list[0]) # Index the list
 ## Strings
 
 ### How might you index "The Rizzler"?
-. . .
 ```{python}
-#| label: rizzIndex
+#| label: rizzIndex1
 
 meme_list = "Harambe, 67, Jar Jar Binks, The Rizzler"
 new_list = meme_list.split(", ")
+```
+
+. . .
+
+```{python}
+#| label: rizzIndex2
 
 print(new_list[3])
 print(new_list[-1])
@@ -706,6 +711,7 @@ for i in x:
 # Importing Packages, Defining Functions
 
 ## Importing Packages
+- Packages add "extra stuff" to Python, including functions, constants, and more
 - Some packages are installed with Python by default, and no extra work is required to use them
 
 ### `import math` {.example}
@@ -732,6 +738,7 @@ print(f'pi = {m.pi:.3f}')
 ## Importing Packages
 
 - Some require installation. This is most easily (and safely) done through **anaconda**
+- Let's install the package **numpy**!
 
 <!-- GK: Share screen here and show how to add numpy to environment -->
 
@@ -753,7 +760,8 @@ print(np.random.normal(loc = 0, scale = 1, size = 3))
 ## Defining Functions
 - Sometimes you repeat the same code over and over again
     - When this happens, it is useful to collapse the repeated code into a function
-    - Otherwise, code becomes long and messy due to copy-pasting
+    - Otherwise, code becomes long and messy due to copy-pasting \pause
+    - For instance, imagine needing to know how to code your own `np.random.normal()` function and then copy pasting this code every time you want to use it
 
 ## Defining Functions
 
@@ -854,7 +862,8 @@ print(type(array2d))
 
 import numpy as np
 
-array2d = np.array([[1,2,3], [4,5,6]])
+array2d = np.array([[1,2,3],  # Matrices typed in a more
+                    [4,5,6]]) # appealing manner
 
 print(array2d.shape)    # Shape (# rows, # columns)
 print(array2d.ndim)     # Number of dimensions

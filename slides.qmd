@@ -939,8 +939,11 @@ print(np.random.uniform(low = 0, high = 10, size = 3))
 
 np.random.seed(67)
 
-print(np.random.choice(["A", "B", "C", "D"])) # 1st time returns 'D'
-print(np.random.choice(["A", "B", "C", "D"])) # 2nd time returns 'B'
+# 1st time returns 'D'
+print(np.random.choice(["A", "B", "C", "D"])) 
+
+# 2nd time returns 'B'
+print(np.random.choice(["A", "B", "C", "D"]))
 ```
 
 ## NumPy

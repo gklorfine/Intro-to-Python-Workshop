@@ -1030,8 +1030,8 @@ import pandas as pd
 df = pd.DataFrame({
     "Memes" : ["67", "Jar Jar", "The Rizzler", "Harambe"],
     "Rating": [6, 3, 7, 10],
-    "Age": ["new", "old", "new", "old"]
-})
+    "Age"   : ["new", "old", "new", "old"]
+}, index = ['a','b','c','d']) # Index is optional
 df # To print
 ```
 
@@ -1157,7 +1157,161 @@ type(df["Memes"])
 
 ## Pandas
 
+- To select multiple columns, provide a list of column names as the index
 
+### Selecting Multiple Columns {.example}
+```{python}
+#| label: selectCols
+
+df[["Memes", "Age"]]
+```
+
+## Pandas
+
+- A simple way to filter rows is by row number:
+
+### Filter Rows by Row Number {.example}
+```{python}
+#| label: simpleRowFilter
+
+df[0:2] # Row numbers 0 and 1
+```
+
+## Pandas
+
+- You can also filter rows by indexing a data frame with a boolean expression involving the same data frame
+
+### Filter Rows With Boolean Expressions {.example}
+```{python}
+#| label: filterBoolean
+
+df[df["Age"] == "old"]
+```
+
+## Pandas
+
+- The result of the previous slide was also a data frame!
+    + This means we can index it further by, say, taking the `"Memes"` column:
+
+### Indexing Twice {.example}
+```{python}
+#| label: indexTwice
+
+df[df["Age"] == "old"]["Memes"]
+```
+
+## Pandas
+
+- This also means that methods shown previously can be applied to these filtered data frames
+
+### Describing Filtered Data {.example}
+```{python}
+#| label: describeFilt
+
+df[df["Age"] == "old"].describe()
+```
+
+## Pandas
+
+- We can also select rows and columns using the `loc` or `iloc` **attributes**
+    + These are like methods but use square `[]` brackets (instead of round brackets `()`)
+
+### Selecting with `loc` and `iloc` {.example}
+```{python}
+#| label: locSelect1
+
+df.loc["b", "Memes"] # Row b of Memes column
+```
+
+```{python}
+#| label: ilocSelect1
+
+df.iloc[1,0] # Row 1 of 0th column (Memes)
+```
+
+## Pandas
+
+- Like **numpy**, we can use a colon (`:`) with `loc` and `iloc` to indicate "all rows" or "all columns":
+
+### Selecting All Rows with `loc` {.example}
+```{python}
+#| label: locSelect2
+
+df.loc[:, "Memes"] # All rows of Memes column
+```
+
+## Pandas
+
+### Selecting All Columns with `iloc` {.example}
+```{python}
+#| label: ilocSelect2
+
+df.iloc[0, :] # All columns for 0th row (row 'a')
+```
+
+## Pandas
+
+- If you would like to select multiple columns (or rows), but not all columns (or rows), pass a `list` to `loc` or `iloc`
+
+### Selecting Multiple (Specific) Columns with `loc` {.example}
+
+```{python}
+#| label: locSelect3
+
+df.loc[["a", "b"], ["Memes", "Age"]]
+```
+
+- Same thing for `iloc`, but with row numbers instead of indices/names
+
+## Pandas
+
+- We can also use boolean expressions with `loc` (but not `iloc`):
+
+### Boolean Expressions with `loc` {.example}
+```{python}
+#| label: locBoolean1
+
+# Take rows where age is old and just the meme column
+df.loc[df["Age"] == "old", "Memes"] # Old memes!
+```
+
+## Pandas
+
+- In these boolean expressions, we can use `&` for `and`, `|` for `or`, and `~` for `not`
+    + We need these special operators as we are comparing entire columns as opposed to single values
+    + We also surround expressions to be compared in round brackets `()`
+
+### Boolean Expressions with `loc` {.example}
+```{python}
+#| label: locBoolean2
+
+# Take all rows where age is old and rating is larger than 7
+df.loc[(df["Age"] == "old") & (df["Rating"] > 7), :]
+```
+
+## Pandas
+
+```{python}
+#| label: display_df
+#| echo: false
+
+df
+```
+
+### How might I index rows with rating greater than or equal to seven?
+
+- I want 2 different answers! (Hint: `loc` and `df[?]`)
+
+## Pandas
+
+### How might I index rows with rating greater than or equal to seven?
+
+```{python}
+#| label: pd_question1
+
+df[df["Rating"] >= 7]
+df.loc[df["Rating"] >= 7, :]
+```
 
 # Matplotlib.pyplot
 

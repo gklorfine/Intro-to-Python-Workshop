@@ -1313,6 +1313,8 @@ df[df["Rating"] >= 7]
 df.loc[df["Rating"] >= 7, :]
 ```
 
+<!-- GK: I need to make sure to go over inclusive:exclusive difference in loc vs. iloc -->
+
 # Matplotlib.pyplot
 
 ## Matplotlib.pyplot

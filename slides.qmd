@@ -73,6 +73,22 @@ jupyter: ws # GK: I need to make sure to change this once we finalize
     1. Search "Python: Select Interpreter"
     1. Select the interpreter that corresponds to your new environment (the name of the environment will be in parentheses)
 
+## Using Python
+
+### Scripts
+- To create a new Python script (a file with a `.py` extension):
+    1. File -> New File -> Python File
+- These scripts are generally executed from top to bottom, and are useful for writing longer chunks of code
+- You can run a script with the play button in the top right corner of VS Code
+
+. . .
+
+### Console
+- The console is useful for executing smaller bits of code
+- To open the console:
+    1. Open the Command Palette -> search "Python: Start Terminal REPL"
+- Type in a line of code and hit `enter` to execute it
+    + Multiple lines may be typed by using `shift + enter`
 
 # The Basics
 

@@ -745,7 +745,7 @@ print(f'pi = {m.pi:.3f}')
 ## Importing Packages
 ### `import numpy as np` {.example}
 ```{python}
-#| label: impNumpy
+#| label: impNumPy
 
 import numpy as np      # Common convention
 
@@ -812,17 +812,17 @@ def qm_mean(things):
 qm_mean(x)              
 ```
 
-# Numpy
+# NumPy
 
-## Numpy
+## NumPy
 
 - Somewhat similar to MATLAB if you have used that
 - Useful for working with arrays/matrices
-- Stands for **num**erical **py**thon
+- Stands for \textcolor{red}{\textbf{Num}}erical \textcolor{red}{\textbf{Py}}thon
 - Based in computer language **C**
     - Faster, more efficient computations
 
-## Numpy
+## NumPy
 
 ### Working With Lists/Arrays {.example}
 ```{python}
@@ -839,28 +839,24 @@ print(numpyList * 2)
 print(type(numpyList))
 ```
 
-## Numpy
+## NumPy
 
 - Matrices are typically worked with as **2D** numpy arrays
 
-### 2D Numpy Arrays {.example}
+### 2D NumPy Arrays {.example}
 ```{python}
 #| label: 2d
-
-import numpy as np
 
 array2d = np.array([[1,2,3], [4,5,6]]) # List of lists
 print(array2d)
 print(type(array2d))
 ```
 
-## Numpy: 
+## NumPy: 
 
-### To Check Attributes of a Numpy Variable {.example}
+### To Check Attributes of a NumPy Variable {.example}
 ```{python}
 #| label: attrib_numpy
-
-import numpy as np
 
 array2d = np.array([[1,2,3],  # Matrices typed in a more
                     [4,5,6]]) # appealing manner
@@ -871,7 +867,7 @@ print(array2d.size)     # Number of elements
 print(array2d.dtype)    # Type of elements
 ```
 
-## Numpy
+## NumPy
 - Some numpy types:
     - `uint8`
     - `int32`
@@ -883,13 +879,11 @@ print(array2d.dtype)    # Type of elements
 - The `u` in `uint8` stands for "unsigned," meaning that the variable can only store positive values
 :::
 
-## Numpy
+## NumPy
 
 ### `np.arange()` {.example}
 ```{python}
 #| label: arange
-
-import numpy as np
 
 np.arange(start=10, stop=20, step=2, dtype = "int64")
 ```
@@ -898,13 +892,11 @@ np.arange(start=10, stop=20, step=2, dtype = "int64")
 - `stop` parameter is *exclusive*
 :::
 
-## Numpy
+## NumPy
 
 ### `np.linspace()` {.example}
 ```{python}
 #| label: linspace
-
-import numpy as np
 
 np.linspace(start=10, stop=20, num=6, dtype = "int64")
 ```
@@ -914,38 +906,47 @@ np.linspace(start=10, stop=20, num=6, dtype = "int64")
 - Use `np.arange()` for creating a sequence of numbers
 :::
 
-## Numpy
+## NumPy
 
-- Numpy has lots of functions relating to choosing random values 
+- NumPy has lots of functions relating to choosing random values 
 
 ### Random Choice {.example}
 ```{python}
 #| label: randChoice
-
-import numpy as np
 
 print(np.random.choice(["A", "B", "C", "D"]))
 
 print(np.random.choice(["A", "B", "C", "D"], size = 2))
 ```
 
-## Numpy
+## NumPy
 ### Random Numbers {.example}
 ```{python}
 #| label: randNum
-
-import numpy as np
 
 print(np.random.normal(loc = 0, scale = 1, size = 3))
 print(np.random.uniform(low = 0, high = 10, size = 3))
 ```
 
-## Numpy
-### Indexing Numpy Arrays {.example}
-```{python}
-#| label: indexNumpy
+## NumPy
 
-import numpy as np
+- To make the values from these random functions reproducible, we set a "seed"
+    + i.e., the first time the below `np.random.choice()` call is run will always return `'D'`, the second time `'B'`
+
+### Setting a Seed {.example}
+```{python}
+#| label: setSeed
+
+np.random.seed(67)
+
+print(np.random.choice(["A", "B", "C", "D"])) # 1st time returns 'D'
+print(np.random.choice(["A", "B", "C", "D"])) # 2nd time returns 'B'
+```
+
+## NumPy
+### Indexing NumPy Arrays {.example}
+```{python}
+#| label: indexNumPy
 
 x = np.random.normal(0, 10, size=(3,3))
 print(x, "\n")  # Print x with a blank line after it
@@ -954,12 +955,10 @@ print(x[2,2], type(x[2,2]))
 print(x[2,:])   # Row 2 (zero-based), all columns
 ```
 
-## Numpy
+## NumPy
 ### Indexing (cont.) {.example}
 ```{python}
 #| label: indexCont
-
-import numpy as np
 
 x = np.random.normal(0, 10, size=(3,3))
 print(x, "\n")
@@ -968,15 +967,13 @@ print(x[2, 0:2])    # Row 2, columns 0 and 1
 print(type(x[2, 0:2]))
 ```
 
-## Numpy
+## NumPy
 
 - You may also perform **aggregate** functions on numpy arrays
 
-### Numpy Aggregate Functions {.example}
+### NumPy Aggregate Functions {.example}
 ```{python}
 #| label: nump_agg
-
-import numpy as np
 
 x = np.array([1,4,7,15])
 
@@ -985,13 +982,11 @@ print(np.median(x))
 print(np.std(x))
 ```
 
-## Numpy
+## NumPy
 
 ### More Aggregate Functions {.example}
 ```{python}
 #| label: nump_agg_more
-
-import numpy as np
 
 x = np.array([1,4,7,15])
 
@@ -1001,7 +996,7 @@ print(np.max(x))        # Maximum value
 print(np.argmax(x))     # Position of maximum value
 ```
 
-## Numpy
+## NumPy
 ### Check-in
 - How might you generate 100 random values from the standard normal distribution?
 - How might you get the maximum of these values?
@@ -1011,32 +1006,154 @@ print(np.argmax(x))     # Position of maximum value
 ```{python}
 #| label: maxNorm
 
-import numpy as np
-
-print(np.max(np.random.normal(loc=0, scale=1, size=100)))
+np.max(np.random.normal(loc=0, scale=1, size=100))
 ```
 
 # Pandas
 
 ## Pandas
 
-- For data analysis in Python
+- For the analysis of spreadsheet-like data in Python
 - Somewhat similar to R if you have used that
     - Introduces the data frame
 
 ## Pandas
 
-### Creating a DataFrame {.example}
+### Creating a Data Frame {.example}
 ```{python}
 #| label: pandas_df
 
 import pandas as pd
-
-pd.DataFrame({
-    "Memes" : ["67", "the rizzler", "harambe"],
-    "Rating": [5, 9, 10]
+df = pd.DataFrame({
+    "Memes" : ["67", "Jar Jar", "The Rizzler", "Harambe"],
+    "Rating": [6, 3, 7, 10],
+    "Age": ["new", "old", "new", "old"]
 })
+df # To print
 ```
+
+## Pandas
+
+- Data are commonly stored as `.csv` files
+    + \textcolor{red}{\textbf{C}}omma \textcolor{red}{\textbf{s}}eparated \textcolor{red}{\textbf{v}}alues
+- These files have entries separated by commas, often including a first row of "header" entries
+- A `.csv` file of the pandas data frame from the previous slide (variable `df`) is shown below
+
+![](images/df-csv.png){fig-align="center" height="128px"}
+
+## Pandas
+
+- Continuing with the `df` data frame, the below shows how a `.csv` file is written
+
+### Writing `.csv` Files {.example}
+```{python}
+#| label: csvWrite
+
+# Write df.csv to the pandas/ folder
+df.to_csv("pandas/df.csv", index = False)
+```
+
+- Here, `to_csv` is a **method** acting on the `df` **object** (or variable)
+
+::: {.callout-tip}
+Setting the `index` argument to `False` removes row indices (i.e., row 0, 1, 2, ..., $n$) from being stored as a separate column
+:::
+
+## Pandas
+
+- We often need to do the reverse; namely, reading data from a `.csv` file into a pandas data frame
+
+### Reading `.csv` Files {.example}
+```{python}
+#| label: csvRead
+
+# Read df.csv from the pandas/ folder
+df_new = pd.read_csv("pandas/df.csv") 
+
+df_new
+```
+
+## Pandas
+- Pandas also has functions to read/write data from other file formats, such as from Microsoft Excel `.xlsx` files
+
+### `.xlsx` Files {.example}
+```{python}
+#| label: xlsxRead
+#| eval: False
+
+excelDat = pd.read_excel( # Read
+    "file_name.xlsx", sheet_name = "optional"
+)
+
+excelDat.to_excel( # Write
+    "folder/excelDat.xlsx", sheet_name = "optional"
+)
+```
+
+## Pandas
+
+### Inspecting Data {.example}
+```{python}
+#| label: inspectHead
+
+df.head(2) # First 2 rows
+```
+
+```{python}
+#| label: inspectTail
+
+df.tail(2) # Last 2 rows
+```
+
+## Pandas
+
+### Inspecting Data {.example}
+```{python}
+#| label: inspectInfo
+
+df.info()
+```
+
+## Pandas
+
+### Descriptives {.example}
+```{python}
+#| label: describe
+
+df.describe()
+```
+
+## Pandas
+
+### Grouping {.example}
+```{python}
+#| label: groupbyDescribe
+
+df.groupby("Age").describe()
+```
+
+## Pandas
+
+### Selecting a Column {.example}
+```{python}
+#| label: selectCol
+
+df["Memes"]
+```
+
+## Pandas
+
+### A Note on Types
+```{python}
+#| label: series
+
+type(df["Memes"])
+```
+
+- A variable of type `pandas.Series` is essentially a column of a pandas data frame
+
+## Pandas
+
 
 
 # Matplotlib.pyplot

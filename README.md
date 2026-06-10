@@ -34,7 +34,7 @@ York University, Canada <br>
 
 <!-- GK: After the workshop, we could include a quote (or a few) from reviews here -->
 
-This workshop takes place June 26, 27, and 28 from 11:30AM to 2:30PM over Zoom (the links were provided to attendees over email). Tickets for this workshop were sold out (26/25 spots filled)! After the third session, a link to a feedback form will be emailed to attendees (please fill this out!).
+This workshop takes place June 26, 27, and 28 from 11:30AM to 2:30PM over Zoom (the link were provided to attendees over email). Tickets for this workshop were sold out (26/25 spots filled)! After the third session, a link to a feedback form will be emailed to attendees (please fill this out!).
 
 Starting with the installation of Python and relevant packages, this workshop guides attendees through basic programming structures/syntax, culminating in the manipulation and analysis of data. Interactive exercises will be available throughout the workshop to practice applying Python and data analysis skills and will serve as the building blocks for a short, end-of-workshop project. A digital credential is provided upon the successful completion of this project. This workshop is meant for those with no prior experience or exposure to Python (or programming, for that matter), although all levels are welcome.
 
@@ -107,7 +107,7 @@ For more on the packages we covered:
 
 ### Fun:
 
-- The logo for this workshop was created using **matplotlib**. The script is located in this repo at <a href="images/logo.py">images/logo.py</a>. There are a couple of video resources included as comments within this file--I (GK) referred to these videos when making the logo and thought they might be of use to some
+- The logo for this workshop was created using **matplotlib**. The script is located in this repo at [`images/logo.py`](images/logo.py). There are a couple of video resources included as comments within this script--I (GK) referred to these videos when making the logo and thought they might be of use to some
 - [**pygame-ce**](https://pyga.me/docs/) for games
     + See *Introduction to Python for Data Analysis: The Game* under [`fun/`](fun/)
 

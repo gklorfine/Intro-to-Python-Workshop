@@ -28,13 +28,13 @@ York University, Canada <br>
 
 <i><strong><span style="color: red;">WORKSHOP IN PROGRESS | WORKSHOP IN PROGRESS | WORKSHOP IN PROGRESS <br> WORKSHOP IN PROGRESS | WORKSHOP IN PROGRESS | WORKSHOP IN PROGRESS</i></strong></span>
 
-<i><span style="color: red;">Attendees are encouraged to read this entire document, as relevant information and resources are interspersed throughout.</i></span>
+*Attendees are encouraged to read this entire document, as relevant information and resources are interspersed throughout. We also encourage attendees to look over the slides after each day, due to the large amount of material covered.*
 
 This workshop takes place June 26, 27, and 28 from 11:30AM to 2:30PM over Zoom (the links were provided to attendees over email). Tickets for this workshop were sold out (26/25 spots filled)!
 
 Starting with the installation of Python and relevant packages, this workshop guides attendees through basic programming structures/syntax, culminating in the manipulation and analysis of data. Interactive exercises will be available throughout the workshop to practice applying Python and data analysis skills and will serve as the building blocks for a short, end-of-workshop project. A digital credential is provided upon the successful completion of this project. This workshop is meant for those with no prior experience or exposure to Python (or programming, for that matter), although all levels are welcome.
 
-Slides were made using [**Quarto**](https://quarto.org/), an open-source publishing system. You may see the 'behind the scenes' code for the slides by opening the `.qmd` files (either through Visual Studio (VS) Code or online via GitHub). This is also a good way to access the code displayed on each slide (tip: `CTRL + F` to search is useful here).
+Slides were made using the [**beamer**](https://ctan.org/pkg/beamer) format in [**Quarto**](https://quarto.org/), an open-source publishing system. You may see the 'behind the scenes' code for the slides by opening the `.qmd` files (either through Visual Studio (VS) Code or online via GitHub). This is also a good way to access the code displayed on each slide (tip: `CTRL + F` to search is useful here).
 
 [ ] **TODO: Put where relevant information in the repo is here (e.g., where to access slides)**
 
@@ -82,7 +82,16 @@ Although we cover a vast amount of material in this workshop, we only skim the s
 - [**Jupyter Notebook**](https://jupyter-notebook.readthedocs.io/en/latest/) allows you to combine markdown text and Python code into a single file (like an `.Rmd` file in programming language **R**). A Jupyter Notebook has the file extension `.ipynb`
     + "Jupyter Notebooks in VS Code" article in the VS Code documentation ([link](https://code.visualstudio.com/docs/datascience/jupyter-notebooks))
 
-[ ] **TODO: Put stuff here (GK: I was thinking maybe more in depth guides for the packages we are including?)**
+For more on the packages we covered:
+
+|     **Package**    | **Video** |
+| :----------------- | :-------- |
+| numpy              |           |
+| pandas             | *Complete Python Pandas Data Science Tutorial! (2025 Updated Edition)* by Keith Galli ([YouTube](https://www.youtube.com/watch?v=2uvysYbKdjM))
+| matplotlib.pyplot  |           |
+| statsmodels        |           |
+
+[ ] **TODO: Fill this out more**
 
 ### Other:
 

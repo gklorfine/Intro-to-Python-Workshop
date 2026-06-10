@@ -1246,8 +1246,13 @@ df.loc[:, "Memes"] # All rows of Memes column
 ```{python}
 #| label: ilocSelect2
 
-df.iloc[0, :] # All columns for 0th row (row 'a')
+df.iloc[0] # All columns for 0th row (row 'a')
 ```
+
+::: {.callout-note}
+- If only the row argument is supplied, all columns are selected by default
+    + This is also true for `loc`
+:::
 
 ## Pandas
 
@@ -1310,10 +1315,108 @@ df
 #| label: pd_question1
 
 df[df["Rating"] >= 7]
-df.loc[df["Rating"] >= 7, :]
+df.loc[df["Rating"] >= 7, :] # The `, :` is optional
 ```
 
-<!-- GK: I need to make sure to go over inclusive:exclusive difference in loc vs. iloc -->
+## Pandas
+
+- To show a peculiarity of pandas, I first set the index of our data frame `df` (e.g., the row names `"a"`, `"b"`, ...) back to integers (the default)
+
+### Changing the Index {.example}
+```{python}
+#| label: changeIndex
+
+df.index = [0,1,2,3]
+df
+```
+
+## Pandas
+
+- When using `loc` on a data frame with a numeric index, the format of a slice is `inclusive:inclusive`
+
+### `loc` is Strange {.example}
+```{python}
+#| label: locStrange
+
+df.loc[0:1] # inclusive:inclusive
+```
+
+## Pandas
+
+- For reference, here is the same line but using `iloc` instead of `loc`:
+
+### `iloc` is Typical {.example}
+```{python}
+#| label: ilocUsual
+
+df.iloc[0:1] # inclusive:exclusive
+```
+
+## Pandas
+
+- We can also add columns to our data frame. Here I add a column `r10`: the `Rating` out of `10`
+
+### Adding a Column {.example}
+```{python}
+#| label: addCol
+
+df["r10"] = df["Rating"] / 10
+df
+```
+
+## Pandas
+
+- We might also want to sort these entries by `Rating`
+
+### Sorting a Data Frame {.example}
+```{python}
+#| label: sort1
+
+df.sort_values(by = "Rating", inplace = True)
+df
+```
+
+- Argument `inplace = True` modifies `df` directly instead of returning a new one
+
+## Pandas
+
+- We can also sort by `Age` first and then `Rating`
+    + Strings are sorted \underline{alphabetically}
+
+### Sorting by a List {.example}
+```{python}
+#| label: sort2
+
+df.sort_values(by = ["Age", "Rating"], inplace = True)
+df
+```
+
+## Pandas
+
+- Instead of using the `describe()` method, you may want only a select few (or one) statistic
+
+### Getting Specific Descriptive Statistics {.example}
+```{python}
+#| label: specDesc_mean
+
+df["Rating"].mean()
+```
+
+```{python}
+#| label: specDesc_std
+
+df["Rating"].std()
+```
+
+## Pandas
+
+### Getting Specific Descriptive Statistics {.example}
+```{python}
+#| label: specDesc_agg
+
+df["Rating"].agg(['mean', 'std']) # agg = aggregate
+```
+
 
 # Matplotlib.pyplot
 

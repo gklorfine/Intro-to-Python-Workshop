@@ -105,6 +105,23 @@ print(x)
 ```
 
 ## Variables
+
+- Variable names should be short but descriptive (e.g., a variable for the mean of `x` should be named `mean_x`)
+    + We are using `x` for pedagogical purposes... In practice, `x` is likely non-descriptive! \pause
+- When a variable name contains multiple words (e.g., apple size), there are a couple of approaches:
+    + Use an underscore (e.g., `apple_size`)
+    + Use "camel case" (e.g., `appleSize`)
+        + Camel case has the first word all lowercase, with subsequent words having their first letter capitalized \pause
+- If a variable is not meant to change, it is called a constant. These variables are usually named in all-caps, e.g.:
+
+```{python}
+#| label: constant
+
+PI = 3.14
+```
+
+
+## Variables
 ### Arithmetic {.example}
 ```{python}
 #| label: arith

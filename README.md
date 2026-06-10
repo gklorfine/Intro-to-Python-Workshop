@@ -79,6 +79,10 @@ Starting out, most problems encountered will be basic enough to handle through t
 
 Although we cover a vast amount of material in this workshop, we only skim the surface of what Python has to offer. This said, we hope that this workshop enables you to feel comfortable seeking out and engaging with material beyond what we have taught. Some resources to do so are provided below:
 
+- Sometimes, packages that you might want to install are not available through the Anaconda Navigator. I have included a guide as to how to install these in [`extras/pip-install.md`](extras/pip-install.md)
+
+**TODO: A possible sub-bullet with resources on how to use the terminal? Maybe include these in the pip-install file?**
+
 - [**Jupyter Notebook**](https://jupyter-notebook.readthedocs.io/en/latest/) allows you to combine markdown text and Python code into a single file (like an `.Rmd` file in programming language **R**). A Jupyter Notebook has the file extension `.ipynb`
     + "Jupyter Notebooks in VS Code" article in the VS Code documentation ([link](https://code.visualstudio.com/docs/datascience/jupyter-notebooks))
 
@@ -101,7 +105,7 @@ For more on the packages we covered:
 
 - The logo for this workshop was created using **matplotlib**. The script is located in this repo at <a href="images/logo.py">images/logo.py</a>. There are a couple of video resources included as comments within this file--I (GK) referred to these videos when making the logo and thought they might be of use to some
 - [**pygame-ce**](https://pyga.me/docs/) for games
-    + See *Introduction to Python for Data Analysis: The Game* under [fun/](fun/)
+    + See *Introduction to Python for Data Analysis: The Game* under [`fun/`](fun/)
 
 ``` python
 from pyfiglet import Figlet

@@ -85,10 +85,17 @@ Although we cover a vast amount of material in this workshop, we only skim the s
 
 - Sometimes, packages that you might want to install are not available through the Anaconda Navigator. I have included a guide as to how to install these in [`extras/pip-install.md`](extras/pip-install.md)
 
-**TODO: A possible sub-bullet with resources on how to use the terminal? Maybe include these in the pip-install file?**
+[ ] **TODO: A possible sub-bullet with resources on how to use the terminal? Maybe include these in the pip-install file?**
 
-- [**Jupyter Notebook**](https://jupyter-notebook.readthedocs.io/en/latest/) allows you to combine markdown text and Python code into a single file (like an `.Rmd` file in programming language **R**). A Jupyter Notebook has the file extension `.ipynb`
-    + "Jupyter Notebooks in VS Code" article in the VS Code documentation ([link](https://code.visualstudio.com/docs/datascience/jupyter-notebooks))
+- **Dictionaries** were not explicitly touched upon in this workshop (though they will look familiar from the pandas section). These are variable types that contain "key-value" pairs, with values corresponding to their given key. A good resource on Python dictionaries is *Python dictionaries are easy 📙* by Bro Code ([YouTube video](https://www.youtube.com/watch?v=MZZSMaEAC2g))
+
+- [**Jupyter Notebook**](https://jupyter-notebook.readthedocs.io/en/latest/) allows you to combine markdown text and Python code into a single file (like an `.Rmd` file in programming language **R**). A Jupyter Notebook has the file extension `.ipynb`. A good resource here is the "Jupyter Notebooks in VS Code" article in the VS Code documentation ([link](https://code.visualstudio.com/docs/datascience/jupyter-notebooks))
+
+- **List comprehensions** are useful, compact ways of making lists in Python. You may find the *Learn Python LIST COMPREHENSIONS in 10 minutes! 📃* video by Bro Code helpful ([YouTube video](https://www.youtube.com/watch?v=YlY2g2xrl6Q))
+
+- **Object-oriented programming (OOP)** and the use of **classes** in Python. 
+
+[ ] **TODO: Explain OOP+classes *very very briefly*, provide a resource (or multiple)**
 
 For more on the packages we covered:
 

@@ -8,6 +8,7 @@
 <tr>
 <td>
 Gavin Klorfine (<a href="https://www.github.com/gklorfine/">@gklorfine</a>)<br>
+Graduate Student <br>
 Department of Psychology <br>
 York University, Canada <br>
 <a href="mailto:gklorfin@yorku.ca">gklorfin@yorku.ca</a>
@@ -17,6 +18,7 @@ York University, Canada <br>
 
 <td>
 Deborah Laze (<a href="https://www.github.com/bora-laze/">@bora-laze</a>)<br>
+Graduate Student <br>
 Department of Psychology <br>
 York University, Canada <br>
 <a href="mailto:laze@yorku.ca">laze@yorku.ca</a>
@@ -26,11 +28,13 @@ York University, Canada <br>
 
 <br>
 
-<i><strong><span style="color: red;">WORKSHOP IN PROGRESS | WORKSHOP IN PROGRESS | WORKSHOP IN PROGRESS <br> WORKSHOP IN PROGRESS | WORKSHOP IN PROGRESS | WORKSHOP IN PROGRESS</i></strong></span>
+<i><strong>WORKSHOP IN PROGRESS | WORKSHOP IN PROGRESS | WORKSHOP IN PROGRESS <br> WORKSHOP IN PROGRESS | WORKSHOP IN PROGRESS | WORKSHOP IN PROGRESS</i></strong>
 
 *Attendees are encouraged to read this entire document, as relevant information and resources are interspersed throughout. We also encourage attendees to look over the slides after each day, due to the large amount of material covered.*
 
-This workshop takes place June 26, 27, and 28 from 11:30AM to 2:30PM over Zoom (the links were provided to attendees over email). Tickets for this workshop were sold out (26/25 spots filled)!
+<!-- GK: After the workshop, we could include a quote (or a few) from reviews here -->
+
+This workshop takes place June 26, 27, and 28 from 11:30AM to 2:30PM over Zoom (the links were provided to attendees over email). Tickets for this workshop were sold out (26/25 spots filled)! After the third session, a link to a feedback form will be emailed to attendees (please fill this out!).
 
 Starting with the installation of Python and relevant packages, this workshop guides attendees through basic programming structures/syntax, culminating in the manipulation and analysis of data. Interactive exercises will be available throughout the workshop to practice applying Python and data analysis skills and will serve as the building blocks for a short, end-of-workshop project. A digital credential is provided upon the successful completion of this project. This workshop is meant for those with no prior experience or exposure to Python (or programming, for that matter), although all levels are welcome.
 

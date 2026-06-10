@@ -38,6 +38,7 @@ p1 = pg.image.load("assets/player.png").convert_alpha()
 py_logo = pg.image.load("assets/py-logo.png").convert_alpha()
 win_img = pg.image.load("assets/win-img.png").convert_alpha()
 win_sound = pg.mixer.Sound("assets/win-sound.wav")
+jump_sound = pg.mixer.Sound("assets/jump.wav")
 
 p1 = pg.transform.scale(p1, (p1.get_width() * .1, p1.get_height() * .1))
 win_img = pg.transform.scale(win_img, (win_img.get_width() * .1, win_img.get_height() * .1))
@@ -99,6 +100,7 @@ while running:
     if keys[pg.K_UP] and on_ground:
         velo = jump_pwr
         on_ground = False
+        jump_sound.play()
 
     old_bottom = p1_pos.y + p1.get_height()
 

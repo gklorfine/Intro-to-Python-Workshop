@@ -107,7 +107,7 @@ For more on the packages we covered in this workshop:
 | matplotlib.pyplot  | *Learn Matplotlib in 30 Minutes - Python Matplotlib Tutorial* by Tech with Tim ([YouTube](https://www.youtube.com/watch?v=7Lc2AxiM17o))        
 | statsmodels        | *statsmodels* by Data Science for Everyone ([YouTube](https://youtube.com/playlist?list=PLlbbWgBRF8EePgK40-i7aGU2_ky1yujgL&si=C27xUwIBMtQThYIu))
 
-- *Data Science Essentials with Python* (pandas & matplotlib) from Cisco Networking Academy ([Online Course](https://www.netacad.com/courses/data-science-essentials-with-python?courseLang=en-US)) is another invaluable resource that provides interactive exercises as well as additional datasets that you can use to independently practice your Python skills!
+- **Data Science Essentials with Python** (pandas & matplotlib) from Cisco Networking Academy ([Online Course](https://www.netacad.com/courses/data-science-essentials-with-python?courseLang=en-US)) is another invaluable resource that provides interactive exercises as well as additional datasets that you can use to independently practice your Python skills!
 
 - Last, **Git/GitHub** offer a way to share your code and collaborate with others. You are reading a shared document on GitHub right now! A good beginner resource on using Git/GitHub is *Learn Git and GitHub in 1 Hour!* by Alex the Analyst ([YouTube video](https://www.youtube.com/watch?v=lLoJHifWTRw&t=345s))
     + If this interests you, I (GK) recommend learning how to use the terminal as well (or command prompt / PowerShell on Windows; see above for resources) 

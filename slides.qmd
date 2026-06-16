@@ -120,6 +120,16 @@ print(x)
 PI = 3.14
 ```
 
+## Variables
+
+::: {.callout-important}
+- Variable names cannot contain spaces (hence the use of camelCase and underscores) \pause
+- Variable names cannot start with a number \pause
+- Avoid naming variables with names that have already been "taken"
+    + E.g., do not name a variable "`print`"
+    + We will encounter more names that have been "taken" \pause
+- Do not capitalize the first letter of a variable unless it is a `class` (beyond the scope of this workshop)
+:::
 
 ## Variables
 ### Arithmetic {.example}

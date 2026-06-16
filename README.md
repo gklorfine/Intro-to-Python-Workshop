@@ -93,9 +93,7 @@ Although we cover a vast amount of material in this workshop, we only skim the s
 
 - **List comprehensions** are useful, compact ways of making lists in Python. You may find the *Learn Python LIST COMPREHENSIONS in 10 minutes! 📃* video by Bro Code helpful ([YouTube video](https://www.youtube.com/watch?v=YlY2g2xrl6Q))
 
-- **Object-oriented programming (OOP)** and the use of **classes** in Python. 
-
-[ ] **TODO: Explain OOP+classes *very very briefly*, provide a resource (or multiple)**
+- **Object-oriented programming (OOP)** and the use of **classes** in Python allow you to bundle related data and functionality. For example, a pandas `DataFrame` is a class that bundles both information on the data used (e.g., variable names, cell frequencies) together with functionality (e.g., `DataFrame.describe()` to get descriptive statistics). A good resource here is *Python Object Oriented Programming Full Course 🐍* by Bro Code ([YouTube video](https://www.youtube.com/watch?v=IbMDCwVm63M))
 
 For more on the packages we covered:
 

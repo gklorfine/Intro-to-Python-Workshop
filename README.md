@@ -34,11 +34,11 @@ York University, Canada <br>
 
 <!-- GK: After the workshop, we could include a quote (or a few) from reviews here -->
 
-This workshop takes place June 26, 27, and 28 from 11:30AM to 2:30PM over Zoom (the link were provided to attendees over email). Tickets for this workshop were sold out (26/25 spots filled)! After the third session, a link to a feedback form will be emailed to attendees (please fill this out!).
+This workshop takes place June 26, 27, and 28 from 11:30AM to 2:30PM over Zoom (the link was provided to attendees over email). Tickets for this workshop were sold out (26/25 spots filled)! After the third session, a link to a feedback form will be emailed to attendees (please fill this out!).
 
 Starting with the installation of Python and relevant packages, this workshop guides attendees through basic programming structures/syntax, culminating in the manipulation and analysis of data. Interactive exercises will be available throughout the workshop to practice applying Python and data analysis skills and will serve as the building blocks for a short, end-of-workshop project. A digital credential is provided upon the successful completion of this project. This workshop is meant for those with no prior experience or exposure to Python (or programming, for that matter), although all levels are welcome.
 
-Slides were made using the [**beamer**](https://ctan.org/pkg/beamer) format in [**Quarto**](https://quarto.org/), an open-source publishing system. You may see the 'behind the scenes' code for the slides by opening the `.qmd` files (either through Visual Studio (VS) Code or online via GitHub). This is also a good way to access the code displayed on each slide (tip: `CTRL + F` to search is useful here).
+Slides were made using the [**beamer**](https://ctan.org/pkg/beamer) format in [**Quarto**](https://quarto.org/), an open-source publishing system. You may see the 'behind the scenes' code for the slides by opening the `.qmd` files (either through Visual Studio (VS) Code or online via GitHub). This is also a good way to access the code displayed on each slide (tip: `CTRL + F` or `CMD + F` to search is useful here).
 
 [ ] **TODO: Put where relevant information in the repo is here (e.g., where to access slides)**
 
@@ -75,7 +75,7 @@ Common uses for AI include:
 
 - Debugging code (e.g., "Why won't this run?")
 - Searching through documentation 
-- Having it point you in the right direction (e.g., "How do I do *x* in Python?")
+- Having it point you in the right direction (e.g., "How do I do $x$ in Python?")
 
 Starting out, most problems encountered will be basic enough to handle through the familiar 'chat' interface. When problems span multiple files, tools such as [**ChatGPT Codex**](https://chatgpt.com/codex/) and [**Claude Code**](https://code.claude.com/docs/en/overview) are very useful. At the user's command, these tools are given access to the project directory and have the ability to modify code and create/remove files; however, many features are pay-walled (in the case of Claude Code, the entire thing is). *Both ChatGPT Codex and Claude Code may be integrated into VS Code as an 'extension'*.
 
@@ -85,7 +85,10 @@ Although we cover a vast amount of material in this workshop, we only skim the s
 
 - Sometimes, packages that you might want to install are not available through the Anaconda Navigator. I have included a guide as to how to install these in [`extras/pip-install.md`](extras/pip-install.md)
 
-[ ] **TODO: A possible sub-bullet with resources on how to use the terminal? Maybe include these in the pip-install file?**
+- Including the above bullet (on `pip install`), it is often helpful and/or necessary to use the terminal (or command prompt / PowerShell on Windows). A few resources on this include:
+    + *Master the basics of Conda environments in Python* by E.M. Ratamero from The Jackson Laboratory ([YouTube video](https://www.youtube.com/watch?v=1VVCd0eSkYc))
+    + *Absolute BEGINNER Guide to the Mac OS Terminal* by Percy Grunwald from TopTechSkills ([YouTube video](https://www.youtube.com/watch?v=aKRYQsKR46I))
+    + *Windows PowerShell [01] Introduction* by John Hammond ([YouTube video](https://www.youtube.com/watch?v=TUNNmVeyjW0))
 
 - **Dictionaries** were not explicitly touched upon in this workshop (though they will look familiar from the pandas section). These are variable types that contain "key-value" pairs, with values corresponding to their given key. A good resource on Python dictionaries is *Python dictionaries are easy 📙* by Bro Code ([YouTube video](https://www.youtube.com/watch?v=MZZSMaEAC2g))
 
@@ -95,7 +98,7 @@ Although we cover a vast amount of material in this workshop, we only skim the s
 
 - **Object-oriented programming (OOP)** and the use of **classes** in Python allow you to bundle related data and functionality. For example, a pandas `DataFrame` is a class that bundles both information on the data used (e.g., variable names, cell frequencies) together with functionality (e.g., `DataFrame.describe()` to get descriptive statistics). A good resource here is *Python Object Oriented Programming Full Course 🐍* by Bro Code ([YouTube video](https://www.youtube.com/watch?v=IbMDCwVm63M))
 
-For more on the packages we covered:
+For more on the packages we covered in this workshop:
 
 |     **Package**    | **Video** |
 | :----------------- | :-------- |
@@ -105,6 +108,9 @@ For more on the packages we covered:
 | statsmodels        |           |
 
 [ ] **TODO: Fill this out more**
+
+- Last, **Git/GitHub** offer a way to share your code and collaborate with others. You are reading a shared document on GitHub right now! A good beginner resource on using Git/GitHub is *Learn Git and GitHub in 1 Hour!* by Alex the Analyst ([YouTube video](https://www.youtube.com/watch?v=lLoJHifWTRw&t=345s))
+    + If this interests you, I (GK) recommend learning how to use the terminal as well (or command prompt / PowerShell on Windows; see above for resources) 
 
 ### Other:
 

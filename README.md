@@ -102,10 +102,10 @@ For more on the packages we covered in this workshop:
 
 |     **Package**    | **Video** |
 | :----------------- | :-------- |
-| numpy              |           |
-| pandas             | *Complete Python Pandas Data Science Tutorial! (2025 Updated Edition)* by Keith Galli ([YouTube](https://www.youtube.com/watch?v=2uvysYbKdjM))
-| matplotlib.pyplot  | *Learn Matplotlib in 30 Minutes - Python Matplotlib Tutorial* by Tech with Tim ([YouTube](https://www.youtube.com/watch?v=7Lc2AxiM17o))        
-| statsmodels        | *statsmodels* by Data Science for Everyone ([YouTube](https://youtube.com/playlist?list=PLlbbWgBRF8EePgK40-i7aGU2_ky1yujgL&si=C27xUwIBMtQThYIu))
+| numpy              | *NumPy Tutorial: For Physicists, Engineers, and Mathematicians* by Mr. P Solver ([YouTube](https://youtu.be/DcfYgePyedM)) |
+| pandas             | *Complete Python Pandas Data Science Tutorial! (2025 Updated Edition)* by Keith Galli ([YouTube](https://www.youtube.com/watch?v=2uvysYbKdjM)) |
+| matplotlib.pyplot  | *Learn Matplotlib in 30 Minutes - Python Matplotlib Tutorial* by Tech with Tim ([YouTube](https://www.youtube.com/watch?v=7Lc2AxiM17o)) |
+| statsmodels        | *statsmodels* by Data Science for Everyone ([YouTube](https://youtube.com/playlist?list=PLlbbWgBRF8EePgK40-i7aGU2_ky1yujgL&si=C27xUwIBMtQThYIu)) |
 
 - [**Data Science Essentials with Python**](https://www.netacad.com/courses/data-science-essentials-with-python?courseLang=en-US) (pandas & matplotlib) from Cisco Networking Academy is an online course that provides interactive exercises as well as additional datasets that you can use to independently practice your Python skills
 

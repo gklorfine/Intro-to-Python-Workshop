@@ -120,7 +120,7 @@ For more on the packages we covered in this workshop:
 
 - The logo for this workshop was created using **matplotlib**. The script is located in this repo at [`images/logo.py`](images/logo.py). There are a couple of video resources included as comments within this script--I (GK) referred to these videos when making the logo and thought they might be of use to some
 - [**pygame-ce**](https://pyga.me/docs/) for games
-    + See *Introduction to Python for Data Analysis: The Game* under [`fun/`](fun/)
+    + See *Introduction to Python for Data Analysis: The Game* under [`extras/fun/`](extras/fun/)
 
 ``` python
 from pyfiglet import Figlet

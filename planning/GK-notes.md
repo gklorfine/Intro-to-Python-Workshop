@@ -19,3 +19,21 @@
 - The first correlation scatterplot is not shown
 
 - Looks good otherwise!
+
+# General notes
+
+- I will have to practice+time things but I think:
+    + Day 1 (GK) can end with `for` loops
+    + Day 2 (GK) can start w/ importing packages, defining functions; end with pandas
+    + Day 3 (DL) starts with matplotlib.pyplot
+
+# Day 1 --- Initial housekeeping
+
+- Introduce selves
+- Briefly show repository
+- Show where to find final project, explain that this is meant to be done in parts after each session
+- Tell everyone that after each session they should spend a bit of time looking the slides over, copy pasting the code, and playing around with it
+- Take like 15 minutes max for installation issues before delving into content
+    + Bora can help out 1-on-1 in a breakout room or through Zoom DMs for people with issues taking longer than this
+- Stop at defining variables to see if people have issues printing `x` (verify installation)
+

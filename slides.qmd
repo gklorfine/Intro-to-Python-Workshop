@@ -48,11 +48,6 @@ jupyter: ws # GK: I need to make sure to change this once we finalize
 
 ![](images/condaWindows.png){fig-align="center"}
 
-## Setting Up a Conda Environment 
-- See the presenter's shared screen
-
-<!-- GK: Here we would just share screen and show how using the Navigator -->
-
 ## Visual Studio (VS) Code
 - Installation link: https://code.visualstudio.com/download
 - Integrated Development Environment (IDE)
@@ -64,6 +59,28 @@ jupyter: ws # GK: I need to make sure to change this once we finalize
 - Install the below extensions:
 
 ![](images/extensions.png){fig-align="center"}
+
+## Stop here!
+
+If you:
+
+1. Are able to open the **Anaconda Navigator**
+1. Have installed **VS Code and the listed extensions**
+
+You are ready for the workshop! We will cover next steps at the beginning of the first session.
+
+Else, please email either of us for help:
+
+- Gavin (gklorfin\@yorku.ca)
+- Bora (laze\@yorku.ca)
+
+
+
+
+## Setting Up a Conda Environment 
+- See the presenter's shared screen
+
+<!-- GK: Here we would just share screen and show how using the Navigator -->
 
 ## Visual Studio (VS) Code
 - To point VS Code to your new Conda environment:

@@ -30,6 +30,7 @@
 # Day 1 --- Initial housekeeping
 
 - Introduce selves
+- Start recording
 - Briefly show repository
 - Show where to find final project, explain that this is meant to be done in parts after each session
 - Tell everyone that after each session they should spend a bit of time looking the slides over, copy pasting the code, and playing around with it

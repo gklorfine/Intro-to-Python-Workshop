@@ -1077,12 +1077,12 @@ np.max(np.random.normal(loc=0, scale=1, size=100))
 ## pandas
 
 - For the analysis of spreadsheet-like data in Python
-- Somewhat similar to R if you have used that
-    - Introduces the data frame
+- Somewhat similar to **R** if you have used that
+    - Introduces the `DataFrame`
 
 ## pandas
 
-### Creating a Data Frame {.example}
+### Creating a `DataFrame` {.example}
 ```{python}
 #| label: pandas_df
 
@@ -1100,13 +1100,13 @@ df # To print
 - Data are commonly stored as `.csv` files
     + \textcolor{red}{\textbf{C}}omma \textcolor{red}{\textbf{s}}eparated \textcolor{red}{\textbf{v}}alues
 - These files have entries separated by commas, often including a first row of "header" entries
-- A `.csv` file of the pandas data frame from the previous slide (variable `df`) is shown below
+- A `.csv` file of the **pandas** `DataFrame` from the previous slide (variable `df`) is shown below
 
 ![](images/df-csv.png){fig-align="center" height="128px"}
 
 ## pandas
 
-- Continuing with the `df` data frame, the below shows how a `.csv` file is written
+- Continuing with the `df` `DataFrame`, the below shows how a `.csv` file is written
 
 ### Writing `.csv` Files {.example}
 ```{python}
@@ -1124,7 +1124,7 @@ Setting the `index` argument to `False` removes row indices (i.e., row 0, 1, 2, 
 
 ## pandas
 
-- We often need to do the reverse; namely, reading data from a `.csv` file into a pandas data frame
+- We often need to do the reverse; namely, reading data from a `.csv` file into a **pandas** `DataFrame`
 
 ### Reading `.csv` Files {.example}
 ```{python}
@@ -1137,7 +1137,7 @@ df_new
 ```
 
 ## pandas
-- pandas also has functions to read/write data from other file formats, such as from Microsoft Excel `.xlsx` files
+- **pandas** also has functions to read/write data from other file formats, such as from Microsoft Excel `.xlsx` files
 
 ### `.xlsx` Files {.example}
 ```{python}
@@ -1213,7 +1213,7 @@ df["Memes"]
 type(df["Memes"])
 ```
 
-- A variable of type `pandas.Series` is essentially a column of a pandas data frame
+- A variable of type `pandas.Series` is essentially a column of a **pandas** `DataFrame`
 
 ## pandas
 
@@ -1239,7 +1239,7 @@ df[0:2] # Row numbers 0 and 1
 
 ## pandas
 
-- You can also filter rows by indexing a data frame with a boolean expression involving the same data frame
+- You can also filter rows by indexing a `DataFrame` with a boolean expression involving the same `DataFrame`
 
 ### Filter Rows With Boolean Expressions {.example}
 ```{python}
@@ -1250,7 +1250,7 @@ df[df["Age"] == "old"]
 
 ## pandas
 
-- The result of the previous slide was also a data frame!
+- The result of the previous slide was also a `DataFrame`!
     + This means we can index it further by, say, taking the `"Memes"` column:
 
 ### Indexing Twice {.example}
@@ -1262,7 +1262,7 @@ df[df["Age"] == "old"]["Memes"]
 
 ## pandas
 
-- This also means that methods shown previously can be applied to these filtered data frames
+- This also means that methods shown previously can be applied to these filtered `DataFrame`s
 
 ### Describing Filtered Data {.example}
 ```{python}
@@ -1274,7 +1274,13 @@ df[df["Age"] == "old"].describe()
 ## pandas
 
 - We can also select rows and columns using the `loc` or `iloc` **attributes**
-    + These are like methods but use square `[]` brackets (instead of round brackets `()`)
+    + These are similar to methods but use square `[]` brackets (instead of round brackets `()`)
+
+::: {.callout-note}
+A brief note on terminology:
+- The distinction between *methods* and *attributes* is that an attribute gives access to information associated with a variable; whereas a method is a function that may act on/with the variable.
+    + E.g., `.loc` versus `.mean()`
+:::
 
 ### Selecting with `loc` and `iloc` {.example}
 ```{python}
@@ -1291,7 +1297,7 @@ df.iloc[1,0] # Row 1 of 0th column (Memes)
 
 ## pandas
 
-- Like **numpy**, we can use a colon (`:`) with `loc` and `iloc` to indicate "all rows" or "all columns":
+- Like **NumPy**, we can use a colon (`:`) with `loc` and `iloc` to indicate "all rows" or "all columns":
 
 ### Selecting All Rows with `loc` {.example}
 ```{python}

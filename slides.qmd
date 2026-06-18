@@ -74,9 +74,6 @@ Else, please email either of us for help:
 - Gavin (gklorfin\@yorku.ca)
 - Bora (laze\@yorku.ca)
 
-
-
-
 ## Setting Up a Conda Environment 
 - See the presenter's shared screen
 
@@ -912,7 +909,7 @@ print(array2d)
 print(type(array2d))
 ```
 
-## NumPy: 
+## NumPy
 
 ### To Check Attributes of a NumPy Variable {.example}
 ```{python}

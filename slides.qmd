@@ -764,8 +764,8 @@ print(f'pi = {m.pi:.3f}')
 
 ## Importing Packages
 
-- Some require installation. This is most easily (and safely) done through **anaconda**
-- Let's install the package **numpy**!
+- Some require installation. This is most easily (and safely) done through **Anaconda**
+- Let's install the package **NumPy**!
 
 <!-- GK: Share screen here and show how to add numpy to environment -->
 
@@ -783,6 +783,22 @@ print(np.random.normal(loc = 0, scale = 1, size = 3))
 ::: {.callout-note}
 - `loc` = $\mu$, `scale` = $\sigma$
 :::
+
+## Importing Packages
+
+- A brief aside:
+    + Let's say of all the functions in **NumPy**, you only care about `numpy.random.normal`
+
+### `from ... import ...` {.example}
+
+```{python}
+#| label: fromImport
+
+from numpy.random import normal
+
+# Same thing, but no `np.random` at the start
+normal(loc = 0, scale = 1, size = 3)
+```
 
 ## Defining Functions
 - Sometimes you repeat the same code over and over again
@@ -1039,15 +1055,15 @@ print(np.argmax(x))     # Position of maximum value
 np.max(np.random.normal(loc=0, scale=1, size=100))
 ```
 
-# Pandas
+# pandas
 
-## Pandas
+## pandas
 
 - For the analysis of spreadsheet-like data in Python
 - Somewhat similar to R if you have used that
     - Introduces the data frame
 
-## Pandas
+## pandas
 
 ### Creating a Data Frame {.example}
 ```{python}
@@ -1062,7 +1078,7 @@ df = pd.DataFrame({
 df # To print
 ```
 
-## Pandas
+## pandas
 
 - Data are commonly stored as `.csv` files
     + \textcolor{red}{\textbf{C}}omma \textcolor{red}{\textbf{s}}eparated \textcolor{red}{\textbf{v}}alues
@@ -1071,7 +1087,7 @@ df # To print
 
 ![](images/df-csv.png){fig-align="center" height="128px"}
 
-## Pandas
+## pandas
 
 - Continuing with the `df` data frame, the below shows how a `.csv` file is written
 
@@ -1089,7 +1105,7 @@ df.to_csv("pandas/df.csv", index = False)
 Setting the `index` argument to `False` removes row indices (i.e., row 0, 1, 2, ..., $n$) from being stored as a separate column
 :::
 
-## Pandas
+## pandas
 
 - We often need to do the reverse; namely, reading data from a `.csv` file into a pandas data frame
 
@@ -1103,8 +1119,8 @@ df_new = pd.read_csv("pandas/df.csv")
 df_new
 ```
 
-## Pandas
-- Pandas also has functions to read/write data from other file formats, such as from Microsoft Excel `.xlsx` files
+## pandas
+- pandas also has functions to read/write data from other file formats, such as from Microsoft Excel `.xlsx` files
 
 ### `.xlsx` Files {.example}
 ```{python}
@@ -1120,7 +1136,7 @@ excelDat.to_excel( # Write
 )
 ```
 
-## Pandas
+## pandas
 
 ### Inspecting Data {.example}
 ```{python}
@@ -1135,7 +1151,7 @@ df.head(2) # First 2 rows
 df.tail(2) # Last 2 rows
 ```
 
-## Pandas
+## pandas
 
 ### Inspecting Data {.example}
 ```{python}
@@ -1144,7 +1160,7 @@ df.tail(2) # Last 2 rows
 df.info()
 ```
 
-## Pandas
+## pandas
 
 ### Descriptives {.example}
 ```{python}
@@ -1153,7 +1169,7 @@ df.info()
 df.describe()
 ```
 
-## Pandas
+## pandas
 
 ### Grouping {.example}
 ```{python}
@@ -1162,7 +1178,7 @@ df.describe()
 df.groupby("Age").describe()
 ```
 
-## Pandas
+## pandas
 
 ### Selecting a Column {.example}
 ```{python}
@@ -1171,7 +1187,7 @@ df.groupby("Age").describe()
 df["Memes"]
 ```
 
-## Pandas
+## pandas
 
 ### A Note on Types
 ```{python}
@@ -1182,7 +1198,7 @@ type(df["Memes"])
 
 - A variable of type `pandas.Series` is essentially a column of a pandas data frame
 
-## Pandas
+## pandas
 
 - To select multiple columns, provide a list of column names as the index
 
@@ -1193,7 +1209,7 @@ type(df["Memes"])
 df[["Memes", "Age"]]
 ```
 
-## Pandas
+## pandas
 
 - A simple way to filter rows is by row number:
 
@@ -1204,7 +1220,7 @@ df[["Memes", "Age"]]
 df[0:2] # Row numbers 0 and 1
 ```
 
-## Pandas
+## pandas
 
 - You can also filter rows by indexing a data frame with a boolean expression involving the same data frame
 
@@ -1215,7 +1231,7 @@ df[0:2] # Row numbers 0 and 1
 df[df["Age"] == "old"]
 ```
 
-## Pandas
+## pandas
 
 - The result of the previous slide was also a data frame!
     + This means we can index it further by, say, taking the `"Memes"` column:
@@ -1227,7 +1243,7 @@ df[df["Age"] == "old"]
 df[df["Age"] == "old"]["Memes"]
 ```
 
-## Pandas
+## pandas
 
 - This also means that methods shown previously can be applied to these filtered data frames
 
@@ -1238,7 +1254,7 @@ df[df["Age"] == "old"]["Memes"]
 df[df["Age"] == "old"].describe()
 ```
 
-## Pandas
+## pandas
 
 - We can also select rows and columns using the `loc` or `iloc` **attributes**
     + These are like methods but use square `[]` brackets (instead of round brackets `()`)
@@ -1256,7 +1272,7 @@ df.loc["b", "Memes"] # Row b of Memes column
 df.iloc[1,0] # Row 1 of 0th column (Memes)
 ```
 
-## Pandas
+## pandas
 
 - Like **numpy**, we can use a colon (`:`) with `loc` and `iloc` to indicate "all rows" or "all columns":
 
@@ -1267,7 +1283,7 @@ df.iloc[1,0] # Row 1 of 0th column (Memes)
 df.loc[:, "Memes"] # All rows of Memes column
 ```
 
-## Pandas
+## pandas
 
 ### Selecting All Columns with `iloc` {.example}
 ```{python}
@@ -1281,7 +1297,7 @@ df.iloc[0] # All columns for 0th row (row 'a')
     + This is also true for `loc`
 :::
 
-## Pandas
+## pandas
 
 - If you would like to select multiple columns (or rows), but not all columns (or rows), pass a `list` to `loc` or `iloc`
 
@@ -1295,7 +1311,7 @@ df.loc[["a", "b"], ["Memes", "Age"]]
 
 - Same thing for `iloc`, but with row numbers instead of indices/names
 
-## Pandas
+## pandas
 
 - We can also use boolean expressions with `loc` (but not `iloc`):
 
@@ -1307,7 +1323,7 @@ df.loc[["a", "b"], ["Memes", "Age"]]
 df.loc[df["Age"] == "old", "Memes"] # Old memes!
 ```
 
-## Pandas
+## pandas
 
 - In these boolean expressions, we can use `&` for `and`, `|` for `or`, and `~` for `not`
     + We need these special operators as we are comparing entire columns as opposed to single values
@@ -1321,7 +1337,7 @@ df.loc[df["Age"] == "old", "Memes"] # Old memes!
 df.loc[(df["Age"] == "old") & (df["Rating"] > 7), :]
 ```
 
-## Pandas
+## pandas
 
 ```{python}
 #| label: display_df
@@ -1334,7 +1350,7 @@ df
 
 - I want 2 different answers! (Hint: `loc` and `df[?]`)
 
-## Pandas
+## pandas
 
 ### How might I index rows with rating greater than or equal to seven?
 
@@ -1345,7 +1361,7 @@ df[df["Rating"] >= 7]
 df.loc[df["Rating"] >= 7, :] # The `, :` is optional
 ```
 
-## Pandas
+## pandas
 
 - To show a peculiarity of pandas, I first set the index of our data frame `df` (e.g., the row names `"a"`, `"b"`, ...) back to integers (the default)
 
@@ -1357,7 +1373,7 @@ df.index = [0,1,2,3]
 df
 ```
 
-## Pandas
+## pandas
 
 - When using `loc` on a data frame with a numeric index, the format of a slice is `inclusive:inclusive`
 
@@ -1368,7 +1384,7 @@ df
 df.loc[0:1] # inclusive:inclusive
 ```
 
-## Pandas
+## pandas
 
 - For reference, here is the same line but using `iloc` instead of `loc`:
 
@@ -1379,7 +1395,7 @@ df.loc[0:1] # inclusive:inclusive
 df.iloc[0:1] # inclusive:exclusive
 ```
 
-## Pandas
+## pandas
 
 - We can also add columns to our data frame. Here I add a column `r10`: the `Rating` out of `10`
 
@@ -1391,7 +1407,7 @@ df["r10"] = df["Rating"] / 10
 df
 ```
 
-## Pandas
+## pandas
 
 - We might also want to sort these entries by `Rating`
 
@@ -1405,7 +1421,7 @@ df
 
 - Argument `inplace = True` modifies `df` directly instead of returning a new one
 
-## Pandas
+## pandas
 
 - We can also sort by `Age` first and then `Rating`
     + Strings are sorted \underline{alphabetically}
@@ -1418,7 +1434,7 @@ df.sort_values(by = ["Age", "Rating"], inplace = True)
 df
 ```
 
-## Pandas
+## pandas
 
 - Instead of using the `describe()` method, you may want only a select few (or one) statistic
 
@@ -1435,7 +1451,7 @@ df["Rating"].mean()
 df["Rating"].std()
 ```
 
-## Pandas
+## pandas
 
 ### Getting Specific Descriptive Statistics {.example}
 ```{python}
@@ -1445,13 +1461,13 @@ df["Rating"].agg(['mean', 'std']) # agg = aggregate
 ```
 
 
-# Matplotlib.pyplot
+# matplotlib.pyplot
 
-## Matplotlib.pyplot
-- **Matplotlib.pyplot** is a package for visualizing data in Python
+## matplotlib.pyplot
+- **matplotlib.pyplot** is a package for visualizing data in Python
 - Fun fact: If you have asked ChatGPT for a graph, you likely received one that was made using this package
 
-## Matplotlib.pyplot
+## matplotlib.pyplot
 
 ### Basic Histogram {.example}
 
@@ -1467,7 +1483,7 @@ plt.hist(x)
 plt.show()
 ```
 
-## Matplotlib.pyplot
+## matplotlib.pyplot
 
 ### Basic Histogram {.example}
 ```{python}
@@ -1484,7 +1500,7 @@ plt.hist(x)
 plt.show()
 ```
 
-## Matplotlib.pyplot
+## matplotlib.pyplot
 
 - A few ways to modify the histogram are illustrated below
 
@@ -1502,7 +1518,7 @@ plt.hist(
 plt.show()
 ```
 
-## Matplotlib.pyplot
+## matplotlib.pyplot
 
 ### Modifying the Plot {.example}
 ```{python}
@@ -1522,7 +1538,7 @@ plt.hist(
 plt.show()
 ```
 
-## Matplotlib.pyplot
+## matplotlib.pyplot
 
 ### More Ways to Modify {.example}
 
@@ -1542,7 +1558,7 @@ plt.ylabel("Count")
 plt.show()
 ```
 
-## Matplotlib.pyplot
+## matplotlib.pyplot
 
 ### More Ways to Modify {.example}
 
@@ -1565,7 +1581,7 @@ plt.show()
 ```
 
 
-## Matplotlib.pyplot
+## matplotlib.pyplot
 
 - The below is how data was generated for subsequent scatterplot examples
 
@@ -1578,7 +1594,7 @@ nums_x = np.arange(0, 10, 1) # Nums 0 to 9
 nums_y = nums_x + errors # y = x + errors
 ```
 
-## Matplotlib.pyplot
+## matplotlib.pyplot
 
 ### Scatterplot {.example}
 ```{python}
@@ -1598,7 +1614,8 @@ figure(figsize=(2.5, 2.5), dpi=200)
 plt.plot(nums_x, nums_y, 'ro')
 plt.show()                      
 ```
-# Matplotlib.pyplot
+
+## matplotlib.pyplot
 
 - You can add another plot layer by calling another plotting function before `plt.show()`
 - This is useful for adding:
@@ -1616,7 +1633,7 @@ plt.plot(nums_x, nums_x, 'k-')       # Reference line: black solid line
 plt.show()
 ```
 
-## Matplotlib.pyplot
+## matplotlib.pyplot
 
 ### Adding Labels and a Legend {.example}
 ```{python}

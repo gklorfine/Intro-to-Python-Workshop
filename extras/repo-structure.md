@@ -8,6 +8,7 @@ Below is a **directory tree** of this repository:
 
 ``` text
 .
+├── .gitignore
 ├── day1-slides.pdf
 ├── day1-slides.qmd
 ├── day2-slides.pdf

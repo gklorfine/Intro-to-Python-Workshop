@@ -119,12 +119,12 @@ For more on the packages we covered in this workshop:
 
 - [**Data Science Essentials with Python**](https://www.netacad.com/courses/data-science-essentials-with-python?courseLang=en-US) (pandas & matplotlib) from Cisco Networking Academy is an online course that provides interactive exercises as well as additional datasets that you can use to independently practice your Python skills
 
-- Last, **Git/GitHub** offer a way to share your code and collaborate with others. You are reading a shared document on GitHub right now! A good beginner resource on using Git/GitHub is *Learn Git and GitHub in 1 Hour!* by Alex the Analyst ([YouTube video](https://www.youtube.com/watch?v=lLoJHifWTRw&t=345s))
-    + If this interests you, I (GK) recommend learning how to use the terminal as well (or command prompt / PowerShell on Windows; see above for resources) 
+- **Git/GitHub** offer a way to share your code and collaborate with others. You are reading a shared document on GitHub right now! A good beginner resource on using Git/GitHub is *Learn Git and GitHub in 1 Hour!* by Alex the Analyst ([YouTube video](https://www.youtube.com/watch?v=lLoJHifWTRw&t=345s))
+    + If this interests you, I (GK) recommend learning how to use the terminal as well (or command prompt / PowerShell on Windows; see above for resources)
 
-### Other:
+- [**PsychoPy**](https://psychopy.org/) can be useful for desigining psychological/visual experiments (installing this as a package is finnicky; it is best used as a standalone development environment)
 
-- [**PsychoPy**](https://psychopy.org/) for desigining psychological experiments (installing this as a package is finnicky; best used as a standalone development environment)
+Last, it should be noted that practice is key to learning any of this material. A rule of thumb is to spend two-thirds of your time learning through coding and the remaining third of your time learning through other methods (e.g., watching videos). If you are struggling to find or come up with exercises, I (GK) recommend asking an AI tool to generate some for you.
 
 ### Fun:
 

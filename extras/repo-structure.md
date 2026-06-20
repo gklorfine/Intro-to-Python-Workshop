@@ -27,7 +27,6 @@ Below is a **directory tree** of this repository:
 │   │   │   └── win-sound.wav
 │   │   ├── game.py
 │   │   └── README.md
-|   ├── day3-exercises.ipynb   
 │   ├── pip-install.md
 │   └── repo-structure.md
 ├── images
@@ -38,6 +37,13 @@ Below is a **directory tree** of this repository:
 │   ├── logo.png
 │   └── logo.py
 ├── LICENSE
+├── optional-exercises
+│   ├── solutions
+│   │   ├── day1-solutions.ipynb
+│   │   └── day2-solutions.ipynb
+│   ├── day1-exercises.ipynb
+│   ├── day2-exercises.ipynb
+│   └── day3-exercises.ipynb
 ├── pandas
 │   └── df.csv
 ├── project
@@ -71,6 +77,19 @@ Starting at the **root** of the repository (i.e., the top-level/outermost folder
 - Contains a dataset created during the day 2 slideshow ([`df.csv`](../pandas/df.csv))
     + See [`day2-slides.pdf`](../day2-slides.pdf) for context
 
+### [`optional-exercises/`](../optional-exercises)
+
+- Contains optional exercises for each day's content that should be used for practice. If we have time at the end of a given session, we can go over some of these together.
+    + [`day1-exercises.ipynb`](../optional-exercises/day1-exercises.ipynb)
+    + [`day2-exercises.ipynb`](../optional-exercises/day2-exercises.ipynb)
+    + [`day3-exercises.ipynb`](../optional-exercises/day3-exercises.ipynb)
+
+#### [`optional-exercises/solutions/`](../optional-exercises/solutions)
+
+- Contains solutions to the optional exercises
+    + [`day1-solutions.ipynb`](../optional-exercises/solutions/day1-solutions.ipynb)
+    + [`day2-solutions.ipynb`](../optional-exercises/solutions/day2-solutions.ipynb)
+
 ### [`images/`](../images)
 
 - Contains images used in the slides (e.g., [`df-csv.png`](../images/df-csv.png))
@@ -83,7 +102,6 @@ Starting at the **root** of the repository (i.e., the top-level/outermost folder
 
 - The folder you are in now!
 - Contains supplementary materials/resources for the workshop and beyond
-    + [`day3-exercises.ipynb`](../extras/day3-exercises.ipynb) contains (optional) exercises for day 3 of the workshop. They will be done during the session if time permits
     + [`pip-install.md`](../extras/pip-install.md) contains instructions for installing Python packages using `pip` (a package manager for Python)
     + This file!
 

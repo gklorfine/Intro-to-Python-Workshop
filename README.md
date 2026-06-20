@@ -50,13 +50,15 @@ The slides (in both `.pdf` and `.qmd` format) can be accessed through the below 
 
 The short project can be accessed through the [`project/`](project/) folder. You may also click here: [`itp-project.ipynb`](project/itp-project.ipynb). All instructions are contained within.
 
-You will also see other folders and files in this repository. These are not of primary concern, so I (GK) have provided information in a separate document for those that are curious ([`extras/repo-structure.md`](extras/repo-structure.md)).
+Optional exercises for each day's content (along with solutions) can be found in the [`optional-exercises/`](optional-exercises/) folder. It is recommended that you take a look at these, as a lot of learning how to program is just practice. If we have time at the end of a given session, we can go over some of these exercises together.
+
+You will also find other folders and files in this repository. These are not of primary concern, so I (GK) have provided information in a separate document for those that are curious ([`extras/repo-structure.md`](extras/repo-structure.md)).
 
 ## Resources
 
 ### Documentation:
 
-Once you have been "shown the ropes" (i.e., after the workshop!) developer documentation will be your best friend. It is essentially an instruction manual provided by developers on how to use their software (so there is a Python one, one for each package, for VS Code, Anaconda, etc.).
+Once you have been "shown the ropes" (i.e., after this workshop!) developer documentation will be your best friend. It is essentially an instruction manual provided by developers on how to use their software (so there is a Python one, one for each package, for VS Code, Anaconda, etc.).
 
 - "How To Use Developer Documentation" by Codecademy ([YouTube video](https://www.youtube.com/watch?v=s1PLS3SQHQ0))
 

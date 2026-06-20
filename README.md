@@ -28,23 +28,33 @@ York University, Canada <br>
 
 <br>
 
-<i><strong>WORKSHOP IN PROGRESS | WORKSHOP IN PROGRESS | WORKSHOP IN PROGRESS <br> WORKSHOP IN PROGRESS | WORKSHOP IN PROGRESS | WORKSHOP IN PROGRESS</i></strong>
-
 *Attendees are encouraged to read this entire document, as relevant information and resources are interspersed throughout. We also encourage attendees to look over the slides after each day, due to the large amount of material covered.*
 
 <!-- GK: After the workshop, we could include a quote (or a few) from reviews here -->
 
 This workshop takes place June 26, 27, and 28 from 11:30AM to 2:30PM over Zoom (the link was provided to attendees over email). Tickets for this workshop were sold out (26/25 spots filled)! After the third session, a link to a feedback form will be emailed to attendees (please fill this out!).
 
-Starting with the installation of Python and relevant packages, this workshop guides attendees through basic programming structures/syntax, culminating in the manipulation and analysis of data. Interactive exercises will be available throughout the workshop to practice applying Python and data analysis skills and will serve as the building blocks for a short, end-of-workshop project. A digital credential is provided upon the successful completion of this project. This workshop is meant for those with no prior experience or exposure to Python (or programming, for that matter), although all levels are welcome.
+Starting with the installation of Python and relevant packages, this workshop guides attendees through basic programming structures/syntax, culminating in the manipulation and analysis of data. Interactive exercises will be available throughout the workshop to practice applying Python and data analysis skills and will serve as the building blocks for a short project. A digital credential is provided upon the successful completion of this project. This workshop is meant for those with no prior experience or exposure to Python (or programming, for that matter), although all levels are welcome.
 
 Slides were made using the [**beamer**](https://ctan.org/pkg/beamer) format in [**Quarto**](https://quarto.org/), an open-source publishing system. You may see the 'behind the scenes' code for the slides by opening the `.qmd` files (either through Visual Studio (VS) Code or online via GitHub). This is also a good way to access the code displayed on each slide (tip: `CTRL + F` or `CMD + F` to search is useful here).
 
-[ ] **TODO: Put where relevant information in the repo is here (e.g., where to access slides)**
+The slides (in both `.pdf` and `.qmd` format) can be accessed through the below table:
+
+| Day | Content | Slides |
+| --: | :------ | :----- |
+| 1 | Foundations (Python Basics) | [[`.pdf`]](/day1-slides.pdf), [[`.qmd`]](/day1-slides.qmd) |
+| 2 | Extensions (**NumPy** and **pandas**) | [[`.pdf`]](/day2-slides.pdf), [[`.qmd`]](/day2-slides.qmd) |
+| 3 | Applications (**matplotlib.pyplot** and **statsmodels**) | [[`.pdf`]](/day3-slides.pdf), [[`.qmd`]](/day3-slides.qmd) |
+
+The short project can be accessed through the [`project/`](project/) folder. You may also click here: [`itp-project.ipynb`](project/itp-project.ipynb). All instructions are contained within.
+
+You will also see other folders and files in this repository. These are not of primary concern, so I (GK) have provided information in a separate document for those that are curious ([`extras/repo-structure.md`](extras/repo-structure.md)).
 
 ## Resources
 
 ### Documentation:
+
+Once you have been "shown the ropes" (i.e., after the workshop!) developer documentation will be your best friend. It is essentially an instruction manual provided by developers on how to use their software (so there is a Python one, one for each package, for VS Code, Anaconda, etc.).
 
 - "How To Use Developer Documentation" by Codecademy ([YouTube video](https://www.youtube.com/watch?v=s1PLS3SQHQ0))
 

@@ -27,7 +27,9 @@ Below is a **directory tree** of this repository:
 │   │   │   └── win-sound.wav
 │   │   ├── game.py
 │   │   └── README.md
-│   └── pip-install.md
+|   ├── day3-exercises.ipynb   
+│   ├── pip-install.md
+│   └── repo-structure.md
 ├── images
 │   ├── condaMac.png
 │   ├── condaWindows.png
@@ -39,7 +41,8 @@ Below is a **directory tree** of this repository:
 ├── pandas
 │   └── df.csv
 ├── project
-│   └── itp-project.ipynb
+│   ├── itp-project.ipynb
+|   └── stroke-data.csv
 └── README.md
 ```
 
@@ -80,6 +83,7 @@ Starting at the **root** of the repository (i.e., the top-level/outermost folder
 
 - The folder you are in now!
 - Contains supplementary materials/resources for the workshop and beyond
+    + [`day3-exercises.ipynb`](../extras/day3-exercises.ipynb) contains (optional) exercises for day 3 of the workshop. They will be done during the session if time permits
     + [`pip-install.md`](../extras/pip-install.md) contains instructions for installing Python packages using `pip` (a package manager for Python)
     + This file!
 

@@ -271,7 +271,7 @@ from statsmodels.stats.weightstats import ttest_ind
 ### General Workflow
 
 1. State the research question
-1. Identify the variable types and study design
+1. Identify the level of measurements and study design
 1. Summarize and visualize the data
 1. Run the appropriate test
 1. Interpret the estimate, confidence interval, and $p$-value
@@ -317,7 +317,7 @@ print(df.shape)    # (number of rows, number of columns)
 
 ## statsmodels
 
-### Independent-Samples $t$-Test
+### Independent-Samples $t$-test
 
 - Used to compare the means of **two independent groups**
 - Do not use this test if the same participants appear in both groups
@@ -336,9 +336,7 @@ $$
 
 ## statsmodels
 
-### Independent-Samples $t$-Test
-
-#### Variable Types
+### Independent-Samples $t$-test: Level of Measurement
 
 - `group`: categorical (nominal), two independent levels — grouping variable
     - Study design: independent (between-subjects) groups
@@ -346,25 +344,33 @@ $$
 
 ## statsmodels
 
-### Independent-Samples $t$-Test
-
-#### Inspecting the Data {.example}
+### Independent-Samples $t$-test: Inspecting the Data {.example}
 ```{python}
 #| label: sm_summary_image_helper
 #| echo: false
 #| output: false
 
-def summary_table_image(table, width = 5.8, height = 1.8, fontsize = 5):
-    fig, ax = plt.subplots(figsize = (width, height), dpi = 220)
-    ax.text(
-        0.01, 0.98, str(table),
+def summary_table_image(table, fontsize = 11, padding = 0.15, dpi = 220):
+    fig = plt.figure(dpi = dpi)
+    ax = fig.add_axes([0, 0, 1, 1]) # axes fill the whole figure, no dead margins
+    ax.axis("off")
+    text = ax.text(
+        0.5, 0.5, str(table),
         family = "monospace",
         fontsize = fontsize,
-        va = "top",
-        ha = "left",
+        va = "center",
+        ha = "center",
         transform = ax.transAxes
     )
-    ax.axis("off")
+
+    # Size the figure to tightly fit the rendered text, so the table
+    # fills the image instead of leaving it small in a sea of white space
+    fig.canvas.draw()
+    bbox = text.get_window_extent(fig.canvas.get_renderer())
+    fig.set_size_inches(
+        bbox.width / dpi + padding * 2,
+        bbox.height / dpi + padding * 2
+    )
     plt.show()
 ```
 
@@ -379,7 +385,7 @@ print(df.groupby("group")["score"].describe().round(2))
 #| echo: false
 #| fig-align: center
 
-summary_table_image(df.groupby("group")["score"].describe().round(2), height = 0.9, fontsize = 6)
+summary_table_image(df.groupby("group")["score"].describe().round(2))
 ```
 
 - Always re-check the data immediately before running a test
@@ -407,9 +413,7 @@ treatment = df.loc[
 
 ## statsmodels
 
-### Independent-Samples $t$-Test
-
-#### The `usevar` Argument {.example}
+### Independent-Samples $t$-test: The `usevar` Argument {.example}
 ```{python}
 #| label: sm_ttest_structure
 #| eval: false
@@ -428,18 +432,14 @@ ttest_ind(
 
 ## statsmodels
 
-### Independent-Samples $t$-Test
-
-#### The `usevar` Argument, continued
+### Independent-Samples $t$-test: The `usevar` Argument
 
 - Use `alternative = "two-sided"` when either group could have the larger mean
 - Use `value = 0` when the null hypothesis is no mean difference
 
 ## statsmodels
 
-### Independent-Samples $t$-Test
-
-#### Running the Test {.example}
+### Independent-Samples $t$-test: Running the Test {.example}
 ```{python}
 #| label: sm_ttest_run
 
@@ -457,27 +457,23 @@ welch_result = ttest_ind(
 
 ## statsmodels
 
-### Independent-Samples $t$-Test
+### Independent-Samples $t$-test: Results
 
-- `ttest_ind()` returns three values:
-    1. $t$-statistic
-    1. $p$-value
-    1. degrees of freedom
+- `ttest_ind()` returns three values: the $t$-statistic, the $p$-value, and the degrees of freedom.
 
-#### Results {.example}
 ```{python}
 #| label: sm_ttest_unpack
-#| eval: false
 print(pool_result)
 print(welch_result)
 ```
 ```{python}
 #| label: sm_ttest_index
 
-# You can also index into these results:
-print(f"{pool_result[0]}, {pool_result[1]}, {pool_result[2]}") 
-print(f"{welch_result[0]}, {welch_result[1]}, {welch_result[2]}") 
-# prints t-statistic, p-value, degrees of freedom
+# You can also index these results:
+print(f"{pool_result[0]}," 
+f"{pool_result[1]}, {pool_result[2]}") 
+print(f"{welch_result[0]}," 
+f"{welch_result[1]}, {welch_result[2]}") 
 ```
 
 ## statsmodels
@@ -494,11 +490,6 @@ print(f"{welch_result[0]}, {welch_result[1]}, {welch_result[2]}")
 
 ## statsmodels
 
-### Mean Difference
-
-- The $t$-test output should be interpreted alongside the observed group difference
-- The mean difference itself does not depend on the variance assumption, so it is the same for both versions
-
 ### Calculating the Mean Difference {.example}
 ```{python}
 #| label: sm_mean_difference
@@ -509,6 +500,9 @@ print(f"Treatment mean: {treatment.mean():.2f}")
 print(f"Control mean: {control.mean():.2f}")
 print(f"Mean difference: {mean_difference:.2f}")
 ```
+
+- The $t$-test output should be interpreted alongside the observed group difference
+- The mean difference itself does not depend on the variance assumption, so it is the same for both versions
 
 ## statsmodels
 
@@ -559,9 +553,7 @@ print(
 
 ## statsmodels
 
-### Correlation
-
-#### Variable Types
+### Correlation: Level of Measurement
 
 - `study_hours`: continuous (interval/ratio)
 - `score`: continuous (interval/ratio)
@@ -630,9 +622,7 @@ print(f"r = {correlation:.2f}")
 
 ## statsmodels
 
-### Correlation
-
-#### Running the Test
+### Correlation: Running the Test
 
 - `.corr()` gives the **estimate** ($r$) of the linear relationship, but not a $p$-value or confidence interval on its own
 - In **simple linear regression** with one predictor, the slope's significance test is mathematically equivalent to testing whether $r$ differs from zero
@@ -657,9 +647,7 @@ $$
 
 ## statsmodels
 
-### Simple Linear Regression
-
-#### Variable Types
+### Simple Linear Regression: Level of Measurement
 
 - `study_hours`: continuous (interval/ratio) — predictor
 - `score`: continuous (interval/ratio) — outcome
@@ -667,9 +655,7 @@ $$
 
 ## statsmodels
 
-### Simple Linear Regression
-
-#### Inspecting the Data {.example}
+### Simple Linear Regression: Inspecting the Data {.example}
 ```{python}
 #| label: sm_regression_inspect
 #| output: false
@@ -684,9 +670,7 @@ plt.show()
 
 ## statsmodels
 
-### Simple Linear Regression
-
-#### Inspecting the Data {.example}
+### Simple Linear Regression: Inspecting the Data {.example}
 ```{python}
 #| label: sm_regression_inspect_show
 #| echo: false
@@ -701,9 +685,7 @@ plt.show()
 
 ## statsmodels
 
-### Formula Notation
-
-#### Formula Structure {.example}
+### Formula Notation: Formula Structure {.example}
 ```{python}
 #| label: sm_formula_structure
 #| eval: false
@@ -718,9 +700,7 @@ plt.show()
 
 ## statsmodels
 
-### `smf.ols()`
-
-#### Creating a Model {.example}
+### Creating a Model with `smf.ols()` {.example}
 ```{python}
 #| label: sm_ols_create
 
@@ -737,9 +717,7 @@ print(type(model_definition))
 
 ## statsmodels
 
-### `.fit()`
-
-#### Fitting a Model {.example}
+### Fitting a Model with `.fit()` {.example}
 ```{python}
 #| label: sm_ols_fit
 #| eval: false
@@ -754,9 +732,7 @@ print(type(model))
 
 ## statsmodels
 
-### Method Chaining
-
-#### Defining and Fitting in One Step {.example}
+### Method Chaining: Defining and Fitting in One Step {.example}
 ```{python}
 #| label: sm_ols_one_step
 
@@ -770,9 +746,7 @@ model = smf.ols(
 
 ## statsmodels
 
-### `.params`
-
-#### Model Parameters {.example}
+### Model Parameters with `.params` {.example}
 ```{python}
 #| label: sm_model_params
 
@@ -800,9 +774,7 @@ print(f"Slope: {slope:.2f}")
 
 ## statsmodels
 
-### `.pvalues`
-
-#### Testing the Slope {.example}
+### Testing the Slope with `.pvalues` {.example}
 ```{python}
 #| label: sm_model_pvalues
 
@@ -819,9 +791,7 @@ $$
 
 ## statsmodels
 
-### `.conf_int()`
-
-#### Confidence Intervals {.example}
+### Confidence Intervals with `.conf.int()` {.example}
 ```{python}
 #| label: sm_model_ci
 
@@ -835,9 +805,7 @@ print(f"Upper: {slope_ci[1]:.2f}")
 
 ## statsmodels
 
-### `.summary().tables[0]`
-
-#### Model Overview {.example}
+### Model Overview: `.summary().tables[0]` {.example}
 ```{python}
 #| label: sm_summary_table0_code
 #| output: false
@@ -851,23 +819,15 @@ print(summary.tables[0])
 #| echo: false
 #| fig-align: center
 
-summary_table_image(summary.tables[0], height = 2.35, fontsize = 4.7)
+summary_table_image(summary.tables[0], fontsize = 9.5)
 ```
-
-## statsmodels
-
-### `.summary().tables[0]`
-
-#### Model Overview, continued
 
 - Table 0 summarizes the model setup and overall fit
 - Useful for checking the outcome, sample size, $R^2$, and model type
 
 ## statsmodels
 
-### `.summary().tables[1]`
-
-#### Coefficient Table {.example}
+### Model Overview: `.summary().tables[1]` {.example}
 ```{python}
 #| label: sm_summary_table1_code
 #| output: false
@@ -880,7 +840,7 @@ print(summary.tables[1])
 #| echo: false
 #| fig-align: center
 
-summary_table_image(summary.tables[1], height = 1.25, fontsize = 5.2)
+summary_table_image(summary.tables[1])
 ```
 
 - Table 1 gives the estimates for each model term
@@ -888,9 +848,7 @@ summary_table_image(summary.tables[1], height = 1.25, fontsize = 5.2)
 
 ## statsmodels
 
-### `.summary().tables[2]`
-
-#### Diagnostics Table {.example}
+### Model Overview: `.summary().tables[2]` {.example}
 ```{python}
 #| label: sm_summary_table2_code
 #| output: false
@@ -903,7 +861,7 @@ print(summary.tables[2])
 #| echo: false
 #| fig-align: center
 
-summary_table_image(summary.tables[2], height = 1.35, fontsize = 5)
+summary_table_image(summary.tables[2])
 ```
 
 - Table 2 contains diagnostic and assumption-related information
@@ -911,13 +869,12 @@ summary_table_image(summary.tables[2], height = 1.35, fontsize = 5)
 
 ## statsmodels
 
-### `.rsquared`
+### `.rsquared` {.example}
 
 - $R^2$ is the proportion of outcome variance described by the fitted model
 - It ranges from 0 to 1
 - A larger $R^2$ does not prove that the model is correct or causal
 
-#### $R^2$ Attribute {.example}
 ```{python}
 #| label: sm_rsquared
 
@@ -926,9 +883,7 @@ print(f"$R^2$: {model.rsquared:.3f}")
 
 ## statsmodels
 
-### `.predict()`
-
-#### Predicted Outcomes {.example}
+### Predicted Outcomes with `.predict()` {.example}
 ```{python}
 #| label: sm_predict
 
@@ -945,9 +900,7 @@ for i in range(3):
 
 ## statsmodels
 
-### Plotting Model Predictions
-
-#### Observed and Predicted Values {.example}
+### Plotting Model Predictions: Observed and Predicted Values {.example}
 ```{python}
 #| label: sm_plot_line
 #| output: false
@@ -985,9 +938,7 @@ plt.show()
 
 ## statsmodels
 
-### Reporting Regression Results
-
-#### Formatting the Result {.example}
+### Reporting Regression Results: Formatting the Result {.example}
 ```{python}
 #| label: sm_regression_report
 
@@ -1020,9 +971,7 @@ $$
 
 ## statsmodels
 
-### Multiple Regression
-
-#### Variable Types
+### Multiple Regression: Level of Measurement
 
 - `study_hours`: continuous (interval/ratio) — predictor
 - `group`: categorical (nominal), two levels — predictor (dummy-coded)
@@ -1030,9 +979,7 @@ $$
 
 ## statsmodels
 
-### Multiple Regression
-
-#### Inspecting the Data {.example}
+### Multiple Regression: Inspecting the Data {.example}
 ```{python}
 #| label: sm_multiple_inspect
 #| output: false
@@ -1055,9 +1002,7 @@ plt.show()
 
 ## statsmodels
 
-### Multiple Regression
-
-#### Inspecting the Data {.example}
+### Multiple Regression: Inspecting the Data {.example}
 ```{python}
 #| label: sm_multiple_inspect_show
 #| echo: false
@@ -1083,9 +1028,7 @@ plt.show()
 
 ## statsmodels
 
-### Multiple Regression
-
-#### Formula Notation {.example}
+### Multiple Regression: Formula Notation {.example}
 ```{python}
 #| label: sm_multiple_formula
 #| eval: false
@@ -1103,9 +1046,7 @@ plt.show()
 
 ## statsmodels
 
-### Multiple Regression
-
-#### Running the Test {.example}
+### Multiple Regression: Running the Test {.example}
 ```{python}
 #| label: sm_multiple_fit
 
@@ -1122,9 +1063,7 @@ interaction_model = smf.ols(
 
 ## statsmodels
 
-### Multiple Regression
-
-#### Interpreting the Results: Main Effects {.example}
+### Multiple Regression: Interpreting the Results (Main Effects) {.example}
 ```{python}
 #| label: sm_multiple_report_main_show
 #| eval: false
@@ -1148,17 +1087,13 @@ for term in main_effects_model.params.index:
 
 ## statsmodels
 
-### Multiple Regression
-
-#### Interpreting the Results: Main Effects, continued
+### Multiple Regression: Interpreting the Results: (Main Effects)
 
 - Each coefficient is interpreted *holding the other predictor constant*
 
 ## statsmodels
 
-### Multiple Regression
-
-#### Interpreting the Results: With Interaction {.example}
+### Multiple Regression: Interpreting the Results (Interaction Effects) {.example}
 ```{python}
 #| label: sm_multiple_report_interaction_show
 #| eval: false
@@ -1182,9 +1117,7 @@ for term in interaction_model.params.index:
 
 ## statsmodels
 
-### Multiple Regression
-
-#### Interpreting the Results: With Interaction, continued
+### Multiple Regression: Interpreting the Results (Interaction Effects)
 
 - Switching `+` to `*` added exactly one new term: `study_hours:group[T.treatment]`
 - It tests whether the `study_hours` slope differs between `control` and `treatment`
@@ -1192,9 +1125,7 @@ for term in interaction_model.params.index:
 
 ## statsmodels
 
-### Comparing the Two Models
-
-#### Running the Test {.example}
+### Comparing the Two Models: Running the Test {.example}
 ```{python}
 #| label: sm_anova_compare
 
@@ -1208,9 +1139,7 @@ print(comparison_table)
 
 ## statsmodels
 
-### Comparing the Two Models
-
-#### Interpreting the Results
+### Comparing the Two Models: Interpreting the Results
 
 - Tests whether adding the interaction explains significantly more variance in `score` than the main-effects-only model
 - Use this $p$-value, not the individual interaction term's $p$-value, to judge whether the interaction belongs in the model

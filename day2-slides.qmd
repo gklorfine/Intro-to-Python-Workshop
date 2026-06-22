@@ -199,7 +199,7 @@ print(array2d.dtype)    # Type of elements
 - Generally, numpy type = type learned before + memory (in bits)
 
 ::: {.callout-note}
-- The `u` in `uint8` stands for "unsigned," meaning that the variable can only store positive values
+- The `u` in `uint8` stands for "unsigned," meaning that the variable can only store positive values and zero.
 :::
 
 ## NumPy
@@ -286,7 +286,6 @@ print(x[2,:])   # Row 2 (zero-based), all columns
 ```{python}
 #| label: indexCont
 
-x = np.random.normal(0, 10, size=(3,3))
 print(x, "\n")
 
 print(x[2, 0:2])    # Row 2, columns 0 and 1
@@ -539,12 +538,6 @@ df[df["Age"] == "old"].describe()
 - We can also select rows and columns using the `loc` or `iloc` **attributes**
     + These are similar to methods but use square `[]` brackets (instead of round brackets `()`)
 
-::: {.callout-note}
-A brief note on terminology:
-- The distinction between *methods* and *attributes* is that an attribute gives access to information associated with a variable; whereas a method is a function that may act on/with the variable.
-    + E.g., `.loc` versus `.mean()`
-:::
-
 ### Selecting with `loc` and `iloc` {.example}
 ```{python}
 #| label: locSelect1
@@ -557,6 +550,14 @@ df.loc["b", "Memes"] # Row b of Memes column
 
 df.iloc[1,0] # Row 1 of 0th column (Memes)
 ```
+
+## pandas
+
+::: {.callout-note}
+A brief note on terminology:
+- The distinction between *methods* and *attributes* is that an attribute gives access to information associated with a variable; whereas a method is a function that may act on/with the variable.
+    + E.g., `.loc` versus `.mean()`
+:::
 
 ## pandas
 

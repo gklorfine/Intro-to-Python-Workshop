@@ -508,10 +508,10 @@ print(cringe.replace("Hello", "Goodbye"))
 ```{python}
 #| label: strSplit
 
-meme_list = "Harambe, 67, Jar Jar Binks, The Rizzler"
+meme_str = "Harambe, 67, Jar Jar Binks, The Rizzler"
 
 # Split on ", "; returns a list
-new_list = meme_list.split(", ")
+new_list = meme_str.split(", ")
 
 print(new_list)
 print(new_list[0]) # Index the list
@@ -523,8 +523,8 @@ print(new_list[0]) # Index the list
 ```{python}
 #| label: rizzIndex1
 
-meme_list = "Harambe, 67, Jar Jar Binks, The Rizzler"
-new_list = meme_list.split(", ")
+meme_str = "Harambe, 67, Jar Jar Binks, The Rizzler"
+new_list = meme_str.split(", ")
 ```
 
 . . .
@@ -545,11 +545,11 @@ print(new_list[len(new_list) - 1])
 ```{python}
 #| label: fString
 
-x = 3.14159
+PI = 3.14159
 
-print(f'Approximate value of pi is {x}')
+print(f'Approximate value of pi is {PI}')
 
-print(f'To three decimal places is {x:.3f}') 
+print(f'To three decimal places is {PI:.3f}') 
 ```
 
 ## Strings
@@ -560,8 +560,8 @@ print(f'To three decimal places is {x:.3f}')
     - A `:` signals that the proceeding formatting code should be applied to the variable
 
 ### f-string Formatting Basics
-- `x:.3f`
-    - Format variable `x`
+- `PI:.3f`
+    - Format variable `PI`
     - Round to 3 decimal places
     - `f` means `float`
 

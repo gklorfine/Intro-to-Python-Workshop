@@ -76,8 +76,7 @@ Else, please email either of us for help:
 
 ## Setting Up a Conda Environment 
 - See the presenter's shared screen
-
-<!-- GK: Here we would just share screen and show how using the Navigator -->
+    + We will install the **ipykernel** package, allowing us to use **Jupyter notebooks** in VS Code (more on this in a few minutes)
 
 ## Visual Studio (VS) Code
 - To point VS Code to your new Conda environment:

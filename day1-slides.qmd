@@ -104,6 +104,20 @@ Else, please email either of us for help:
 - Type in a line of code and hit `enter` to execute it
     + Multiple lines may be typed by using `shift + enter`
 
+## Using Python
+
+### Jupyter Notebooks
+- Jupyter notebooks are a great way to combine code, text, and visualizations in one
+- To create a new Jupyter notebook (a file with a `.ipynb` extension):
+    1. File -> New File -> Jupyter Notebook
+- Notebooks are composed of **cells** that can be run independently of one another.
+    + Cells can either be **code** or **markdown** (text)
+- Click the play button beside a given cell to run it
+
+::: {.callout-note}
+- If you would like to follow along by typing in the code from the slides, this may be easiest in a Jupyter notebook.
+:::
+
 # The Basics
 
 ## Variables

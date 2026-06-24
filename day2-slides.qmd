@@ -44,10 +44,27 @@ print(f'pi = {m.pi:.3f}')
 
 ## Importing Packages
 
-- Some require installation. This is most easily (and safely) done through **Anaconda**
-- Let's install the package **NumPy**!
+- A brief aside:
+    + Let's say of all the functions/constants/etc. in **math**, you only care about `math.pi`
 
-<!-- GK: Share screen here and show how to add numpy to environment -->
+### `from ... import ...` {.example}
+
+```{python}
+#| label: fromImport
+
+from math import pi
+
+# Same thing, but no `math` at the start
+print(f'pi = {pi:.3f}')
+```
+
+
+## Importing Packages
+
+- Some require installation. This is most easily (and safely) done through **Anaconda**
+- Let's install the packages **NumPy** and **pandas**!
+
+<!-- GK: Share screen here and show how to add numpy and pandas to environment -->
 
 ## Importing Packages
 ### `import numpy as np` {.example}
@@ -63,22 +80,6 @@ print(np.random.normal(loc = 0, scale = 1, size = 3))
 ::: {.callout-note}
 - `loc` = $\mu$, `scale` = $\sigma$
 :::
-
-## Importing Packages
-
-- A brief aside:
-    + Let's say of all the functions in **NumPy**, you only care about `numpy.random.normal`
-
-### `from ... import ...` {.example}
-
-```{python}
-#| label: fromImport
-
-from numpy.random import normal
-
-# Same thing, but no `np.random` at the start
-normal(loc = 0, scale = 1, size = 3)
-```
 
 ## Defining Functions
 - Sometimes you repeat the same code over and over again
@@ -125,12 +126,12 @@ def function_name(arg1, arg2 = default_value, arg_n):
 x = [0,1,2,3,4,5,6,7]
 
 def qm_mean(things):
-    sum = 0
+    qm_sum = 0
 
     for i in things:
-        sum += i
+        qm_sum += i
     
-    return sum / len(things)
+    return qm_sum / len(things)
 
 qm_mean(x)              
 ```
@@ -139,7 +140,7 @@ qm_mean(x)
 
 ## NumPy
 
-- Somewhat similar to MATLAB if you have used that
+- Somewhat similar to **MATLAB** if you have used that
 - Useful for working with arrays/matrices
 - Stands for \textcolor{red}{\textbf{Num}}erical \textcolor{red}{\textbf{Py}}thon
 - Based in computer language **C**
@@ -157,9 +158,9 @@ list1 = [1,2,3,4]
 print(list1 * 2)
 print(type(list1))
 
-numpyList = np.array(list1)  # Convert list -> numpy array
-print(numpyList * 2)
-print(type(numpyList))
+numpyArray = np.array(list1)  # Convert list -> numpy array
+print(numpyArray * 2)
+print(type(numpyArray))
 ```
 
 ## NumPy
@@ -274,7 +275,7 @@ print(np.random.choice(["A", "B", "C", "D"]))
 ```{python}
 #| label: indexNumPy
 
-x = np.random.normal(0, 10, size=(3,3))
+x = np.random.normal(loc = 0, scale = 10, size = (3,3))
 print(x, "\n")  # Print x with a blank line after it
 
 print(x[2,2], type(x[2,2]))
@@ -710,12 +711,24 @@ df
 
 ## pandas
 
+### Sorting in Descending Order {.example}
+```{python}
+#| label: sort2
+
+df.sort_values(
+    by = "Rating", ascending = False, inplace = True
+)
+df
+```
+
+## pandas
+
 - We can also sort by `Age` first and then `Rating`
     + Strings are sorted \underline{alphabetically}
 
 ### Sorting by a List {.example}
 ```{python}
-#| label: sort2
+#| label: sort3
 
 df.sort_values(by = ["Age", "Rating"], inplace = True)
 df
@@ -745,4 +758,15 @@ df["Rating"].std()
 #| label: specDesc_agg
 
 df["Rating"].agg(['mean', 'std']) # agg = aggregate
+```
+
+## pandas
+
+### Challenge:
+- Group `df` by `Age` and then get the mean of the rating column (for each `Age` group) \pause
+
+```{python}
+#| label: groupbyChallenge
+
+df.groupby("Age")["Rating"].mean()
 ```

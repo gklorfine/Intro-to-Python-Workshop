@@ -100,8 +100,7 @@ Else, please email either of us for help:
 - The console is useful for executing smaller bits of code
 - To open the console:
     1. Open the Command Palette -> search "Python: Start Terminal REPL"
-- Type in a line of code and hit `enter` to execute it
-    + Multiple lines may be typed by using `shift + enter`
+- Type in a line of code and hit `enter` (or `return` on MacOS) to execute it
 
 ## Using Python
 

@@ -192,6 +192,16 @@ print(array2d.dtype)    # Type of elements
 ```
 
 ## NumPy
+
+::: {.callout-note}
+A brief note on terminology:
+
+- The distinction between *methods* and *attributes* is that an attribute gives access to information associated with a variable; whereas a method is a function that may act on/with the variable.
+    
+    + E.g., `.shape` (attribute) with **NumPy** arrays and `.split()` (method) for strings
+:::
+
+## NumPy
 - Some numpy types:
     - `uint8`
     - `int32`
@@ -537,7 +547,6 @@ df[df["Age"] == "old"].describe()
 ## pandas
 
 - We can also select rows and columns using the `loc` or `iloc` **attributes**
-    + These are similar to methods but use square `[]` brackets (instead of round brackets `()`)
 
 ### Selecting with `loc` and `iloc` {.example}
 ```{python}
@@ -551,14 +560,6 @@ df.loc["b", "Memes"] # Row b of Memes column
 
 df.iloc[1,0] # Row 1 of 0th column (Memes)
 ```
-
-## pandas
-
-::: {.callout-note}
-A brief note on terminology:
-- The distinction between *methods* and *attributes* is that an attribute gives access to information associated with a variable; whereas a method is a function that may act on/with the variable.
-    + E.g., `.loc` versus `.mean()`
-:::
 
 ## pandas
 

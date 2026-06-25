@@ -104,9 +104,13 @@ Although we cover a vast amount of material in this workshop, we only skim the s
     + *Absolute BEGINNER Guide to the Mac OS Terminal* by Percy Grunwald from TopTechSkills ([YouTube video](https://www.youtube.com/watch?v=aKRYQsKR46I))
     + *Windows PowerShell [01] Introduction* by John Hammond ([YouTube video](https://www.youtube.com/watch?v=TUNNmVeyjW0))
 
+- **f-string** cheat sheet (see day 1 slides for an initial introduction): *Python f-string tips and cheat sheets* by Trey Hunner ([link](https://www.pythonmorsels.com/string-formatting/))
+
 - **Dictionaries** were not explicitly touched upon in this workshop (though they will look familiar from the pandas section). These are variable types that contain "key-value" pairs, with values corresponding to their given key. A good resource on Python dictionaries is *Python dictionaries are easy 📙* by Bro Code ([YouTube video](https://www.youtube.com/watch?v=MZZSMaEAC2g))
 
-- [**Jupyter Notebook**](https://jupyter-notebook.readthedocs.io/en/latest/) allows you to combine markdown text and Python code into a single file (like an `.Rmd` file in programming language **R**). A Jupyter Notebook has the file extension `.ipynb`. A good resource here is the "Jupyter Notebooks in VS Code" article in the VS Code documentation ([link](https://code.visualstudio.com/docs/datascience/jupyter-notebooks))
+<!--
+- A [**Jupyter Notebook**](https://jupyter-notebook.readthedocs.io/en/latest/) allows you to combine markdown text and Python code into a single file (like an `.Rmd` file in programming language **R**). An extra resource here is the "Jupyter Notebooks in VS Code" article in the VS Code documentation ([link](https://code.visualstudio.com/docs/datascience/jupyter-notebooks))
+-->
 
 - **List comprehensions** are useful, compact ways of making lists in Python. You may find the *Learn Python LIST COMPREHENSIONS in 10 minutes! 📃* video by Bro Code helpful ([YouTube video](https://www.youtube.com/watch?v=YlY2g2xrl6Q))
 

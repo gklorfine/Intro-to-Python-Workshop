@@ -52,6 +52,8 @@ The short project can be accessed through the [`project/`](project/) folder. You
 
 Optional exercises for each day's content (along with solutions) can be found in the [`optional-exercises/`](optional-exercises/) folder. It is recommended that you take a look at these, as a lot of learning how to program is just practice. If we have time at the end of a given session, we can go over some of these exercises together.
 
+During the workshop sessions, attendees asked some important questions. Questions that were particularly insightful and/or beyond the scope of this workshop are included (and answered) in the [`q-and-a`](/q-and-a/) folder as Jupyter Notebooks (separated by day).
+
 You will also find other folders and files in this repository. These are not of primary concern, so I (GK) have provided information in a separate document for those that are curious ([`extras/repo-structure.md`](extras/repo-structure.md)).
 
 ## Resources

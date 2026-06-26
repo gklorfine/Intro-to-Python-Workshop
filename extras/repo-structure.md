@@ -8,13 +8,6 @@ Below is a **directory tree** of this repository:
 
 ``` text
 .
-├── .gitignore
-├── day1-slides.pdf
-├── day1-slides.qmd
-├── day2-slides.pdf
-├── day2-slides.qmd
-├── day3-slides.pdf
-├── day3-slides.qmd
 ├── extras
 │   ├── fun
 │   │   ├── assets
@@ -36,7 +29,6 @@ Below is a **directory tree** of this repository:
 │   ├── extensions.png
 │   ├── logo.png
 │   └── logo.py
-├── LICENSE
 ├── optional-exercises
 │   ├── solutions
 │   │   ├── day1-solutions.ipynb
@@ -49,6 +41,16 @@ Below is a **directory tree** of this repository:
 ├── project
 │   ├── itp-project.ipynb
 |   └── stroke-data.csv
+├── q-and-a
+│   └── day1-attendee-q-and-a.ipynb
+├── .gitignore
+├── day1-slides.pdf
+├── day1-slides.qmd
+├── day2-slides.pdf
+├── day2-slides.qmd
+├── day3-slides.pdf
+├── day3-slides.qmd
+├── LICENSE
 └── README.md
 ```
 
@@ -66,6 +68,11 @@ Starting at the **root** of the repository (i.e., the top-level/outermost folder
 - The [`.gitignore`](../.gitignore) file tells our computers (mine (GK) and Bora's) which files not to upload when we update the repository
 
 ## Folders
+
+### [`q-and-a/`](../q-and-a)
+
+- Contains answers to attendee questions that were particularly insightful and/or beyond the scope of this workshop.
+    + Day 1 Q&A: [`day1-attendee-q-and-a.ipynb`](../q-and-a/day1-attendee-q-and-a.ipynb)
 
 ### [`project/`](../project)
 

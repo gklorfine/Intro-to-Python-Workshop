@@ -60,6 +60,12 @@ jupyter: ws # GK: I need to make sure to change this once we finalize
 
 ![](images/extensions.png){fig-align="center"}
 
+## Visual Studio (VS) Code
+
+Addition after first session (June 26th, 2026):
+
+- Make sure to install the **Jupyter** extension as well, which will allow you to use Jupyter notebooks in VS Code
+
 ## Stop here!
 
 If you:

@@ -67,6 +67,9 @@ print(f'pi = {pi:.3f}')
 <!-- GK: Share screen here and show how to add numpy and pandas to environment -->
 
 ## Importing Packages
+
+As an example (and a test to see if **NumPy** is installed), let's explore the `np.random.normal()` function, which generates random values from a normal distribution: \pause
+
 ### `import numpy as np` {.example}
 ```{python}
 #| label: impNumPy

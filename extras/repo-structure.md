@@ -42,7 +42,8 @@ Below is a **directory tree** of this repository:
 │   ├── itp-project.ipynb
 |   └── stroke-data.csv
 ├── q-and-a
-│   └── day1-attendee-q-and-a.ipynb
+│   ├── day1-attendee-q-and-a.ipynb
+│   └── day2-attendee-q-and-a.ipynb
 ├── .gitignore
 ├── day1-slides.pdf
 ├── day1-slides.qmd
@@ -73,6 +74,7 @@ Starting at the **root** of the repository (i.e., the top-level/outermost folder
 
 - Contains answers to attendee questions that were particularly insightful and/or beyond the scope of this workshop.
     + Day 1 Q&A: [`day1-attendee-q-and-a.ipynb`](../q-and-a/day1-attendee-q-and-a.ipynb)
+    + Day 2 Q&A: [`day2-attendee-q-and-a.ipynb`](../q-and-a/day2-attendee-q-and-a.ipynb)
 
 ### [`project/`](../project)
 

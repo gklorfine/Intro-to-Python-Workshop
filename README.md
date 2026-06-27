@@ -32,7 +32,7 @@ York University, Canada <br>
 
 <!-- GK: After the workshop, we could include a quote (or a few) from reviews here -->
 
-This workshop takes place June 26, 27, and 28 from 11:30AM to 2:30PM over Zoom (the link was provided to attendees over email). Tickets for this workshop were sold out (26/25 spots filled)! 
+This workshop takes place June 26, 27, and 28 from 11:30AM to 2:30PM (EDT) over Zoom (the link was provided to attendees over email). Tickets for this workshop were sold out (26/25 spots filled)! 
 
 After the third session, a link to a feedback form will be emailed to attendees (please fill this out!).
 

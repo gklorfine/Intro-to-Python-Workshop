@@ -28,11 +28,13 @@ Below is a **directory tree** of this repository:
 │   ├── df-csv.png
 │   ├── extensions.png
 │   ├── logo.png
-│   └── logo.py
+│   ├── logo.py
+|   └── paste-1.png
 ├── optional-exercises
 │   ├── solutions
 │   │   ├── day1-solutions.ipynb
-│   │   └── day2-solutions.ipynb
+|   |   ├── day2-solutions.ipynb
+│   │   └── day3-solutions.ipynb
 │   ├── day1-exercises.ipynb
 │   ├── day2-exercises.ipynb
 │   └── day3-exercises.ipynb
@@ -43,7 +45,8 @@ Below is a **directory tree** of this repository:
 |   └── stroke-data.csv
 ├── q-and-a
 │   ├── day1-attendee-q-and-a.ipynb
-│   └── day2-attendee-q-and-a.ipynb
+│   ├── day2-attendee-q-and-a.ipynb
+|   └── day3-attendee-q-and-a.ipynb
 ├── .gitignore
 ├── day1-slides.pdf
 ├── day1-slides.qmd
@@ -75,6 +78,7 @@ Starting at the **root** of the repository (i.e., the top-level/outermost folder
 - Contains answers to attendee questions that were particularly insightful and/or beyond the scope of this workshop.
     + Day 1 Q&A: [`day1-attendee-q-and-a.ipynb`](../q-and-a/day1-attendee-q-and-a.ipynb)
     + Day 2 Q&A: [`day2-attendee-q-and-a.ipynb`](../q-and-a/day2-attendee-q-and-a.ipynb)
+    + Day 3 Q&A: [`day3-attendee-q-and-a.ipynb`](../q-and-a/day3-attendee-q-and-a.ipynb)
 
 ### [`project/`](../project)
 
@@ -98,10 +102,11 @@ Starting at the **root** of the repository (i.e., the top-level/outermost folder
 - Contains solutions to the optional exercises
     + [`day1-solutions.ipynb`](../optional-exercises/solutions/day1-solutions.ipynb)
     + [`day2-solutions.ipynb`](../optional-exercises/solutions/day2-solutions.ipynb)
+    + [`day3-solutions.ipynb`](../optional-exercises/solutions/day3-solutions.ipynb)
 
 ### [`images/`](../images)
 
-- Contains images used in the slides (e.g., [`df-csv.png`](../images/df-csv.png))
+- Contains images used in the slides and optional exercises (e.g., [`df-csv.png`](../images/df-csv.png))
     + See [`day2-slides.pdf`](../day2-slides.pdf) for context
 - Also contains the code and image for the logo used in the [`README.md`](../README.md) file
     + See [`logo.py`](../images/logo.py) for the code 

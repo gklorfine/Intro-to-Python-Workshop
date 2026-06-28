@@ -156,7 +156,7 @@ nums_y = nums_x + errors # y = x + errors
 #| output: false
 
 # plot(x, y, style, transparency)
-plt.plot(nums_x, nums_y, 'ro', alpha=0.6)                      # 'ro' = red circles
+plt.plot(nums_x, nums_y, 'or', alpha=0.6)                      # 'or' = red circles
 plt.show()
 ```
 
@@ -166,7 +166,7 @@ plt.show()
 #| fig-align: center
 
 figure(figsize=(2.5, 2.5), dpi=200)
-plt.plot(nums_x, nums_y, 'ro', alpha=0.6)                      # 'ro' = red circles
+plt.plot(nums_x, nums_y, 'or', alpha=0.6)                      # 'or' = red circles
 plt.show()                      
 ```
 
@@ -184,8 +184,9 @@ plt.show()
 #| output: false
 
 #Adds observed data as red circles
-plt.plot(nums_x, nums_y, 'ro')   # Reference line: black solid line
-plt.plot(nums_x, nums_x, 'k-')
+plt.plot(nums_x, nums_y, 'or')
+#Adds reference line (x=y) as black solid line
+plt.plot(nums_x, nums_x, '-k')
 plt.show()
 ```
 
@@ -198,8 +199,8 @@ plt.show()
 #| fig-align: center
 
 figure(figsize=(2.2, 1.8), dpi=200)
-plt.plot(nums_x, nums_y, 'ro', label = "Observed")
-plt.plot(nums_x, nums_x, 'k-', label = "Reference line")
+plt.plot(nums_x, nums_y, 'or', label = "Observed")
+plt.plot(nums_x, nums_x, '-k', label = "Reference line")
 plt.title("Scatterplot with Reference Line")
 plt.xlabel("X Value")
 plt.ylabel("Y Value")

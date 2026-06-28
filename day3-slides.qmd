@@ -12,7 +12,7 @@ header-includes: # GK: GPT added this part of YAML to fix file not rendering
 execute:
     echo: True
     include: True
-jupyter: ws # GK: I need to change this to 'workshop' once we finish all 3 days of the workshop
+jupyter: workshop
 ---
 
 # matplotlib.pyplot
@@ -583,7 +583,7 @@ df["study_hours"] = (
 #| label: sm_scatter
 #| output: false
 
-plt.plot(df["study_hours"], df["score"], "bo")
+plt.plot(df["study_hours"], df["score"], "ob")
 plt.xlabel("Study Hours")
 plt.ylabel("Score")
 plt.show()
@@ -600,7 +600,7 @@ plt.show()
 #| fig-align: center
 
 figure(figsize=(2.5, 2.2), dpi=200)
-plt.plot(df["study_hours"], df["score"], "bo")
+plt.plot(df["study_hours"], df["score"], "ob")
 plt.xlabel("Study Hours")
 plt.ylabel("Score")
 plt.show()
@@ -661,7 +661,7 @@ $$
 #| label: sm_regression_inspect
 #| output: false
 
-plt.plot(df["study_hours"], df["score"], "bo")
+plt.plot(df["study_hours"], df["score"], "ob")
 plt.xlabel("Study Hours")
 plt.ylabel("Score")
 plt.show()
@@ -678,7 +678,7 @@ plt.show()
 #| fig-align: center
 
 figure(figsize=(2.5, 2.2), dpi=200)
-plt.plot(df["study_hours"], df["score"], "bo")
+plt.plot(df["study_hours"], df["score"], "ob")
 plt.xlabel("Study Hours")
 plt.ylabel("Score")
 plt.show()
@@ -879,7 +879,7 @@ summary_table_image(summary.tables[2])
 ```{python}
 #| label: sm_rsquared
 
-print(f"$R^2$: {model.rsquared:.3f}")
+print(f"R^2: {model.rsquared:.3f}")
 ```
 
 ## statsmodels
@@ -908,9 +908,9 @@ for i in range(3):
 
 ordered = df.sort_values("study_hours")
 
-plt.plot(df["study_hours"], df["score"], "bo")
+plt.plot(df["study_hours"], df["score"], "ob")
 plt.plot(
-    ordered["study_hours"], ordered["predicted_score"], "k-"
+    ordered["study_hours"], ordered["predicted_score"], "-k"
 )
 plt.xlabel("Study Hours")
 plt.ylabel("Score")
@@ -927,8 +927,8 @@ plt.show()
 
 figure(figsize=(2.5, 2.5), dpi=200)
 ordered = df.sort_values("study_hours")
-plt.plot(df["study_hours"], df["score"], "bo")
-plt.plot(ordered["study_hours"], ordered["predicted_score"], "k-")
+plt.plot(df["study_hours"], df["score"], "ob")
+plt.plot(ordered["study_hours"], ordered["predicted_score"], "-k")
 plt.xlabel("Study Hours")
 plt.ylabel("Score")
 plt.show()
@@ -947,7 +947,7 @@ slope_ci = model.conf_int().loc["study_hours"]
 
 print(f"b = {model.params['study_hours']:.2f}, "
     f"95% CI [{slope_ci[0]:.2f}, {slope_ci[1]:.2f}], "
-    f"$p$ = {model.pvalues['study_hours']:.3f}")
+    f"p = {model.pvalues['study_hours']:.3f}")
 ```
 
 - Report the estimated slope, confidence interval, and $p$-value together

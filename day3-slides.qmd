@@ -67,7 +67,7 @@ plt.hist(
     x,                      # Data
     color = "green",        # Bar Colour
     edgecolor = "black",    # Outline Colour
-    bins = np.arange(-3, 3.5, 0.5) # Bins of 0.5 from -3 to +3
+    bins = np.arange(-3, 3.5, 0.5)#Bins of 0.5 from -3 to +3
 )
 plt.show()
 ```

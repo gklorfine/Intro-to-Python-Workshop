@@ -32,9 +32,9 @@ York University, Canada <br>
 
 <!-- GK: After the workshop, we could include a quote (or a few) from reviews here -->
 
-This workshop takes place June 26, 27, and 28 from 11:30AM to 2:30PM (EDT) over Zoom (the link was provided to attendees over email). Tickets for this workshop were sold out (26/25 spots filled)! 
+This workshop took place June 26, 27, and 28 from 11:30AM to 2:30PM (EDT) over Zoom (the link was provided to attendees over email). Tickets for this workshop were sold out (26/25 spots filled)! 
 
-After the third session, a link to a feedback form will be emailed to attendees (please fill this out!).
+After the third session, a link to a feedback form was emailed to attendees (please fill this out!).
 
 Starting with the installation of Python and relevant packages, this workshop guides attendees through basic programming structures/syntax, culminating in the manipulation and analysis of data. Interactive exercises will be available throughout the workshop to practice applying Python and data analysis skills and will serve as the building blocks for a short project. A digital credential is provided upon the successful completion of this project. This workshop is meant for those with no prior experience or exposure to Python (or programming, for that matter), although all levels are welcome.
 
@@ -52,7 +52,7 @@ The short project can be accessed through the [`project/`](project/) folder. You
 
 Optional exercises for each day's content (along with solutions) can be found in the [`optional-exercises/`](optional-exercises/) folder. It is recommended that you take a look at these, as a lot of learning how to program is just practice. If we have time at the end of a given session, we can go over some of these exercises together.
 
-During the workshop sessions, attendees asked some important questions. Questions that were particularly insightful and/or beyond the scope of this workshop are included (and answered) in the [`q-and-a`](/q-and-a/) folder as Jupyter Notebooks (separated by day).
+During the workshop sessions, attendees asked some important questions. Questions that were particularly insightful and/or beyond the scope of this workshop are included (and answered) in the [`q-and-a/`](/q-and-a/) folder as Jupyter Notebooks (separated by day).
 
 You will also find other folders and files in this repository. These are not of primary concern, so I (GK) have provided information in a separate document for those that are curious ([`extras/repo-structure.md`](extras/repo-structure.md)).
 

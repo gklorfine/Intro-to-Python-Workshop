@@ -26,7 +26,7 @@ plt.annotate(
     fontsize = 54, fontfamily='signpainter'
 )
 plt.annotate(
-    "Spring 2026", (0, -.83), ha = "center", va = "center",
+    "Fall 2026", (0, -.83), ha = "center", va = "center",
     color = "white", 
     fontsize = 22, fontfamily='signpainter'
 )

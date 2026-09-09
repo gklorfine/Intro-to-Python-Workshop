@@ -1,5 +1,5 @@
 ---
-title: "QMWS Spring 2026: Introduction to Python for Data Analysis"
+title: "QMWS Fall 2026: Introduction to Python for Data Analysis"
 subtitle: "Day One: Foundations"
 author: "Gavin Klorfine & Deborah Laze"
 format: 
@@ -62,9 +62,9 @@ jupyter: workshop
 
 ## Visual Studio (VS) Code
 
-Addition after first session (June 26th, 2026):
+- You will also need to install the **Jupyter** extensions below, which will allow you to use Jupyter notebooks in VS Code:
 
-- Make sure to install the **Jupyter** extension as well, which will allow you to use Jupyter notebooks in VS Code
+![](images/jupyter-ext.png){fig-align="center"}
 
 ## Stop here!
 

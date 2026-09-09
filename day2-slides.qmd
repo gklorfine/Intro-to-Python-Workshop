@@ -1,5 +1,5 @@
 ---
-title: "QMWS Spring 2026: Introduction to Python for Data Analysis"
+title: "QMWS Fall 2026: Introduction to Python for Data Analysis"
 subtitle: "Day Two: Extensions"
 author: "Gavin Klorfine & Deborah Laze"
 format: 

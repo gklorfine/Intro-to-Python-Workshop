@@ -1,19 +1,5 @@
 ---
-title: "QMWS Fall 2026: Introduction to Python for Data Analysis"
-shorttitle: "Introduction to Python for Data Analysis"
 subtitle: "Day One: Foundations"
-author: "Gavin Klorfine & Deborah Laze"
-format: 
-    beamer:
-        theme: Madrid
-        slide-level: 2
-header-includes: # GK: GPT added this part of YAML to fix file not rendering
-    - \usepackage{textcomp}
-    - \providecommand{\textasciicaret}{\textasciicircum}
-execute:
-    echo: True
-    include: True
-jupyter: workshop
 ---
 
 # Installation
@@ -29,7 +15,7 @@ jupyter: workshop
         - Especially useful if you have more than one project going on
 
 ## Anaconda
-- Installation link: https://www.anaconda.com/download
+- Installation link: [https://www.anaconda.com/download](https://www.anaconda.com/download)
 - The simplest way to use Anaconda is via the **Navigator**
 - To install:
     1. Make an account
@@ -37,14 +23,14 @@ jupyter: workshop
 
 ---
 
-- Installation link: https://www.anaconda.com/download
+- Installation link: [https://www.anaconda.com/download](https://www.anaconda.com/download)
 - On Mac:
 
 ![](images/condaMac.png){fig-align="center"}
 
 ---
 
-- Installation link: https://www.anaconda.com/download
+- Installation link: [https://www.anaconda.com/download](https://www.anaconda.com/download)
 - On Windows:
 
 ![](images/condaWindows.png){fig-align="center"}

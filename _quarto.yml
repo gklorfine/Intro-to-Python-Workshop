@@ -1,0 +1,29 @@
+project:
+    render: # only the slides; without this, `quarto render` also renders the README, notebooks, etc.
+        - day1-slides.qmd
+        - day2-slides.qmd
+        - day3-slides.qmd
+
+# Shared by all three days; each dayN-slides.qmd only sets its own subtitle
+title: "QMWS Fall 2026: Introduction to Python for Data Analysis"
+shorttitle: "Introduction to Python for Data Analysis"
+author:
+    - '\begin{tabular}[t]{c}Gavin Klorfine\\ gklorfin@yorku.ca\end{tabular}'
+    - '\begin{tabular}[t]{c}Deborah Laze\\ laze@yorku.ca\end{tabular}'
+shortauthor: "Gavin Klorfine & Deborah Laze" # bottom bar
+format:
+    beamer:
+        theme: Madrid
+        slide-level: 2
+        toc: True
+        toc-title: "Today"
+header-includes: # GK: GPT added this part of YAML to fix file not rendering
+    - \usepackage{textcomp}
+    - \providecommand{\textasciicaret}{\textasciicircum}
+    - \institute[]{York University} # empty [] keeps it off the bottom bar
+    - \setbeamerfont{institute}{size=\normalsize} # Beamer default is \scriptsize
+    - \setbeamertemplate{frametitle continuation}{} # remove roman numeral from "Today" TOC slide
+execute:
+    echo: True
+    include: True
+jupyter: workshop

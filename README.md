@@ -28,7 +28,7 @@ York University, Canada <br>
 
 <br>
 
-**Current Session: Fall 2026 (November *x*, *y*, and *z* from XX:XX to XX:XX (EDT))**
+**Current Session: Fall 2026 (November 9<sup>th</sup>, 16<sup>th</sup>, and 23<sup>rd</sup> from 2:30PM to 5:30PM (EDT))**
 
 Previous versions of this workshop are available on the [GitHub Releases page](https://github.com/gklorfine/Intro-to-Python-Workshop/releases).
 

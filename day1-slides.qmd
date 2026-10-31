@@ -1,5 +1,6 @@
 ---
 title: "QMWS Fall 2026: Introduction to Python for Data Analysis"
+shorttitle: "Introduction to Python for Data Analysis"
 subtitle: "Day One: Foundations"
 author: "Gavin Klorfine & Deborah Laze"
 format: 

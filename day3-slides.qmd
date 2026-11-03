@@ -2,8 +2,6 @@
 subtitle: "Day Three: Applications"
 ---
 
-# matplotlib.pyplot
-
 ## matplotlib.pyplot
 - **matplotlib.pyplot** is a package for visualizing data in Python
 - Fun fact: If you have asked ChatGPT for a graph, you likely received one that was made using this package
@@ -54,7 +52,7 @@ plt.hist(
     x,                      # Data
     color = "green",        # Bar Colour
     edgecolor = "black",    # Outline Colour
-    bins = np.arange(-3, 3.5, 0.5)#Bins of 0.5 from -3 to +3
+    bins = np.arange(-3, 3.5, 0.5) # Bins of 0.5 from -3 to +3
 )
 plt.show()
 ```
@@ -142,8 +140,8 @@ nums_y = nums_x + errors # y = x + errors
 #| label: scatter
 #| output: false
 
-# plot(x, y, style, transparency)
-plt.plot(nums_x, nums_y, 'or', alpha=0.6)                      # 'or' = red circles
+# scatter(x, y, colour, transparency)
+plt.scatter(nums_x, nums_y, color = "red", alpha = 0.6)
 plt.show()
 ```
 
@@ -153,9 +151,98 @@ plt.show()
 #| fig-align: center
 
 figure(figsize=(2.5, 2.5), dpi=200)
-plt.plot(nums_x, nums_y, 'or', alpha=0.6)                      # 'or' = red circles
-plt.show()                      
+plt.scatter(nums_x, nums_y, color = "red", alpha = 0.6)
+plt.show()
 ```
+
+## matplotlib.pyplot
+
+- To colour the dots by a **categorical** variable (e.g., group), call `plt.scatter()` once per group
+- Give each call its own `color` and `label`, then add `plt.legend()`
+
+### Colouring by Group (Categorical) {.example}
+```{python}
+#| label: scatter_group
+#| output: false
+
+groups = np.array(["A", "B"] * 5)    # Group label for each point
+
+plt.scatter(nums_x[groups == "A"], nums_y[groups == "A"],
+    color = "blue", label = "Group A")
+plt.scatter(nums_x[groups == "B"], nums_y[groups == "B"],
+    color = "red", label = "Group B")
+plt.legend()
+plt.show()
+```
+
+## matplotlib.pyplot
+
+### Colouring by Group (Categorical) {.example}
+```{python}
+#| label: scatter_group_show
+#| echo: false
+#| fig-align: center
+
+groups = np.array(["A", "B"] * 5)
+
+figure(figsize=(2.5, 2.5), dpi=200)
+plt.scatter(nums_x[groups == "A"], nums_y[groups == "A"],
+    color = "blue", label = "Group A")
+plt.scatter(nums_x[groups == "B"], nums_y[groups == "B"],
+    color = "red", label = "Group B")
+plt.legend(loc = 2, fontsize = "xx-small")
+plt.show()
+```
+
+- `groups == "A"` selects only the points in Group A
+- `plt.legend()` uses each call's `label` to name the groups
+
+## matplotlib.pyplot
+
+- For a **continuous** variable, pass the numbers to `c` and choose a colour map with `cmap`
+- `plt.colorbar()` acts as the legend, showing which colour matches which value
+
+### Colouring with a Colour Map (Continuous) {.example}
+```{python}
+#| label: scatter_cmap
+#| output: false
+
+plt.scatter(
+    nums_x, nums_y,
+    c = errors,          # Values that determine each dot's colour
+    cmap = "coolwarm"    # Colour map: low = blue, high = red
+)
+plt.colorbar(label = "Error")
+plt.show()
+```
+
+## matplotlib.pyplot
+
+### Colouring with a Colour Map (Continuous) {.example}
+```{python}
+#| label: scatter_cmap_show
+#| echo: false
+#| fig-align: center
+
+figure(figsize=(2.8, 2.2), dpi=200)
+plt.scatter(nums_x, nums_y, c = errors, cmap = "coolwarm")
+plt.colorbar(label = "Error")
+plt.show()
+```
+
+- Redder dots have larger errors (further above the line $y = x$); bluer dots have smaller errors (further below it)
+- Other colour maps include `"viridis"`, `"plasma"`, and `"Greys"`
+
+## matplotlib.pyplot
+
+### `color` vs. `c` + `cmap`
+
+- `color` + `label`: one colour per group, one `plt.scatter()` call per group; legend with `plt.legend()` (categorical)
+- `c` + `cmap`: a list of numbers that matplotlib converts to colours; legend with `plt.colorbar()` (continuous)
+
+::: {.callout-note}
+- `cmap` only works with `c` — matplotlib needs numbers to map onto a colour scale
+:::
 
 ## matplotlib.pyplot
 
@@ -170,12 +257,14 @@ plt.show()
 #| label: scatter_add_line
 #| output: false
 
-#Adds observed data as red circles
-plt.plot(nums_x, nums_y, 'or')
-#Adds reference line (x=y) as black solid line
+# Observed data as red dots
+plt.scatter(nums_x, nums_y, color = "red")
+# Reference line: black solid line
 plt.plot(nums_x, nums_x, '-k')
 plt.show()
 ```
+
+- `plt.scatter()` draws dots; `plt.plot()` with `'-k'` draws a line
 
 ## matplotlib.pyplot
 
@@ -186,7 +275,7 @@ plt.show()
 #| fig-align: center
 
 figure(figsize=(2.2, 1.8), dpi=200)
-plt.plot(nums_x, nums_y, 'or', label = "Observed")
+plt.scatter(nums_x, nums_y, color = "red", label = "Observed")
 plt.plot(nums_x, nums_x, '-k', label = "Reference line")
 plt.title("Scatterplot with Reference Line")
 plt.xlabel("X Value")
@@ -570,7 +659,7 @@ df["study_hours"] = (
 #| label: sm_scatter
 #| output: false
 
-plt.plot(df["study_hours"], df["score"], "ob")
+plt.scatter(df["study_hours"], df["score"], color = "blue")
 plt.xlabel("Study Hours")
 plt.ylabel("Score")
 plt.show()
@@ -587,7 +676,7 @@ plt.show()
 #| fig-align: center
 
 figure(figsize=(2.5, 2.2), dpi=200)
-plt.plot(df["study_hours"], df["score"], "ob")
+plt.scatter(df["study_hours"], df["score"], color = "blue")
 plt.xlabel("Study Hours")
 plt.ylabel("Score")
 plt.show()
@@ -648,7 +737,7 @@ $$
 #| label: sm_regression_inspect
 #| output: false
 
-plt.plot(df["study_hours"], df["score"], "ob")
+plt.scatter(df["study_hours"], df["score"], color = "blue")
 plt.xlabel("Study Hours")
 plt.ylabel("Score")
 plt.show()
@@ -665,7 +754,7 @@ plt.show()
 #| fig-align: center
 
 figure(figsize=(2.5, 2.2), dpi=200)
-plt.plot(df["study_hours"], df["score"], "ob")
+plt.scatter(df["study_hours"], df["score"], color = "blue")
 plt.xlabel("Study Hours")
 plt.ylabel("Score")
 plt.show()
@@ -866,7 +955,7 @@ summary_table_image(summary.tables[2])
 ```{python}
 #| label: sm_rsquared
 
-print(f"R^2: {model.rsquared:.3f}")
+print(f"$R^2$: {model.rsquared:.3f}")
 ```
 
 ## statsmodels
@@ -895,9 +984,9 @@ for i in range(3):
 
 ordered = df.sort_values("study_hours")
 
-plt.plot(df["study_hours"], df["score"], "ob")
+plt.scatter(df["study_hours"], df["score"], color = "blue")
 plt.plot(
-    ordered["study_hours"], ordered["predicted_score"], "-k"
+    ordered["study_hours"], ordered["predicted_score"], "k-"
 )
 plt.xlabel("Study Hours")
 plt.ylabel("Score")
@@ -914,8 +1003,8 @@ plt.show()
 
 figure(figsize=(2.5, 2.5), dpi=200)
 ordered = df.sort_values("study_hours")
-plt.plot(df["study_hours"], df["score"], "ob")
-plt.plot(ordered["study_hours"], ordered["predicted_score"], "-k")
+plt.scatter(df["study_hours"], df["score"], color = "blue")
+plt.plot(ordered["study_hours"], ordered["predicted_score"], "k-")
 plt.xlabel("Study Hours")
 plt.ylabel("Score")
 plt.show()
@@ -934,7 +1023,7 @@ slope_ci = model.conf_int().loc["study_hours"]
 
 print(f"b = {model.params['study_hours']:.2f}, "
     f"95% CI [{slope_ci[0]:.2f}, {slope_ci[1]:.2f}], "
-    f"p = {model.pvalues['study_hours']:.3f}")
+    f"$p$ = {model.pvalues['study_hours']:.3f}")
 ```
 
 - Report the estimated slope, confidence interval, and $p$-value together
@@ -975,18 +1064,19 @@ $$
 control_rows = df[df["group"] == "control"]
 treatment_rows = df[df["group"] == "treatment"]
 
-plt.plot(
+plt.scatter(
     control_rows["study_hours"], control_rows["score"],
-    "bo", label = "Control")
-plt.plot(
+    color = "blue", label = "Control")
+plt.scatter(
     treatment_rows["study_hours"], treatment_rows["score"],
-    "ro", label = "Treatment")
+    color = "red", label = "Treatment")
 plt.xlabel("Study Hours")
 plt.ylabel("Score")
 plt.legend()
 plt.show()
 ```
 
+- Same approach as before: one `plt.scatter()` call per group, each with its own `color` and `label`, so `plt.legend()` can name the groups
 
 ## statsmodels
 
@@ -1000,13 +1090,13 @@ control_rows = df[df["group"] == "control"]
 treatment_rows = df[df["group"] == "treatment"]
 
 figure(figsize=(2.5, 2.2), dpi=200)
-plt.plot(
+plt.scatter(
     control_rows["study_hours"], control_rows["score"],
-    "bo", label = "Control"
+    color = "blue", label = "Control"
 )
-plt.plot(
+plt.scatter(
     treatment_rows["study_hours"], treatment_rows["score"],
-    "ro", label = "Treatment"
+    color = "red", label = "Treatment"
 )
 plt.xlabel("Study Hours")
 plt.ylabel("Score")
@@ -1132,3 +1222,178 @@ print(comparison_table)
 - Tests whether adding the interaction explains significantly more variance in `score` than the main-effects-only model
 - Use this $p$-value, not the individual interaction term's $p$-value, to judge whether the interaction belongs in the model
 - Here, $p$ is far from significant — the interaction does not improve the model
+
+## statsmodels
+
+### Multiple Regression: Two Continuous Predictors
+
+- Multiple regression also works when **all** predictors are continuous
+- Here we add `sleep_hours` (hours slept the night before the exam) as a second predictor alongside `study_hours`
+
+**Research Question:**
+
+- Does study hours predict score, after accounting for sleep hours?
+
+$$
+\text{score} = \text{intercept} + b_1(\text{study hours}) + b_2(\text{sleep hours}) + \text{error}
+$$
+
+## statsmodels
+
+### Two Continuous Predictors: Level of Measurement
+
+- `study_hours`: continuous (interval/ratio) — predictor
+- `sleep_hours`: continuous (interval/ratio) — predictor
+- `score`: continuous (interval/ratio) — outcome
+- Study design: observational/correlational, same as above
+
+## statsmodels
+
+### Adding a Third Variable {.example}
+```{python}
+#| label: sm_add_sleep
+
+np.random.seed(21)
+
+df["sleep_hours"] = (
+    4
+    + 0.06 * df["score"]
+    - 0.25 * df["study_hours"]
+    + np.random.normal(0, 0.6, len(df))
+)
+```
+
+- Students who study more tend to sleep a little less
+
+## statsmodels
+
+### Two Continuous Predictors: Inspecting the Data {.example}
+```{python}
+#| label: sm_two_cont_inspect
+#| output: false
+
+plt.scatter(
+    df["study_hours"], df["score"],
+    c = df["sleep_hours"],   # Colour each dot by sleep hours
+    cmap = "viridis"
+)
+plt.colorbar(label = "Sleep Hours")
+plt.xlabel("Study Hours")
+plt.ylabel("Score")
+plt.show()
+```
+
+- With a second continuous predictor, use `c` and `cmap` instead of one colour per group
+
+## statsmodels
+
+### Two Continuous Predictors: Inspecting the Data {.example}
+```{python}
+#| label: sm_two_cont_inspect_show
+#| echo: false
+#| fig-align: center
+
+figure(figsize=(2.8, 2.2), dpi=200)
+plt.scatter(
+    df["study_hours"], df["score"],
+    c = df["sleep_hours"], cmap = "viridis"
+)
+plt.colorbar(label = "Sleep Hours")
+plt.xlabel("Study Hours")
+plt.ylabel("Score")
+plt.show()
+```
+
+- At any given number of study hours, lighter (more sleep) dots tend to sit higher
+
+## statsmodels
+
+### Two Continuous Predictors: Correlations Between Variables {.example}
+```{python}
+#| label: sm_two_cont_corr
+
+print(
+    df[["score", "study_hours", "sleep_hours"]].corr().round(2)
+)
+```
+
+- Both predictors correlate positively with `score`
+- The predictors are slightly **negatively** correlated with each other
+- Very strong correlations between predictors (**multicollinearity**) make coefficients hard to interpret
+
+## statsmodels
+
+### Two Continuous Predictors: Formula Notation {.example}
+```{python}
+#| label: sm_two_cont_formula
+#| eval: false
+
+"score ~ study_hours + sleep_hours"
+# Main effects only
+
+"score ~ study_hours * sleep_hours"
+# Main effects AND their interaction
+```
+
+- The formula works exactly as it did with `group` — the predictor types do not change the syntax
+- `*` would test whether the effect of study hours depends on sleep hours; we focus on the main-effects model here
+
+## statsmodels
+
+### Two Continuous Predictors: Running the Test {.example}
+```{python}
+#| label: sm_two_cont_fit
+
+two_cont_model = smf.ols(
+    "score ~ study_hours + sleep_hours", data = df
+).fit()
+```
+
+- Same `smf.ols()` and `.fit()` steps as before; only the formula string changes
+
+## statsmodels
+
+### Two Continuous Predictors: Interpreting the Results {.example}
+```{python}
+#| label: sm_two_cont_report_show
+#| eval: false
+
+two_cont_model.summary()
+```
+```{python}
+#| label: sm_two_cont_report
+#| echo: false
+
+for term in two_cont_model.params.index:
+    estimate = two_cont_model.params[term]
+    ci = two_cont_model.conf_int().loc[term]
+    p = two_cont_model.pvalues[term]
+    print(
+        f"{term}: b = {estimate:.2f}, "
+        f"95% CI [{ci[0]:.2f}, {ci[1]:.2f}], "
+        f"p = {p:.3f}"
+    )
+```
+
+## statsmodels
+
+### Two Continuous Predictors: Interpreting the Results
+
+- `study_hours`: predicted score change for one additional study hour, *holding sleep hours constant*
+- `sleep_hours`: predicted score change for one additional hour of sleep, *holding study hours constant*
+- `Intercept`: predicted score at zero study hours **and** zero sleep hours — not meaningful here, since no one in the data slept zero hours
+
+## statsmodels
+
+### Comparing to Simple Regression {.example}
+```{python}
+#| label: sm_two_cont_compare
+
+print(f"Simple: b = {model.params['study_hours']:.2f}, "
+    f"R^2 = {model.rsquared:.3f}")
+print(f"Multiple: b = {two_cont_model.params['study_hours']:.2f}, "
+    f"R^2 = {two_cont_model.rsquared:.3f}")
+```
+
+- The `study_hours` slope grows once sleep is held constant — heavy studiers sleep less, which had been masking part of the study effect
+- $R^2$ increases: the two predictors together describe more variance in `score` than study hours alone

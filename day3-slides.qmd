@@ -2,6 +2,8 @@
 subtitle: "Day Three: Applications"
 ---
 
+# matplotlib.pyplot
+
 ## matplotlib.pyplot
 - **matplotlib.pyplot** is a package for visualizing data in Python
 - Fun fact: If you have asked ChatGPT for a graph, you likely received one that was made using this package

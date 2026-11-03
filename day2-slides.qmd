@@ -1,18 +1,5 @@
 ---
-title: "QMWS Spring 2026: Introduction to Python for Data Analysis"
 subtitle: "Day Two: Extensions"
-author: "Gavin Klorfine & Deborah Laze"
-format: 
-    beamer:
-        theme: Madrid
-        slide-level: 2
-header-includes: # GK: GPT added this part of YAML to fix file not rendering
-    - \usepackage{textcomp}
-    - \providecommand{\textasciicaret}{\textasciicircum}
-execute:
-    echo: True
-    include: True
-jupyter: workshop
 ---
 
 # Importing Packages, Defining Functions

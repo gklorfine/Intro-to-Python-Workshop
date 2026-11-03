@@ -1,6 +1,6 @@
 # Introduction to Python for Data Analysis <a href="images/logo.py"><img src="images/logo.png" align="right" height="256" alt="Python workshop logo created using matplotlib.pyplot"/></a>
 
-### A workshop offered through the [Spring 2026 *Quantitative Methods Workshop Series*](https://qm.info.yorku.ca/qmws/)
+### A workshop offered through the [*Quantitative Methods Workshop Series*](https://qm.info.yorku.ca/qmws/)
 
 ### Instructors:
 
@@ -28,15 +28,15 @@ York University, Canada <br>
 
 <br>
 
+**Current Session: Fall 2026 (November 9<sup>th</sup>, 16<sup>th</sup>, and 23<sup>rd</sup> from 2:30PM to 5:30PM (EDT))**
+
+Previous versions of this workshop are available on the [GitHub Releases page](https://github.com/gklorfine/Intro-to-Python-Workshop/releases).
+
 *Attendees are encouraged to read this entire document, as relevant information and resources are interspersed throughout. We also encourage attendees to look over the slides after each day, due to the large amount of material covered.*
 
-<!-- GK: After the workshop, we could include a quote (or a few) from reviews here -->
+This workshop will take place over Zoom (with the link provided over email). After the third session, a link to a feedback form will be emailed to attendees (please fill this out!).
 
-This workshop took place June 26, 27, and 28 from 11:30AM to 2:30PM (EDT) over Zoom (the link was provided to attendees over email). Tickets for this workshop were sold out (26/25 spots filled)! 
-
-After the third session, a link to a feedback form was emailed to attendees (please fill this out!).
-
-Starting with the installation of Python and relevant packages, this workshop guides attendees through basic programming structures/syntax, culminating in the manipulation and analysis of data. Interactive exercises will be available throughout the workshop to practice applying Python and data analysis skills and will serve as the building blocks for a short project. A digital credential is provided upon the successful completion of this project. This workshop is meant for those with no prior experience or exposure to Python (or programming, for that matter), although all levels are welcome.
+This workshop guides attendees from basic programming structures/syntax to the manipulation and analysis of data in Python. It is designed for those with minimal or no prior exposure to Python or programming in general, though all levels are welcome. Day one focuses on foundational knowledge, including variable types and their usage, conditional statements, and loops. Day two extends this knowledge to the manipulation of data using Python packages NumPy and pandas. Last, day three applies knowledge from previous days to data visualization (via the matplotlib package) and fitting statistical models (via the statsmodels package). The statistical analyses covered include independent samples *t*-tests, correlation, and linear regression. A basic working knowledge of these statistical methods is assumed. Short exercises will be provided after each day, serving as building blocks for a final project. A digital credential is provided upon the successful completion of this project.
 
 Slides were made using the [**beamer**](https://ctan.org/pkg/beamer) format in [**Quarto**](https://quarto.org/), an open-source publishing system. You may see the 'behind the scenes' code for the slides by opening the `.qmd` files (either through Visual Studio (VS) Code or online via GitHub). This is also a good way to access the code displayed on each slide (tip: `CTRL + F` or `CMD + F` to search is useful here).
 
@@ -48,13 +48,13 @@ The slides (in both `.pdf` and `.qmd` format) can be accessed through the below 
 | 2 | Extensions (**NumPy** and **pandas**) | [[`.pdf`]](/day2-slides.pdf), [[`.qmd`]](/day2-slides.qmd) |
 | 3 | Applications (**matplotlib.pyplot** and **statsmodels**) | [[`.pdf`]](/day3-slides.pdf), [[`.qmd`]](/day3-slides.qmd) |
 
-The short project can be accessed through the [`project/`](project/) folder. You may also click here: [`itp-project.ipynb`](project/itp-project.ipynb). All instructions are contained within.
+The short project can be accessed through the [`project/`](./project/) folder. You may also click here: [`itp-project.ipynb`](./project/itp-project.ipynb). All instructions are contained within.
 
-Optional exercises for each day's content (along with solutions) can be found in the [`optional-exercises/`](optional-exercises/) folder. It is recommended that you take a look at these, as a lot of learning how to program is just practice. If we have time at the end of a given session, we can go over some of these exercises together.
+Optional exercises for each day's content (along with solutions) can be found in the [`optional-exercises/`](./optional-exercises/) folder. It is recommended that you take a look at these, as a lot of learning how to program is just practice. If we have time at the end of a given session, we can go over some of these exercises together.
 
-During the workshop sessions, attendees asked some important questions. Questions that were particularly insightful and/or beyond the scope of this workshop are included (and answered) in the [`q-and-a/`](/q-and-a/) folder as Jupyter Notebooks (separated by day).
+During the workshop sessions, attendees often ask some important questions. Questions that were particularly insightful and/or beyond the scope of this workshop are included (and answered) in the [`q-and-a/`](./q-and-a/) folder as Jupyter Notebooks (separated by day). These files contain questions and answers from previous workshops as well.
 
-You will also find other folders and files in this repository. These are not of primary concern, so I (GK) have provided information in a separate document for those that are curious ([`extras/repo-structure.md`](extras/repo-structure.md)).
+You will also find other folders and files in this repository. These are not of primary concern, so I (GK) have provided information in a separate document for those that are curious ([`extras/repo-structure.md`](./extras/repo-structure.md)).
 
 ## Resources
 
@@ -99,7 +99,7 @@ Starting out, most problems encountered will be basic enough to handle through t
 
 Although we cover a vast amount of material in this workshop, we only skim the surface of what Python has to offer. This said, we hope that this workshop enables you to feel comfortable seeking out and engaging with material beyond what we have taught. Some resources to do so are provided below:
 
-- Sometimes, packages that you might want to install are not available through the Anaconda Navigator. I have included a guide as to how to install these in [`extras/pip-install.md`](extras/pip-install.md)
+- Sometimes, packages that you might want to install are not available through the Anaconda Navigator. I have included a guide as to how to install these in [`extras/pip-install.md`](./extras/pip-install.md)
 
 - Including the above bullet (on `pip install`), it is often helpful and/or necessary to use the terminal (or command prompt / PowerShell on Windows). A few resources on this include:
     + *Master the basics of Conda environments in Python* by E.M. Ratamero from The Jackson Laboratory ([YouTube video](https://www.youtube.com/watch?v=1VVCd0eSkYc))
@@ -140,7 +140,7 @@ Last, it should be noted that practice is key to learning any of this material. 
 
 - The logo for this workshop was created using **matplotlib**. The script is located in this repo at [`images/logo.py`](images/logo.py). There are a couple of video resources included as comments within this script--I (GK) referred to these videos when making the logo and thought they might be of use to some
 - [**pygame-ce**](https://pyga.me/docs/) for games
-    + See *Introduction to Python for Data Analysis: The Game* under [`extras/fun/`](extras/fun/)
+    + See *Introduction to Python for Data Analysis: The Game* under [`./extras/fun/`](extras/fun/)
 
 ``` python
 from pyfiglet import Figlet

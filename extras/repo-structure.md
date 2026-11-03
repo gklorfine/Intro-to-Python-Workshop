@@ -47,6 +47,7 @@ Below is a **directory tree** of this repository:
 │   ├── day1-attendee-q-and-a.ipynb
 │   ├── day2-attendee-q-and-a.ipynb
 |   └── day3-attendee-q-and-a.ipynb
+├── _quarto.yml
 ├── .gitignore
 ├── day1-slides.pdf
 ├── day1-slides.qmd
@@ -58,7 +59,7 @@ Below is a **directory tree** of this repository:
 └── README.md
 ```
 
-With the exception of the [`LICENSE.md`](../LICENSE) file, items without a file extension (e.g., `.py`, `.md`, etc.) are folders. Indented branches off a folder indicate that folder's contents.
+With the exception of the [`LICENSE`](../LICENSE) file, items without a file extension (e.g., `.py`, `.md`, etc.) are folders. Indented branches off a folder indicate that folder's contents.
 
 ## Root
 
@@ -66,10 +67,11 @@ Starting at the **root** of the repository (i.e., the top-level/outermost folder
 
 - The slide files, `day*-slides.*`
     + "`*`" is shorthand for "everything" (or "all possible combinations" in this case)
-- The [`LICENSE.md`](../LICENSE) file for legal stuff (explains how others are allowed to use/copy/modify/share the workshop)
-    + Fairly standard on GitHub
 - The [`README.md`](../README.md) file, which is the document you see at the "homepage" of the repository
+- The [`_quarto.yml`](../_quarto.yml) file is a configuration file for Quarto (the software used to create the slides)
 - The [`.gitignore`](../.gitignore) file tells our computers (mine (GK) and Bora's) which files not to upload when we update the repository
+- The [`LICENSE`](../LICENSE) file for legal stuff (explains how others are allowed to use/copy/modify/share the workshop)
+    + Fairly standard on GitHub
 
 ## Folders
 

@@ -1,4 +1,5 @@
 .DS_Store
+.vscode
 README.html
 README_files/
 slides_files/
@@ -7,3 +8,6 @@ day2-slides_files/
 day3-slides_files/
 repo-structure_files/
 repo-structure.html
+
+/.quarto/
+**/*.quarto_ipynb

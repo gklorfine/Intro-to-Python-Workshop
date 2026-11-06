@@ -54,7 +54,7 @@ plt.hist(
     x,                      # Data
     color = "green",        # Bar Colour
     edgecolor = "black",    # Outline Colour
-    bins = np.arange(-3, 3.5, 0.5) # Bins of 0.5 from -3 to +3
+    bins = np.arange(-3, 3.5, 0.5) #Bin size of 0.5, (-3 to +3)
 )
 plt.show()
 ```
@@ -127,6 +127,7 @@ plt.show()
 ### Simulated Data for a Scatterplot {.example}
 ```{python}
 #| label: regressData
+#| echo: false
 
 errors = np.random.normal(0, 2, 10) # Normal errors
 nums_x = np.arange(0, 10, 1) # Nums 0 to 9
@@ -1063,7 +1064,6 @@ $$
 #| output: false
 control_rows = df[df["group"] == "control"]
 treatment_rows = df[df["group"] == "treatment"]
-
 plt.scatter(
     control_rows["study_hours"], control_rows["score"],
     color = "blue", label = "Control")
@@ -1311,9 +1311,7 @@ plt.show()
 ```{python}
 #| label: sm_two_cont_corr
 corrs = df[["score", "study_hours", "sleep_hours"]].corr()
-print(
-    corrs.round(2)
-)
+print(corrs.round(2))
 ```
 
 - Both predictors correlate positively with `score`

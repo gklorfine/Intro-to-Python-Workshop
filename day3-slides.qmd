@@ -72,9 +72,7 @@ plt.hist(
     x,                      #Data
     color = "green",        #Bar Colour
     edgecolor = "black",    #Outline Colour
-    
-    #Bin size: 0.5, from -3 to +3
-    bins = np.arange(-3, 3.5, 0.5)
+    bins = np.arange(-3, 3.5, 0.5) #Bin size of 0.5, (-3 to +3)
 )
 plt.show()
 ```
@@ -126,27 +124,22 @@ plt.show()
 
 - The below is how data was generated for subsequent scatterplot examples
 
-### Simulated Data for a Simple Regression {.example}
+### Simulated Data for a Scatterplot {.example}
 ```{python}
 #| label: regressData
 
 errors = np.random.normal(0, 2, 10) # Normal errors
 nums_x = np.arange(0, 10, 1) # Nums 0 to 9
 nums_y = nums_x + errors # y = x + errors
-```
-
-## matplotlib.pyplot
-
-### Scatterplot {.example}
-```{python}
-#| label: scatter
-#| output: false
 
 # scatter(x, y, colour, transparency)
 plt.scatter(nums_x, nums_y, color = "red", alpha = 0.6)
 plt.show()
 ```
 
+## matplotlib.pyplot
+
+### Scatterplot {.example}
 ```{python}
 #| label: scatter_show
 #| echo: false
@@ -167,7 +160,7 @@ plt.show()
 #| label: scatter_group
 #| output: false
 
-groups = np.array(["A", "B"] * 5)    # Group label for each point
+groups = np.array(["A", "B"] * 5) # Group labels
 
 plt.scatter(nums_x[groups == "A"], nums_y[groups == "A"],
     color = "blue", label = "Group A")
@@ -211,8 +204,8 @@ plt.show()
 
 plt.scatter(
     nums_x, nums_y,
-    c = errors,          # Values that determine each dot's colour
-    cmap = "coolwarm"    # Colour map: low = blue, high = red
+    c = errors,          # Values for each colour
+    cmap = "coolwarm"    # Colour map: low/blue, high/red
 )
 plt.colorbar(label = "Error")
 plt.show()
@@ -261,7 +254,7 @@ plt.show()
 
 # Observed data as red dots
 plt.scatter(nums_x, nums_y, color = "red")
-# Reference line: black solid line
+# Reference line: black solid line (y = x)
 plt.plot(nums_x, nums_x, '-k')
 plt.show()
 ```
@@ -542,6 +535,12 @@ welch_result = ttest_ind(
 
 ```{python}
 #| label: sm_ttest_unpack
+#| echo: false
+np.set_printoptions(legacy='1.25')
+```
+
+```{python}
+#| label: sm_ttest_unpack_show
 print(pool_result)
 print(welch_result)
 ```
@@ -957,7 +956,7 @@ summary_table_image(summary.tables[2])
 ```{python}
 #| label: sm_rsquared
 
-print(f"$R^2$: {model.rsquared:.3f}")
+print(f"R^2: {model.rsquared:.3f}")
 ```
 
 ## statsmodels
@@ -1003,7 +1002,7 @@ plt.show()
 #| echo: false
 #| fig-align: center
 
-figure(figsize=(2.5, 2.5), dpi=200)
+figure(figsize=(2.3, 2.3), dpi=200)
 ordered = df.sort_values("study_hours")
 plt.scatter(df["study_hours"], df["score"], color = "blue")
 plt.plot(ordered["study_hours"], ordered["predicted_score"], "k-")
@@ -1062,7 +1061,6 @@ $$
 ```{python}
 #| label: sm_multiple_inspect
 #| output: false
-
 control_rows = df[df["group"] == "control"]
 treatment_rows = df[df["group"] == "treatment"]
 
@@ -1078,7 +1076,7 @@ plt.legend()
 plt.show()
 ```
 
-- Same approach as before: one `plt.scatter()` call per group, each with its own `color` and `label`, so `plt.legend()` can name the groups
+- Same approach: one `plt.scatter()` call per group, each with its own `color` and `label`, so `plt.legend()` can name the groups
 
 ## statsmodels
 
@@ -1090,7 +1088,6 @@ plt.show()
 
 control_rows = df[df["group"] == "control"]
 treatment_rows = df[df["group"] == "treatment"]
-
 figure(figsize=(2.5, 2.2), dpi=200)
 plt.scatter(
     control_rows["study_hours"], control_rows["score"],
@@ -1276,7 +1273,7 @@ df["sleep_hours"] = (
 
 plt.scatter(
     df["study_hours"], df["score"],
-    c = df["sleep_hours"],   # Colour each dot by sleep hours
+    c = df["sleep_hours"],   # Colour dots by sleep hours
     cmap = "viridis"
 )
 plt.colorbar(label = "Sleep Hours")
@@ -1313,9 +1310,9 @@ plt.show()
 ### Two Continuous Predictors: Correlations Between Variables {.example}
 ```{python}
 #| label: sm_two_cont_corr
-
+corrs = df[["score", "study_hours", "sleep_hours"]].corr()
 print(
-    df[["score", "study_hours", "sleep_hours"]].corr().round(2)
+    corrs.round(2)
 )
 ```
 
@@ -1346,7 +1343,7 @@ print(
 ```{python}
 #| label: sm_two_cont_fit
 
-two_cont_model = smf.ols(
+cont_model = smf.ols(
     "score ~ study_hours + sleep_hours", data = df
 ).fit()
 ```
@@ -1360,16 +1357,16 @@ two_cont_model = smf.ols(
 #| label: sm_two_cont_report_show
 #| eval: false
 
-two_cont_model.summary()
+cont_model.summary()
 ```
 ```{python}
 #| label: sm_two_cont_report
 #| echo: false
 
-for term in two_cont_model.params.index:
-    estimate = two_cont_model.params[term]
-    ci = two_cont_model.conf_int().loc[term]
-    p = two_cont_model.pvalues[term]
+for term in cont_model.params.index:
+    estimate = cont_model.params[term]
+    ci = cont_model.conf_int().loc[term]
+    p = cont_model.pvalues[term]
     print(
         f"{term}: b = {estimate:.2f}, "
         f"95% CI [{ci[0]:.2f}, {ci[1]:.2f}], "
@@ -1393,8 +1390,8 @@ for term in two_cont_model.params.index:
 
 print(f"Simple: b = {model.params['study_hours']:.2f}, "
     f"R^2 = {model.rsquared:.3f}")
-print(f"Multiple: b = {two_cont_model.params['study_hours']:.2f}, "
-    f"R^2 = {two_cont_model.rsquared:.3f}")
+print(f"Multiple: b = {cont_model.params['study_hours']:.2f}, "
+    f"R^2 = {cont_model.rsquared:.3f}")
 ```
 
 - The `study_hours` slope grows once sleep is held constant — heavy studiers sleep less, which had been masking part of the study effect

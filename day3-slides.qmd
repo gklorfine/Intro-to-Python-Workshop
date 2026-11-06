@@ -127,20 +127,22 @@ plt.show()
 ### Simulated Data for a Scatterplot {.example}
 ```{python}
 #| label: regressData
-#| echo: false
 
 errors = np.random.normal(0, 2, 10) # Normal errors
 nums_x = np.arange(0, 10, 1) # Nums 0 to 9
 nums_y = nums_x + errors # y = x + errors
-
-# scatter(x, y, colour, transparency)
-plt.scatter(nums_x, nums_y, color = "red", alpha = 0.6)
-plt.show()
 ```
 
 ## matplotlib.pyplot
 
 ### Scatterplot {.example}
+```{python}
+#| label: scatter
+#| eval: false
+# scatter(x, y, colour, transparency)
+plt.scatter(nums_x, nums_y, color = "red", alpha = 0.6)
+plt.show()
+```
 ```{python}
 #| label: scatter_show
 #| echo: false

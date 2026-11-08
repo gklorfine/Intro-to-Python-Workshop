@@ -28,7 +28,7 @@ plt.annotate(
 plt.annotate(
     "Fall 2026", (0, -.83), ha = "center", va = "center",
     color = "white", 
-    fontsize = 22, fontfamily='signpainter'
+    fontsize = 30, fontfamily='signpainter'
 )
 
 # gcf = 'get current figure'; gca = 'get current axes'

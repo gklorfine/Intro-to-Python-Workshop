@@ -262,7 +262,7 @@ y = 2
 
 print(x[0])     # Index first element of a list
 print(x[-1])    # Index last element
-print(x[y])     # Index yth element
+print(x[y])     # yth index of the list
 ```
 
 ## Lists: Indexing

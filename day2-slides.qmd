@@ -45,10 +45,17 @@ from math import pi
 print(f'pi = {pi:.3f}')
 ```
 
+## Importing Packages
+
+::: {.callout-note}
+- Each package is typically imported once per script (or notebook)
+- All `import ...` statements are typically placed at the top of the script
+    + Same with notebooks, but it is less strict of a convention
+:::
 
 ## Importing Packages
 
-- Some require installation. This is most easily (and safely) done through **Anaconda**
+- Some packages require installation. This is more safely done through the use of environments (e.g., through **Anaconda**)
 - Let's install the packages **NumPy** and **pandas**!
 
 <!-- GK: Share screen here and show how to add numpy and pandas to environment -->
@@ -113,8 +120,6 @@ def function_name(arg1, arg2 = default_value, arg_n):
 ```{python}
 #| label: def
 
-x = [0,1,2,3,4,5,6,7]
-
 def qm_mean(things):
     qm_sum = 0
 
@@ -123,6 +128,7 @@ def qm_mean(things):
     
     return qm_sum / len(things)
 
+x = [0,1,2,3,4,5,6,7]
 qm_mean(x)              
 ```
 
@@ -168,7 +174,7 @@ print(type(array2d))
 
 ## NumPy
 
-### To Check Attributes of a NumPy Variable {.example}
+### To Check Attributes of a NumPy Array {.example}
 ```{python}
 #| label: attrib_numpy
 

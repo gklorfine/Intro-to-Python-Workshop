@@ -5,6 +5,7 @@ subtitle: "Day Three: Applications"
 # matplotlib.pyplot
 
 ## matplotlib.pyplot
+
 - **matplotlib.pyplot** is a package for visualizing data in Python
 - Fun fact: If you have asked ChatGPT for a graph, you likely received one that was made using this package
 
@@ -27,6 +28,7 @@ plt.show()
 ## matplotlib.pyplot
 
 ### Basic Histogram {.example}
+
 ```{python}
 #| label: pltShow
 #| echo: false
@@ -46,6 +48,7 @@ plt.show()
 - A few ways to modify the histogram are illustrated below
 
 ### Modifying the Plot {.example}
+
 ```{python}
 #| label: modifyplt
 #| output: false
@@ -63,6 +66,7 @@ plt.show()
 ## matplotlib.pyplot
 
 ### Modifying the Plot {.example}
+
 ```{python}
 #| label: modifyplt_show
 #| echo: false
@@ -121,12 +125,12 @@ plt.ylabel("Count")
 plt.show()
 ```
 
-
 ## matplotlib.pyplot
 
 - The below is how data was generated for subsequent scatterplot examples
 
 ### Simulated Data for a Scatterplot {.example}
+
 ```{python}
 #| label: regressData
 
@@ -138,29 +142,32 @@ nums_y = nums_x + errors # y = x + errors
 ## matplotlib.pyplot
 
 ### Scatterplot {.example}
+
 ```{python}
 #| label: scatter
 #| eval: false
 # scatter(x, y, colour, transparency)
-plt.scatter(nums_x, nums_y, color = "red", alpha = 0.6)
+plt.scatter(nums_x, nums_y, c = "red", alpha = 0.6)
 plt.show()
 ```
+
 ```{python}
 #| label: scatter_show
 #| echo: false
 #| fig-align: center
 
 figure(figsize=(2.3, 2.3), dpi=200)
-plt.scatter(nums_x, nums_y, color = "red", alpha = 0.6)
+plt.scatter(nums_x, nums_y, c = "red", alpha = 0.6)
 plt.show()
 ```
 
 ## matplotlib.pyplot
 
 - To colour the dots by a **categorical** variable (e.g., group), call `plt.scatter()` once per group
-- Give each call its own `color` and `label`, then add `plt.legend()`
+- Give each call its own colour `c` and `label`, then add `plt.legend()`
 
 ### Colouring by Group (Categorical) {.example}
+
 ```{python}
 #| label: scatter_group
 #| output: false
@@ -168,9 +175,9 @@ plt.show()
 groups = np.array(["A", "B"] * 5) # Group labels
 
 plt.scatter(nums_x[groups == "A"], nums_y[groups == "A"],
-    color = "blue", label = "Group A")
+    c = "blue", label = "Group A")
 plt.scatter(nums_x[groups == "B"], nums_y[groups == "B"],
-    color = "red", label = "Group B")
+    c = "red", label = "Group B")
 plt.legend()
 plt.show()
 ```
@@ -178,6 +185,7 @@ plt.show()
 ## matplotlib.pyplot
 
 ### Colouring by Group (Categorical) {.example}
+
 ```{python}
 #| label: scatter_group_show
 #| echo: false
@@ -187,9 +195,9 @@ groups = np.array(["A", "B"] * 5)
 
 figure(figsize=(2.5, 2.5), dpi=200)
 plt.scatter(nums_x[groups == "A"], nums_y[groups == "A"],
-    color = "blue", label = "Group A")
+    c = "blue", label = "Group A")
 plt.scatter(nums_x[groups == "B"], nums_y[groups == "B"],
-    color = "red", label = "Group B")
+    c = "red", label = "Group B")
 plt.legend(loc = 2, fontsize = "xx-small")
 plt.show()
 ```
@@ -203,6 +211,7 @@ plt.show()
 - `plt.colorbar()` acts as the legend, showing which colour matches which value
 
 ### Colouring with a Colour Map (Continuous) {.example}
+
 ```{python}
 #| label: scatter_cmap
 #| output: false
@@ -219,6 +228,7 @@ plt.show()
 ## matplotlib.pyplot
 
 ### Colouring with a Colour Map (Continuous) {.example}
+
 ```{python}
 #| label: scatter_cmap_show
 #| echo: false
@@ -235,12 +245,12 @@ plt.show()
 
 ## matplotlib.pyplot
 
-### `color` vs. `c` + `cmap`
+### `c` + `label` vs. `c` + `cmap`
 
-- `color` + `label`: one colour per group, one `plt.scatter()` call per group; legend with `plt.legend()` (categorical)
+- `c` + `label`: one colour per group, one `plt.scatter()` call per group; legend with `plt.legend()` (categorical)
 - `c` + `cmap`: a list of numbers that matplotlib converts to colours; legend with `plt.colorbar()` (continuous)
 
-::: {.callout-note}
+::: callout-note
 - `cmap` only works with `c` — matplotlib needs numbers to map onto a colour scale
 :::
 
@@ -248,17 +258,18 @@ plt.show()
 
 - You can add another plot layer by calling another plotting function before `plt.show()`
 - This is useful for adding:
-    - reference lines
-    - fitted lines
-    - multiple groups
+  - reference lines
+  - fitted lines
+  - multiple groups
 
 ### Adding a Line to a Scatterplot {.example}
+
 ```{python}
 #| label: scatter_add_line
 #| output: false
 
 # Observed data as red dots
-plt.scatter(nums_x, nums_y, color = "red")
+plt.scatter(nums_x, nums_y, c = "red")
 # Reference line: black solid line (y = x)
 plt.plot(nums_x, nums_x, '-k')
 plt.show()
@@ -269,13 +280,14 @@ plt.show()
 ## matplotlib.pyplot
 
 ### Adding Labels and a Legend {.example}
+
 ```{python}
 #| label: scatter_add_line_show
 #| echo: false
 #| fig-align: center
 
 figure(figsize=(2.2, 1.8), dpi=200)
-plt.scatter(nums_x, nums_y, color = "red", label = "Observed")
+plt.scatter(nums_x, nums_y, c = "red", label = "Observed")
 plt.plot(nums_x, nums_x, '-k', label = "Reference line")
 plt.title("Scatterplot with Reference Line")
 plt.xlabel("X Value")
@@ -299,12 +311,13 @@ plt.show()
 
 - **statsmodels** is a package for statistical testing and modelling
 - It is useful when you want:
-    - formal hypothesis tests
-    - regression models
-    - $p$-values and confidence intervals
-    - detailed statistical output
+  - formal hypothesis tests
+  - regression models
+  - $p$-values and confidence intervals
+  - detailed statistical output
 
 ### Importing **statsmodels** Functions {.example}
+
 ```{python}
 #| label: sm_imports
 
@@ -319,6 +332,7 @@ from statsmodels.stats.weightstats import ttest_ind
 - `ttest_ind` is a function for independent-samples $t$-tests
 
 ### Import Structure {.example}
+
 ```{python}
 #| label: sm_import_structure
 #| output: false
@@ -336,10 +350,10 @@ from statsmodels.stats.weightstats import ttest_ind
 
 - Statistical tests help us use a **sample** to make inferences about a larger population
 - A test usually starts with a **null hypothesis**
-    - Often "no difference" or "no relationship"
+  - Often "no difference" or "no relationship"
 - We compare the observed data to what would be expected if the null hypothesis were true
 
-::: {.callout-note}
+::: callout-note
 - The code runs the test, but the researcher chooses whether the test makes sense
 :::
 
@@ -347,11 +361,11 @@ from statsmodels.stats.weightstats import ttest_ind
 
 ### General Workflow
 
-1. State the research question
-1. Identify the level of measurements and study design
-1. Summarize and visualize the data
-1. Run the appropriate test
-1. Interpret the estimate, confidence interval, and $p$-value
+1.  State the research question
+2.  Identify the level of measurements and study design
+3.  Summarize and visualize the data
+4.  Run the appropriate test
+5.  Interpret the estimate, confidence interval, and $p$-value
 
 ## statsmodels
 
@@ -364,6 +378,7 @@ from statsmodels.stats.weightstats import ttest_ind
 ## statsmodels
 
 ### Creating the Data {.example}
+
 ```{python}
 #| label: sm_create_data
 
@@ -383,6 +398,7 @@ df = pd.DataFrame({
 ## statsmodels
 
 ### Inspecting the Data {.example}
+
 ```{python}
 #| label: sm_inspect_data
 
@@ -407,21 +423,20 @@ print(df.shape)    # (number of rows, number of columns)
 
 **Null hypothesis:**
 
-$$
-H_0: \mu_{\text{treatment}} - \mu_{\text{control}} = 0
-$$
+$$H_0: \mu_{\text{treatment}} - \mu_{\text{control}} = 0$$
 
 ## statsmodels
 
 ### Independent-Samples $t$-test: Level of Measurement
 
 - `group`: categorical (nominal), two independent levels — grouping variable
-    - Study design: independent (between-subjects) groups
+  - Study design: independent (between-subjects) groups
 - `score`: continuous (interval/ratio) — outcome variable
 
 ## statsmodels
 
 ### Independent-Samples $t$-test: Inspecting the Data {.example}
+
 ```{python}
 #| label: sm_summary_image_helper
 #| echo: false
@@ -457,6 +472,7 @@ def summary_table_image(table, fontsize = 11, padding = 0.15, dpi = 220):
 
 print(df.groupby("group")["score"].describe().round(2))
 ```
+
 ```{python}
 #| label: sm_describe_image
 #| echo: false
@@ -472,6 +488,7 @@ summary_table_image(df.groupby("group")["score"].describe().round(2))
 ## statsmodels
 
 ### Selecting Each Group {.example}
+
 ```{python}
 #| label: sm_select_groups
 
@@ -491,6 +508,7 @@ treatment = df.loc[
 ## statsmodels
 
 ### Independent-Samples $t$-test: The `usevar` Argument {.example}
+
 ```{python}
 #| label: sm_ttest_structure
 #| eval: false
@@ -505,7 +523,7 @@ ttest_ind(
 ```
 
 - `usevar = "pooled"` assumes equal population variances (the regular independent-samples $t$-test)
-- `usevar = "unequal"` does **not** assume equal population variances (**Welch's $t$-test**) — a useful default when in doubt
+- `usevar = "unequal"` does **not** assume equal population variances (**Welch's** $t$-test) — a useful default when in doubt
 
 ## statsmodels
 
@@ -517,6 +535,7 @@ ttest_ind(
 ## statsmodels
 
 ### Independent-Samples $t$-test: Running the Test {.example}
+
 ```{python}
 #| label: sm_ttest_run
 
@@ -549,6 +568,7 @@ np.set_printoptions(legacy='1.25')
 print(pool_result)
 print(welch_result)
 ```
+
 ```{python}
 #| label: sm_ttest_index
 
@@ -567,13 +587,14 @@ f"{welch_result[1]}, {welch_result[2]}")
 - The $p$-value is the probability, assuming the null hypothesis is true, of observing a test statistic at least as extreme as the one observed
 - The degrees of freedom help determine the $t$-distribution used by the test
 
-::: {.callout-important}
+::: callout-important
 - A $p$-value is **not** the probability that the null hypothesis is true
 :::
 
 ## statsmodels
 
 ### Calculating the Mean Difference {.example}
+
 ```{python}
 #| label: sm_mean_difference
 
@@ -590,6 +611,7 @@ print(f"Mean difference: {mean_difference:.2f}")
 ## statsmodels
 
 ### Interpreting the Results: Equal Variances {.example}
+
 ```{python}
 #| label: sm_pooled_report
 
@@ -605,6 +627,7 @@ print(
 ## statsmodels
 
 ### Interpreting the Results: Unequal Variances (Welch's) {.example}
+
 ```{python}
 #| label: sm_welch_report
 
@@ -630,7 +653,7 @@ print(
 
 - Is there a linear relationship between study hours and score?
 
-::: {.callout-important}
+::: callout-important
 - Correlation does not establish causation
 :::
 
@@ -646,6 +669,7 @@ print(
 ## statsmodels
 
 ### Adding a Second Variable {.example}
+
 ```{python}
 #| label: sm_add_hours
 
@@ -661,11 +685,12 @@ df["study_hours"] = (
 ## statsmodels
 
 ### Scatterplot {.example}
+
 ```{python}
 #| label: sm_scatter
 #| output: false
 
-plt.scatter(df["study_hours"], df["score"], color = "blue")
+plt.scatter(df["study_hours"], df["score"], c = "blue")
 plt.xlabel("Study Hours")
 plt.ylabel("Score")
 plt.show()
@@ -676,13 +701,14 @@ plt.show()
 ## statsmodels
 
 ### Scatterplot {.example}
+
 ```{python}
 #| label: sm_scatter_show
 #| echo: false
 #| fig-align: center
 
 figure(figsize=(2.5, 2.2), dpi=200)
-plt.scatter(df["study_hours"], df["score"], color = "blue")
+plt.scatter(df["study_hours"], df["score"], c = "blue")
 plt.xlabel("Study Hours")
 plt.ylabel("Score")
 plt.show()
@@ -691,6 +717,7 @@ plt.show()
 ## statsmodels
 
 ### `.corr()` Method {.example}
+
 ```{python}
 #| label: sm_corr
 
@@ -716,17 +743,15 @@ print(f"r = {correlation:.2f}")
 ### Simple Linear Regression
 
 - Simple linear regression examines the relationship between:
-    - one continuous **outcome**
-    - one continuous **predictor**
+  - one continuous **outcome**
+  - one continuous **predictor**
 - Here, the outcome is `score` and the predictor is `study_hours`
 
 **Research Question (same as above):**
 
 - Is there a linear relationship between study hours and score?
 
-$$
-\text{score} = \text{intercept} + (\text{slope} \times \text{study hours}) + \text{error}
-$$
+$$\text{score} = \text{intercept} + (\text{slope} \times \text{study hours}) + \text{error}$$
 
 ## statsmodels
 
@@ -739,11 +764,12 @@ $$
 ## statsmodels
 
 ### Simple Linear Regression: Inspecting the Data {.example}
+
 ```{python}
 #| label: sm_regression_inspect
 #| output: false
 
-plt.scatter(df["study_hours"], df["score"], color = "blue")
+plt.scatter(df["study_hours"], df["score"], c = "blue")
 plt.xlabel("Study Hours")
 plt.ylabel("Score")
 plt.show()
@@ -754,13 +780,14 @@ plt.show()
 ## statsmodels
 
 ### Simple Linear Regression: Inspecting the Data {.example}
+
 ```{python}
 #| label: sm_regression_inspect_show
 #| echo: false
 #| fig-align: center
 
 figure(figsize=(2.5, 2.2), dpi=200)
-plt.scatter(df["study_hours"], df["score"], color = "blue")
+plt.scatter(df["study_hours"], df["score"], c = "blue")
 plt.xlabel("Study Hours")
 plt.ylabel("Score")
 plt.show()
@@ -769,6 +796,7 @@ plt.show()
 ## statsmodels
 
 ### Formula Notation: Formula Structure {.example}
+
 ```{python}
 #| label: sm_formula_structure
 #| eval: false
@@ -784,6 +812,7 @@ plt.show()
 ## statsmodels
 
 ### Creating a Model with `smf.ols()` {.example}
+
 ```{python}
 #| label: sm_ols_create
 
@@ -801,6 +830,7 @@ print(type(model_definition))
 ## statsmodels
 
 ### Fitting a Model with `.fit()` {.example}
+
 ```{python}
 #| label: sm_ols_fit
 #| eval: false
@@ -816,6 +846,7 @@ print(type(model))
 ## statsmodels
 
 ### Method Chaining: Defining and Fitting in One Step {.example}
+
 ```{python}
 #| label: sm_ols_one_step
 
@@ -830,6 +861,7 @@ model = smf.ols(
 ## statsmodels
 
 ### Model Parameters with `.params` {.example}
+
 ```{python}
 #| label: sm_model_params
 
@@ -843,6 +875,7 @@ print("study_hours:", round(model.params["study_hours"], 2))
 ## statsmodels
 
 ### Accessing One Parameter {.example}
+
 ```{python}
 #| label: sm_model_param_index
 
@@ -858,6 +891,7 @@ print(f"Slope: {slope:.2f}")
 ## statsmodels
 
 ### Testing the Slope with `.pvalues` {.example}
+
 ```{python}
 #| label: sm_model_pvalues
 
@@ -868,13 +902,12 @@ print(f"study_hours p-value: {slope_p_value:.3f}")
 
 **Null hypothesis:**
 
-$$
-H_0: \text{population slope} = 0
-$$
+$$H_0: \text{population slope} = 0$$
 
 ## statsmodels
 
 ### Confidence Intervals with `.conf.int()` {.example}
+
 ```{python}
 #| label: sm_model_ci
 
@@ -889,6 +922,7 @@ print(f"Upper: {slope_ci[1]:.2f}")
 ## statsmodels
 
 ### Model Overview: `.summary().tables[0]` {.example}
+
 ```{python}
 #| label: sm_summary_table0_code
 #| output: false
@@ -911,6 +945,7 @@ summary_table_image(summary.tables[0], fontsize = 9.5)
 ## statsmodels
 
 ### Model Overview: `.summary().tables[1]` {.example}
+
 ```{python}
 #| label: sm_summary_table1_code
 #| output: false
@@ -932,6 +967,7 @@ summary_table_image(summary.tables[1])
 ## statsmodels
 
 ### Model Overview: `.summary().tables[2]` {.example}
+
 ```{python}
 #| label: sm_summary_table2_code
 #| output: false
@@ -967,6 +1003,7 @@ print(f"R^2: {model.rsquared:.3f}")
 ## statsmodels
 
 ### Predicted Outcomes with `.predict()` {.example}
+
 ```{python}
 #| label: sm_predict
 
@@ -984,13 +1021,14 @@ for i in range(3):
 ## statsmodels
 
 ### Plotting Model Predictions: Observed and Predicted Values {.example}
+
 ```{python}
 #| label: sm_plot_line
 #| output: false
 
 ordered = df.sort_values("study_hours")
 
-plt.scatter(df["study_hours"], df["score"], color = "blue")
+plt.scatter(df["study_hours"], df["score"], c = "blue")
 plt.plot(
     ordered["study_hours"], ordered["predicted_score"], "k-"
 )
@@ -1002,6 +1040,7 @@ plt.show()
 ## statsmodels
 
 ### Fitted Line {.example}
+
 ```{python}
 #| label: sm_plot_line_show
 #| echo: false
@@ -1009,7 +1048,7 @@ plt.show()
 
 figure(figsize=(2.3, 2.3), dpi=200)
 ordered = df.sort_values("study_hours")
-plt.scatter(df["study_hours"], df["score"], color = "blue")
+plt.scatter(df["study_hours"], df["score"], c = "blue")
 plt.plot(ordered["study_hours"], ordered["predicted_score"], "k-")
 plt.xlabel("Study Hours")
 plt.ylabel("Score")
@@ -1022,6 +1061,7 @@ plt.show()
 ## statsmodels
 
 ### Reporting Regression Results: Formatting the Result {.example}
+
 ```{python}
 #| label: sm_regression_report
 
@@ -1048,9 +1088,7 @@ print(f"b = {model.params['study_hours']:.2f}, "
 
 - Does study hours predict score, after accounting for group — and does the effect of study hours depend on group?
 
-$$
-\text{score} = \text{intercept} + b_1(\text{study hours}) + b_2(\text{group}) + \text{error}
-$$
+$$\text{score} = \text{intercept} + b_1(\text{study hours}) + b_2(\text{group}) + \text{error}$$
 
 ## statsmodels
 
@@ -1063,6 +1101,7 @@ $$
 ## statsmodels
 
 ### Multiple Regression: Inspecting the Data {.example}
+
 ```{python}
 #| label: sm_multiple_inspect
 #| output: false
@@ -1070,21 +1109,22 @@ control_rows = df[df["group"] == "control"]
 treatment_rows = df[df["group"] == "treatment"]
 plt.scatter(
     control_rows["study_hours"], control_rows["score"],
-    color = "blue", label = "Control")
+    c = "blue", label = "Control")
 plt.scatter(
     treatment_rows["study_hours"], treatment_rows["score"],
-    color = "red", label = "Treatment")
+    c = "red", label = "Treatment")
 plt.xlabel("Study Hours")
 plt.ylabel("Score")
 plt.legend()
 plt.show()
 ```
 
-- Same approach: one `plt.scatter()` call per group, each with its own `color` and `label`, so `plt.legend()` can name the groups
+- Same approach: one `plt.scatter()` call per group, each with its own colour `c` and `label`, so `plt.legend()` can name the groups
 
 ## statsmodels
 
 ### Multiple Regression: Inspecting the Data {.example}
+
 ```{python}
 #| label: sm_multiple_inspect_show
 #| echo: false
@@ -1095,11 +1135,11 @@ treatment_rows = df[df["group"] == "treatment"]
 figure(figsize=(2.5, 2.2), dpi=200)
 plt.scatter(
     control_rows["study_hours"], control_rows["score"],
-    color = "blue", label = "Control"
+    c = "blue", label = "Control"
 )
 plt.scatter(
     treatment_rows["study_hours"], treatment_rows["score"],
-    color = "red", label = "Treatment"
+    c = "red", label = "Treatment"
 )
 plt.xlabel("Study Hours")
 plt.ylabel("Score")
@@ -1110,6 +1150,7 @@ plt.show()
 ## statsmodels
 
 ### Multiple Regression: Formula Notation {.example}
+
 ```{python}
 #| label: sm_multiple_formula
 #| eval: false
@@ -1128,6 +1169,7 @@ plt.show()
 ## statsmodels
 
 ### Multiple Regression: Running the Test {.example}
+
 ```{python}
 #| label: sm_multiple_fit
 
@@ -1145,12 +1187,14 @@ interaction_model = smf.ols(
 ## statsmodels
 
 ### Multiple Regression: Interpreting the Results (Main Effects) {.example}
+
 ```{python}
 #| label: sm_multiple_report_main_show
 #| eval: false
 
 main_effects_model.summary()
 ```
+
 ```{python}
 #| label: sm_multiple_report_main
 #| echo: false
@@ -1175,12 +1219,14 @@ for term in main_effects_model.params.index:
 ## statsmodels
 
 ### Multiple Regression: Interpreting the Results (Interaction Effects) {.example}
+
 ```{python}
 #| label: sm_multiple_report_interaction_show
 #| eval: false
 
 interaction_model.summary()
 ```
+
 ```{python}
 #| label: sm_multiple_report_interaction
 #| echo: false
@@ -1207,6 +1253,7 @@ for term in interaction_model.params.index:
 ## statsmodels
 
 ### Comparing the Two Models: Running the Test {.example}
+
 ```{python}
 #| label: sm_anova_compare
 
@@ -1237,9 +1284,7 @@ print(comparison_table)
 
 - Does study hours predict score, after accounting for sleep hours?
 
-$$
-\text{score} = \text{intercept} + b_1(\text{study hours}) + b_2(\text{sleep hours}) + \text{error}
-$$
+$$\text{score} = \text{intercept} + b_1(\text{study hours}) + b_2(\text{sleep hours}) + \text{error}$$
 
 ## statsmodels
 
@@ -1253,6 +1298,7 @@ $$
 ## statsmodels
 
 ### Adding a Third Variable {.example}
+
 ```{python}
 #| label: sm_add_sleep
 
@@ -1271,6 +1317,7 @@ df["sleep_hours"] = (
 ## statsmodels
 
 ### Two Continuous Predictors: Inspecting the Data {.example}
+
 ```{python}
 #| label: sm_two_cont_inspect
 #| output: false
@@ -1291,6 +1338,7 @@ plt.show()
 ## statsmodels
 
 ### Two Continuous Predictors: Inspecting the Data {.example}
+
 ```{python}
 #| label: sm_two_cont_inspect_show
 #| echo: false
@@ -1312,6 +1360,7 @@ plt.show()
 ## statsmodels
 
 ### Two Continuous Predictors: Correlations Between Variables {.example}
+
 ```{python}
 #| label: sm_two_cont_corr
 corrs = df[["score", "study_hours", "sleep_hours"]].corr()
@@ -1325,6 +1374,7 @@ print(corrs.round(2))
 ## statsmodels
 
 ### Two Continuous Predictors: Formula Notation {.example}
+
 ```{python}
 #| label: sm_two_cont_formula
 #| eval: false
@@ -1342,6 +1392,7 @@ print(corrs.round(2))
 ## statsmodels
 
 ### Two Continuous Predictors: Running the Test {.example}
+
 ```{python}
 #| label: sm_two_cont_fit
 
@@ -1355,12 +1406,14 @@ cont_model = smf.ols(
 ## statsmodels
 
 ### Two Continuous Predictors: Interpreting the Results {.example}
+
 ```{python}
 #| label: sm_two_cont_report_show
 #| eval: false
 
 cont_model.summary()
 ```
+
 ```{python}
 #| label: sm_two_cont_report
 #| echo: false
@@ -1387,6 +1440,7 @@ for term in cont_model.params.index:
 ## statsmodels
 
 ### Comparing to Simple Regression {.example}
+
 ```{python}
 #| label: sm_two_cont_compare
 

@@ -29,7 +29,7 @@ Below is a **directory tree** of this repository:
 │   ├── extensions.png
 │   ├── logo.png
 │   ├── logo.py
-|   └── paste-1.png
+|   └── new_output.png
 ├── optional-exercises
 │   ├── solutions
 │   │   ├── day1-solutions.ipynb
